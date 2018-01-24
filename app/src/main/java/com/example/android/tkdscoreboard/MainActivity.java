@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void blueBodyPoint (View view) {
         blueScore = blueScore + 2;
-        displayRedScore(blueScore);
+        displayBlueScore(blueScore);
     }
 
     /**

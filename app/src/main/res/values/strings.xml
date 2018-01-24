@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TKD Score Board</string>
+    <string name="app_name">Taekwondo Score Board</string>
 
     <!-- Button's Labels-->
     <string name="headPoint">Head</string>

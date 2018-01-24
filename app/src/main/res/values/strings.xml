@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TKD Score Board</string>
+
+    <!-- Button's Labels-->
+    <string name="headPoint">Head Kick</string>
+    <string name="turningPoint">Turning Kick</string>
+    <string name="bodyPoint">Body Kick</string>
+    <string name="faultPoint">Penalty</string>
+    <string name="reset">Reset</string>
 </resources>

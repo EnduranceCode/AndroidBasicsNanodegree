@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.android.tkdscoreboard.MainActivity">
 
     <ImageView
@@ -12,224 +11,239 @@
         android:scaleType="centerCrop"
         android:src="@drawable/taekwondo" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/redFighterScore"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:background="@color/redFighter"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/scoreText" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:layout_marginLeft="@dimen/horizontalMargin"
-                android:layout_marginRight="@dimen/horizontalMargin"
-                android:layout_marginTop="@dimen/verticalMargin"
                 android:orientation="horizontal">
 
-                <Button
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/horizontalMargin"
                     android:layout_weight="1"
-                    android:background="@color/redFighter"
-                    android:onClick="redHeadPoint"
-                    android:text="@string/headPoint"
-                    android:textColor="@color/white" />
+                    android:orientation="vertical">
 
-                <Button
+                    <TextView
+                        android:id="@+id/redFighterScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/verticalMargin"
+                        android:background="@color/redFighter"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/scoreText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/verticalMargin"
+                        android:layout_marginLeft="@dimen/horizontalMargin"
+                        android:layout_marginRight="@dimen/horizontalMargin"
+                        android:layout_marginTop="@dimen/verticalMargin"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/horizontalMargin"
+                            android:layout_weight="1"
+                            android:background="@color/redFighter"
+                            android:onClick="redHeadPoint"
+                            android:text="@string/headPoint"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/redFighter"
+                            android:onClick="redHeadTurningPoint"
+                            android:text="@string/headTurningPoint"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/verticalMargin"
+                        android:layout_marginLeft="@dimen/horizontalMargin"
+                        android:layout_marginRight="@dimen/horizontalMargin"
+                        android:layout_marginTop="@dimen/verticalMargin"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/horizontalMargin"
+                            android:layout_weight="1"
+                            android:background="@color/redFighter"
+                            android:onClick="redBodyPoint"
+                            android:text="@string/bodyPoint"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/redFighter"
+                            android:onClick="redBodyTurningPoint"
+                            android:text="@string/bodyTurningPoint"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/verticalMargin"
+                        android:layout_marginLeft="@dimen/horizontalMargin"
+                        android:layout_marginRight="@dimen/horizontalMargin"
+                        android:layout_marginTop="@dimen/verticalMargin"
+                        android:background="@color/redFighter"
+                        android:onClick="redPunchPoint"
+                        android:text="@string/punchPoint"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontalMargin"
+                        android:layout_marginRight="@dimen/horizontalMargin"
+                        android:layout_marginTop="@dimen/verticalMargin"
+                        android:background="@color/redFighter"
+                        android:onClick="redFaultPoint"
+                        android:text="@string/faultPoint"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/redFighter"
-                    android:onClick="redHeadTurningPoint"
-                    android:text="@string/headTurningPoint"
-                    android:textColor="@color/white" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/blueFighterScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/verticalMargin"
+                        android:background="@color/blueFighter"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/scoreText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/verticalMargin"
+                        android:layout_marginLeft="@dimen/horizontalMargin"
+                        android:layout_marginRight="@dimen/horizontalMargin"
+                        android:layout_marginTop="@dimen/verticalMargin"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/horizontalMargin"
+                            android:layout_weight="1"
+                            android:background="@color/blueFighter"
+                            android:onClick="blueHeadPoint"
+                            android:text="@string/headPoint"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/blueFighter"
+                            android:onClick="blueHeadTurningPoint"
+                            android:text="@string/headTurningPoint"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/verticalMargin"
+                        android:layout_marginLeft="@dimen/horizontalMargin"
+                        android:layout_marginRight="@dimen/horizontalMargin"
+                        android:layout_marginTop="@dimen/verticalMargin"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/horizontalMargin"
+                            android:layout_weight="1"
+                            android:background="@color/blueFighter"
+                            android:onClick="blueBodyPoint"
+                            android:text="@string/bodyPoint"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/blueFighter"
+                            android:onClick="blueBodyTurningPoint"
+                            android:text="@string/bodyTurningPoint"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/verticalMargin"
+                        android:layout_marginLeft="@dimen/horizontalMargin"
+                        android:layout_marginRight="@dimen/horizontalMargin"
+                        android:layout_marginTop="@dimen/verticalMargin"
+                        android:background="@color/blueFighter"
+                        android:onClick="bluePunchPoint"
+                        android:text="@string/punchPoint"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontalMargin"
+                        android:layout_marginRight="@dimen/horizontalMargin"
+                        android:layout_marginTop="@dimen/verticalMargin"
+                        android:background="@color/blueFighter"
+                        android:onClick="blueFaultPoint"
+                        android:text="@string/faultPoint"
+                        android:textColor="@color/white" />
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:layout_marginLeft="@dimen/horizontalMargin"
-                android:layout_marginRight="@dimen/horizontalMargin"
-                android:layout_marginTop="@dimen/verticalMargin"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/resetButtonContainerVerticalPadding"
+                android:paddingLeft="@dimen/resetButtonContainerHorizontalPadding"
+                android:paddingRight="@dimen/resetButtonContainerHorizontalPadding"
+                android:paddingTop="@dimen/resetButtonContainerVerticalPadding">
 
                 <Button
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/horizontalMargin"
-                    android:layout_weight="1"
-                    android:background="@color/redFighter"
-                    android:onClick="redBodyPoint"
-                    android:text="@string/bodyPoint"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorAccent"
+                    android:onClick="reset"
+                    android:text="@string/reset"
                     android:textColor="@color/white" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/redFighter"
-                    android:onClick="redBodyTurningPoint"
-                    android:text="@string/bodyTurningPoint"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:layout_marginLeft="@dimen/horizontalMargin"
-                android:layout_marginRight="@dimen/horizontalMargin"
-                android:layout_marginTop="@dimen/verticalMargin"
-                android:background="@color/redFighter"
-                android:onClick="redPunchPoint"
-                android:text="@string/punchPoint"
-                android:textColor="@color/white" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:layout_marginLeft="@dimen/horizontalMargin"
-                android:layout_marginRight="@dimen/horizontalMargin"
-                android:layout_marginTop="@dimen/verticalMargin"
-                android:background="@color/redFighter"
-                android:onClick="redFaultPoint"
-                android:text="@string/faultPoint"
-                android:textColor="@color/white" />
+            </RelativeLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/blueFighterScore"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:background="@color/blueFighter"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/scoreText" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:layout_marginLeft="@dimen/horizontalMargin"
-                android:layout_marginRight="@dimen/horizontalMargin"
-                android:layout_marginTop="@dimen/verticalMargin"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginRight="@dimen/horizontalMargin"
-                    android:background="@color/blueFighter"
-                    android:onClick="blueHeadPoint"
-                    android:text="@string/headPoint"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/blueFighter"
-                    android:onClick="blueHeadTurningPoint"
-                    android:text="@string/headTurningPoint"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:layout_marginLeft="@dimen/horizontalMargin"
-                android:layout_marginRight="@dimen/horizontalMargin"
-                android:layout_marginTop="@dimen/verticalMargin"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginRight="@dimen/horizontalMargin"
-                    android:background="@color/blueFighter"
-                    android:onClick="blueBodyPoint"
-                    android:text="@string/bodyPoint"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/blueFighter"
-                    android:onClick="blueBodyTurningPoint"
-                    android:text="@string/bodyTurningPoint"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:layout_marginLeft="@dimen/horizontalMargin"
-                android:layout_marginRight="@dimen/horizontalMargin"
-                android:layout_marginTop="@dimen/verticalMargin"
-                android:background="@color/blueFighter"
-                android:onClick="bluePunchPoint"
-                android:text="@string/punchPoint"
-                android:textColor="@color/white" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:layout_marginLeft="@dimen/horizontalMargin"
-                android:layout_marginRight="@dimen/horizontalMargin"
-                android:layout_marginTop="@dimen/verticalMargin"
-                android:background="@color/blueFighter"
-                android:onClick="blueFaultPoint"
-                android:text="@string/faultPoint"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/resetButtomBottomMargin"
-        android:layout_marginLeft="@dimen/horizontalMargin"
-        android:layout_marginRight="@dimen/horizontalMargin"
-        android:layout_marginTop="@dimen/verticalMargin"
-        android:background="@color/colorAccent"
-        android:onClick="reset"
-        android:text="@string/reset"
-        android:textColor="@color/white" />
+    </ScrollView>
 </RelativeLayout>

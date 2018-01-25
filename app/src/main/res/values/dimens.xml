@@ -3,8 +3,12 @@
     <!-- Typography -->
     <dimen name="scoreText">112sp</dimen>
 
-    <!-- Margins -->
+    <!-- Margin -->
     <dimen name="horizontalMargin">16dp</dimen>
     <dimen name="verticalMargin">8dp</dimen>
-    <dimen name="resetButtomBottomMargin">32dp</dimen>
+    <dimen name="resetButtonVerticalMargin">32dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="resetButtonContainerHorizontalPadding">16dp</dimen>
+    <dimen name="resetButtonContainerVerticalPadding">32dp</dimen>
 </resources>

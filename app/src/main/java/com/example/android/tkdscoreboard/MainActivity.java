@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    static final String STATE_REDSCORE ="redScore";
+    static final String STATE_BLUESCORE ="blueScore";
     int redScore = 0;
     int blueScore = 0;
 
@@ -14,6 +16,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current score state
+        savedInstanceState.putInt(STATE_REDSCORE, redScore);
+        savedInstanceState.putInt(STATE_BLUESCORE, blueScore);
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy
+        super.onRestoreInstanceState(savedInstanceState);
+
+        // Restore state members from saved instance
+        redScore = savedInstanceState.getInt(STATE_REDSCORE);
+        blueScore = savedInstanceState.getInt(STATE_BLUESCORE);
+
+        displayRedScore(redScore);
+        displayBlueScore(blueScore);
     }
 
     /**

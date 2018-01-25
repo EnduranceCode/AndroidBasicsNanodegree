@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/redFighter"
-                    android:onClick="redTurningHeadPoint"
+                    android:onClick="redHeadTurningPoint"
                     android:text="@string/headTurningPoint"
                     android:textColor="@color/white" />
             </LinearLayout>

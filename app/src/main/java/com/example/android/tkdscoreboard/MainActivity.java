@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Update total score when Red Fighter Scores a Turning Kick in the Body
+     * Update total score when Red Fighter Scores a Turning Kick in the Head
      */
-    public void redTurningPoint (View view) {
-        redScore = redScore + 3;
+    public void redHeadTurningPoint (View view) {
+        redScore = redScore + 4;
         displayRedScore(redScore);
     }
 
@@ -53,6 +53,22 @@ public class MainActivity extends AppCompatActivity {
      */
     public void redBodyPoint (View view) {
         redScore = redScore + 2;
+        displayRedScore(redScore);
+    }
+
+    /**
+     * Update total score when Red Fighter Scores a Turning Kick in the Body
+     */
+    public void redBodyTurningPoint (View view) {
+        redScore = redScore + 3;
+        displayRedScore(redScore);
+    }
+
+    /**
+     * Update total score when Red Fighter Scores a Punch
+     */
+    public void redPunchPoint (View view) {
+        redScore = redScore + 1;
         displayRedScore(redScore);
     }
 
@@ -74,10 +90,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Update total score when Blue Fighter Scores a Turning Kick in the Body
+     * Update total score when Blue Fighter Scores a Turning Kick in the Head
      */
-    public void blueTurningPoint (View view) {
-        blueScore = blueScore + 3;
+    public void blueHeadTurningPoint (View view) {
+        blueScore = blueScore + 4;
         displayBlueScore(blueScore);
     }
 
@@ -86,6 +102,22 @@ public class MainActivity extends AppCompatActivity {
      */
     public void blueBodyPoint (View view) {
         blueScore = blueScore + 2;
+        displayBlueScore(blueScore);
+    }
+
+    /**
+     * Update total score when Blue Fighter Scores a Turning Kick in the Body
+     */
+    public void blueBodyTurningPoint (View view) {
+        blueScore = blueScore + 3;
+        displayBlueScore(blueScore);
+    }
+
+    /**
+     * Update total score when Blue Fighter Scores a Punch
+     */
+    public void bluePunchPoint (View view) {
+        blueScore = blueScore + 1;
         displayBlueScore(blueScore);
     }
 

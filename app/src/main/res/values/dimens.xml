@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margin & Padding-->
+    <dimen name="mp_big_global">16dp</dimen>
+    <dimen name="mp_big_horizontal">16dp</dimen>
+    <dimen name="mp_big_vertical">16dp</dimen>
+    <dimen name="mp_normal_global">8dp</dimen>
+    <dimen name="mp_normal_horizontal">8dp</dimen>
+    <dimen name="mp_normal_vertical">8dp</dimen>
+    <dimen name="mp_small_global">4dp</dimen>
+    <dimen name="mp_small_horizontal">4dp</dimen>
+    <dimen name="mp_small_vertical">4dp</dimen>
+
+    <!-- Elevations -->
+    <dimen name="powered_by_bar_elevation">4dp</dimen>
+
+    <!-- Image sizes -->
+    <dimen name="powered_by_bar_height">48dp</dimen>
+
+    <!-- Cards -->
+    <dimen name="card_corner_radius">4dp</dimen>
+
+    <!-- TextViews Sizes -->
+    <dimen name="date_width">48dp</dimen>
+    <dimen name="day_height">28dp</dimen>
+    <dimen name="month_height">20dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="day_text_size">18sp</dimen>
+    <dimen name="month_text_size">12sp</dimen>
+    <dimen name="main_line_text_size">14sp</dimen>
+    <dimen name="sub_line_text_size">12sp</dimen>
+</resources>

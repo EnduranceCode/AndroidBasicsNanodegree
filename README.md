@@ -26,7 +26,7 @@ The goal of this project is to create a Score Keeper App which gives a user the 
 
 ### Practice Set: Object-Oriented Programming 
 
-This Practice Set's code is stored in the folder [practice-oop](./practice-oop).
+This Practice Set's code is stored in the folder [practice-oop](./practice-oop) of this repository.
 
 #### Practice Set Goal
 The goal of this Practice Set is to use object-oriented programming techniques to create a simple user profile that gives a basic introduction of a person.

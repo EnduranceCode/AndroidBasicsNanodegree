@@ -20,7 +20,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="@dimen/logo"
             android:layout_marginBottom="@dimen/verticalMargin"
             android:contentDescription="@string/logo"
             android:scaleType="fitCenter"
@@ -35,156 +35,150 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingBottom="@dimen/smallPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:paddingTop="@dimen/globalPadding"
-                    android:text="@string/addressTitle"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/title"
-                    android:textStyle="bold" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/verticalMargin"
                     android:background="@android:color/white"
-                    android:paddingBottom="@dimen/globalPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:text="@string/address"
-                    android:textSize="@dimen/body" />
+                    android:orientation="horizontal"
+                    android:padding="@dimen/globalPadding">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingBottom="@dimen/smallPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:paddingTop="@dimen/globalPadding"
-                    android:text="@string/telephoneTitle"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/title"
-                    android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="@dimen/icons"
+                        android:layout_height="@dimen/icons"
+                        android:layout_marginRight="@dimen/globalPadding"
+                        android:contentDescription="@string/placeIcon"
+                        android:src="@drawable/place" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/verticalMargin"
-                    android:background="@android:color/white"
-                    android:paddingBottom="@dimen/globalPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:text="@string/telephone"
-                    android:textSize="@dimen/body" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:text="@string/address"
+                        android:textSize="@dimen/body" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingBottom="@dimen/smallPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:paddingTop="@dimen/globalPadding"
-                    android:text="@string/emailTitle"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/title"
-                    android:textStyle="bold" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/verticalMargin"
                     android:background="@android:color/white"
-                    android:paddingBottom="@dimen/globalPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:text="@string/email"
-                    android:textSize="@dimen/body" />
+                    android:orientation="horizontal"
+                    android:padding="@dimen/globalPadding">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingBottom="@dimen/smallPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:paddingTop="@dimen/globalPadding"
-                    android:text="@string/websiteTitle"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/title"
-                    android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="@dimen/icons"
+                        android:layout_height="@dimen/icons"
+                        android:layout_marginRight="@dimen/globalPadding"
+                        android:contentDescription="@string/phoneIcon"
+                        android:src="@drawable/phone" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/verticalMargin"
-                    android:background="@android:color/white"
-                    android:paddingBottom="@dimen/globalPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:text="@string/website"
-                    android:textSize="@dimen/body" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:text="@string/phone"
+                        android:textSize="@dimen/body" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:paddingTop="@dimen/globalPadding"
-                    android:text="@string/timeTableTitle"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/title"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:paddingTop="@dimen/globalPadding"
-                    android:text="@string/timeTableWeekDaysTitle"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/subheading"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:text="@string/timeTableWeekDays"
-                    android:textSize="@dimen/body" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:text="@string/timeTableSatardayTitle"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/subheading"
-                    android:textStyle="bold" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/verticalMargin"
                     android:background="@android:color/white"
-                    android:paddingBottom="@dimen/globalPadding"
-                    android:paddingLeft="@dimen/globalPadding"
-                    android:paddingRight="@dimen/globalPadding"
-                    android:text="@string/timeTableSatarday"
-                    android:textSize="@dimen/body" />
+                    android:orientation="horizontal"
+                    android:padding="@dimen/globalPadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/icons"
+                        android:layout_height="@dimen/icons"
+                        android:layout_marginRight="@dimen/globalPadding"
+                        android:contentDescription="@string/emailIcon"
+                        android:src="@drawable/email" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/white"
+                        android:text="@string/email"
+                        android:textSize="@dimen/body" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/globalPadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/icons"
+                        android:layout_height="@dimen/icons"
+                        android:layout_marginRight="@dimen/globalPadding"
+                        android:contentDescription="@string/webIcon"
+                        android:src="@drawable/web" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/white"
+                        android:text="@string/website"
+                        android:textSize="@dimen/body" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/globalPadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/icons"
+                        android:layout_height="@dimen/icons"
+                        android:layout_marginRight="@dimen/globalPadding"
+                        android:contentDescription="@string/timeIcon"
+                        android:src="@drawable/time" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/timeTableWeekDaysTitle"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/subheading"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:text="@string/timeTableWeekDays"
+                            android:textSize="@dimen/body" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/timeTableSaturdayTitle"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/subheading"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/timeTableSaturday"
+                            android:textSize="@dimen/body" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

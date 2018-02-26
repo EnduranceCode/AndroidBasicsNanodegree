@@ -58,6 +58,54 @@
                     android:paddingRight="@dimen/globalPadding"
                     android:text="@string/address"
                     android:textSize="@dimen/body" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingBottom="@dimen/smallPadding"
+                    android:paddingLeft="@dimen/globalPadding"
+                    android:paddingRight="@dimen/globalPadding"
+                    android:paddingTop="@dimen/globalPadding"
+                    android:text="@string/telephoneTitle"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:background="@android:color/white"
+                    android:paddingBottom="@dimen/globalPadding"
+                    android:paddingLeft="@dimen/globalPadding"
+                    android:paddingRight="@dimen/globalPadding"
+                    android:text="@string/telephone"
+                    android:textSize="@dimen/body" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingBottom="@dimen/smallPadding"
+                    android:paddingLeft="@dimen/globalPadding"
+                    android:paddingRight="@dimen/globalPadding"
+                    android:paddingTop="@dimen/globalPadding"
+                    android:text="@string/emailTitle"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:background="@android:color/white"
+                    android:paddingBottom="@dimen/globalPadding"
+                    android:paddingLeft="@dimen/globalPadding"
+                    android:paddingRight="@dimen/globalPadding"
+                    android:text="@string/email"
+                    android:textSize="@dimen/body" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

@@ -4,6 +4,12 @@
     <string name="addressTitle">Address</string>
     <string name="address">Rua Condessa da Junqueira, 1&#8211;A\n2080&#8211;069 Almeirim\nPortugal</string>
 
+    <string name="telephoneTitle">Telephone</string>
+    <string name="telephone">243 592 809</string>
+
+    <string name="emailTitle">e-mail</string>
+    <string name="email">ourivesaria@rpinhal.pt</string>
+
     <!-- Images Content Description -->
     <string name="background">Store Photo</string>
     <string name="logo">Logo</string>

@@ -10,6 +10,9 @@
     <string name="emailTitle">e-mail</string>
     <string name="email">ourivesaria@rpinhal.pt</string>
 
+    <string name="websiteTitle">Website</string>
+    <string name="website">www.rpinhal.pt/ourivesaria</string>
+
     <!-- Images Content Description -->
     <string name="background">Store Photo</string>
     <string name="logo">Logo</string>

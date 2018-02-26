@@ -13,6 +13,12 @@
     <string name="websiteTitle">Website</string>
     <string name="website">www.rpinhal.pt/ourivesaria</string>
 
+    <string name="timeTableTitle">Opening Hours</string>
+    <string name="timeTableWeekDaysTitle">Monday to Friday</string>
+    <string name="timeTableWeekDays">9:30 &#8211; 13:00 | 15:00 &#8211; 19:00</string>
+    <string name="timeTableSatardayTitle">Satarday</string>
+    <string name="timeTableSatarday">9:30 &#8211; 13:00</string>
+
     <!-- Images Content Description -->
     <string name="background">Store Photo</string>
     <string name="logo">Logo</string>

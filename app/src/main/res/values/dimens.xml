@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margin -->
+    <dimen name="verticalMargin">16dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="globalPadding">16dp</dimen>
+</resources>

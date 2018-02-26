@@ -5,4 +5,11 @@
 
     <!-- Padding -->
     <dimen name="globalPadding">16dp</dimen>
+    <dimen name="smallPadding">8dp</dimen>
+
+    <!-- Text Sizes -->
+    <!-- https://material.io/guidelines/style/typography.html#typography-styles -->
+    <dimen name="title">20sp</dimen>
+    <dimen name="subheading">16sp</dimen>
+    <dimen name="body">14sp</dimen>
 </resources>

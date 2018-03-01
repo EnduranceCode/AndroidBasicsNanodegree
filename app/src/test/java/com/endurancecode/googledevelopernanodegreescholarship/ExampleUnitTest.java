@@ -1,4 +1,4 @@
-package com.example.android.tkdscoreboard;
+package com.endurancecode.googledevelopernanodegreescholarship;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.android.tkdscoreboard;
+package com.endurancecode.googledevelopernanodegreescholarship;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

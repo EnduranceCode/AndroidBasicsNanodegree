@@ -28,7 +28,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/zero"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -55,7 +55,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:layout_width="0dp"
+                            android:layout_width="@dimen/zero"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/horizontalMargin"
                             android:layout_weight="1"
@@ -65,7 +65,7 @@
                             android:textColor="@color/white" />
 
                         <Button
-                            android:layout_width="0dp"
+                            android:layout_width="@dimen/zero"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@color/redFighter"
@@ -84,7 +84,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:layout_width="0dp"
+                            android:layout_width="@dimen/zero"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/horizontalMargin"
                             android:layout_weight="1"
@@ -94,7 +94,7 @@
                             android:textColor="@color/white" />
 
                         <Button
-                            android:layout_width="0dp"
+                            android:layout_width="@dimen/zero"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@color/redFighter"
@@ -128,7 +128,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/zero"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -155,7 +155,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:layout_width="0dp"
+                            android:layout_width="@dimen/zero"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/horizontalMargin"
                             android:layout_weight="1"
@@ -165,7 +165,7 @@
                             android:textColor="@color/white" />
 
                         <Button
-                            android:layout_width="0dp"
+                            android:layout_width="@dimen/zero"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@color/blueFighter"
@@ -184,7 +184,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:layout_width="0dp"
+                            android:layout_width="@dimen/zero"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/horizontalMargin"
                             android:layout_weight="1"
@@ -194,7 +194,7 @@
                             android:textColor="@color/white" />
 
                         <Button
-                            android:layout_width="0dp"
+                            android:layout_width="@dimen/zero"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@color/blueFighter"

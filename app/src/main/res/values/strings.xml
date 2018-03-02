@@ -9,4 +9,7 @@
     <string name="punchPoint">Punch</string>
     <string name="faultPoint">Penalty</string>
     <string name="reset">Reset</string>
+
+    <!-- Images Content Description -->
+    <string name="background">Background Image</string>
 </resources>

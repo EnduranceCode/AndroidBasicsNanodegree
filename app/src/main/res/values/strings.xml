@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">User Profile</string>
+
+    <string name="profile_pictureContentDescription">Profile Picture</string>
 </resources>

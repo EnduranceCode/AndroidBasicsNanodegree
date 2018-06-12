@@ -10,6 +10,7 @@
         android:id="@+id/profile_picture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:contentDescription="@string/profile_pictureContentDescription" />
 
     <TextView

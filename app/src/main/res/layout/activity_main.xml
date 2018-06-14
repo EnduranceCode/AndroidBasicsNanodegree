@@ -1,34 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="@dimen/globalPadding"
     tools:context="com.endurancecode.PracticeSetObjectOrientedProgramming.MainActivity">
 
-    <ImageView
-        android:id="@+id/profile_picture"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        android:contentDescription="@string/profile_pictureContentDescription" />
+        <ImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verticalMargin"
+            android:adjustViewBounds="true"
+            android:background="@color/colorPrimary"
+            android:contentDescription="@string/profile_pictureContentDescription"
+            android:padding="@dimen/extraSmallPadding"
+            android:paddingBottom="@dimen/globalPadding"
+            android:scaleType="fitXY" />
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/profile_picture" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verticalMargin"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/birthday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/name" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:padding="@dimen/extraSmallPadding"
+                android:text="@string/name"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/country"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/birthday" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/extraSmallPadding"
+                android:paddingBottom="@dimen/globalPadding" />
+        </LinearLayout>
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verticalMargin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:padding="@dimen/extraSmallPadding"
+                android:text="@string/birthday"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/extraSmallPadding"
+                android:paddingBottom="@dimen/globalPadding" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verticalMargin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:padding="@dimen/extraSmallPadding"
+                android:text="@string/country"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/extraSmallPadding"
+                android:paddingBottom="@dimen/globalPadding" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+

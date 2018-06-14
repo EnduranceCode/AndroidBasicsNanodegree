@@ -2,4 +2,8 @@
     <string name="app_name">User Profile</string>
 
     <string name="profile_pictureContentDescription">Profile Picture</string>
+
+    <string name="name">Name</string>
+    <string name="birthday">Birthday</string>
+    <string name="country">Country</string>
 </resources>

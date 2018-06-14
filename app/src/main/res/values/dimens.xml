@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="globalPadding">16dp</dimen>
+    <dimen name="smallPadding">8dp</dimen>
+    <dimen name="extraSmallPadding">4dp</dimen>
+
+    <dimen name="verticalMargin">8dp</dimen>
+</resources>

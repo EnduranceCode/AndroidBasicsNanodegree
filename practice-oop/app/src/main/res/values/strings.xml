@@ -6,4 +6,9 @@
     <string name="name">Name</string>
     <string name="birthday">Birthday</string>
     <string name="country">Country</string>
+
+    <string name="nameData">Ricardo</string>
+    <string name="birthdayData">06-02-1971</string>
+    <string name="countryData">Portugal</string>
+
 </resources>

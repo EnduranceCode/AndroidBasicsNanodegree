@@ -3,5 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/globalPadding"
     tools:context="com.endurancecode.quizapp.MainActivity">
+
+    <ImageView
+        android:id="@+id/ituLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/appLogoContentDescription"
+        android:paddingBottom="@dimen/globalPadding"
+        android:src="@drawable/logo" />
+
 </RelativeLayout>

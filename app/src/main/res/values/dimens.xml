@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margin -->
-    <dimen name="horizontalMargin">16dp</dimen>
+    <dimen name="horizontalBigMargin">16dp</dimen>
+    <dimen name="horizontalMargin">8dp</dimen>
+    <dimen name="verticalBigMargin">16dp</dimen>
     <dimen name="verticalMargin">8dp</dimen>
 
     <!-- Padding -->
     <dimen name="globalPadding">16dp</dimen>
+
 </resources>

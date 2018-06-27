@@ -16,9 +16,44 @@
         android:src="@drawable/logo" />
 
     <Button
+        android:id="@+id/navigateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:paddingTop="@dimen/globalPadding" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ituLogo">
+
+        <!-- START: First Screen -->
+        <LinearLayout
+            android:id="@+id/screen01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/verticalBigMargin"
+                android:text="@string/welcomeText"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/verticalMargin"
+                android:hint="@string/question1InputHint"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+        <!-- END: First Screen -->
+    </ScrollView>
 </RelativeLayout>

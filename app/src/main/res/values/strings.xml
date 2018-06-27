@@ -3,4 +3,12 @@
 
     <string name="appLogoContentDescription">App Logo</string>
 
+    <!-- First Screen -->
+    <string name="welcomeText">
+        This app will test your knowledge on Triathlon\'s Olympic Games history.
+    </string>
+    <string name="question1">
+        Before we start, we would like to know your name. What\'s your name?
+    </string>
+    <string name="question1InputHint">First Name</string>
 </resources>

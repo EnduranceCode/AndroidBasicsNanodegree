@@ -3,12 +3,24 @@
 
     <string name="appLogoContentDescription">App Logo</string>
 
-    <!-- First Screen -->
     <string name="welcomeText">
         This app will test your knowledge on Triathlon\'s Olympic Games history.
     </string>
-    <string name="question1">
-        Before we start, we would like to know your name. What\'s your name?
+
+    <!-- First Question -->
+    <string name="Q1">
+        What\'s your name?
     </string>
-    <string name="question1InputHint">First Name</string>
+    <string name="Q1InputHint">First Name</string>
+
+    <!-- Second Question -->
+    <string name="Q2">
+        In which Olympic Games made triathlon its first appearance?
+    </string>
+    <string name="Q2Option1">1996 Atlanta</string>
+    <string name="Q2Option2">2000 Sydney</string>
+    <string name="Q2Option3">2004 Athens</string>
+    <string name="Q2Option4">2008 Beijing</string>
+    <string name="Q2Option5">2012 London</string>
+
 </resources>

@@ -61,4 +61,21 @@
     <string name="Q5Option10">Simon Whitfield</string>
     <string name="Q5Option11">Stephan Vuckovic</string>
     <string name="Q5Option12">Sven Riederer</string>
+
+    <!-- Sixth Question -->
+    <string name="Q6">
+        Select the female Gold Medal Winners in triathlon olympic history up to 2018
+    </string>
+    <string name="Q6Option1">Brigitte McMahon</string>
+    <string name="Q6Option2">Emma Moffatt</string>
+    <string name="Q6Option3">Emma Snowsill</string>
+    <string name="Q6Option4">Gwen Jorgensen</string>
+    <string name="Q6Option5">Kate Allen</string>
+    <string name="Q6Option6">Lisa Nordén</string>
+    <string name="Q6Option7">Loretta Harrop</string>
+    <string name="Q6Option8">Magali Messmer</string>
+    <string name="Q6Option9">Michellie Jones</string>
+    <string name="Q6Option10">Nicola Spirig</string>
+    <string name="Q6Option11">Susan Williams</string>
+    <string name="Q6Option12">Vanessa Fernandes</string>
 </resources>

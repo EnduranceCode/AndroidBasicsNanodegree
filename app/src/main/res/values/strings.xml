@@ -34,6 +34,17 @@
     <string name="Q3Option5">5</string>
     <string name="Q3Option6">6</string>
 
+    <!-- Third Question -->
+    <string name="Q4">
+        How many female triathletes have on at least one gold medal in the Olympic Games?
+    </string>
+    <string name="Q4Option1">1</string>
+    <string name="Q4Option2">2</string>
+    <string name="Q4Option3">3</string>
+    <string name="Q4Option4">4</string>
+    <string name="Q4Option5">5</string>
+    <string name="Q4Option6">6</string>
+
     <!-- Fifth Question -->
     <string name="Q5">
         Select the male Gold Medal Winners in triathlon olympic history up to 2018

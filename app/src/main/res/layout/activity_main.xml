@@ -56,188 +56,163 @@
             <!-- END: First Question -->
 
             <!-- START: Second Question -->
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/Q2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/horizontalBigMargin"
-                android:orientation="vertical">
+                android:layout_marginBottom="@dimen/horizontalBigMargin">
 
-                <RadioGroup
-                    android:id="@+id/Q2"
+                <RadioButton
+                    android:id="@+id/Q2option1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q2Option1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="@dimen/verticalMargin"
-                        android:text="@string/Q2"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q2option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q2Option2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q2option1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q2Option1"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q2option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q2Option3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q2option2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q2Option2"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q2option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q2Option4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q2option3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q2Option3"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                    <RadioButton
-                        android:id="@+id/Q2option4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q2Option4"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                    <RadioButton
-                        android:id="@+id/Q2option5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q2Option5"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-                </RadioGroup>
-            </LinearLayout>
+                <RadioButton
+                    android:id="@+id/Q2option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q2Option5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </RadioGroup>
             <!-- END: Second Question -->
 
             <!-- START: Third Question -->
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/Q3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/horizontalBigMargin"
-                android:orientation="vertical">
+                android:layout_marginBottom="@dimen/horizontalBigMargin">
 
-                <RadioGroup
-                    android:id="@+id/Q3"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:text="@string/Q3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="@dimen/verticalMargin"
-                        android:text="@string/Q3"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q3option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q3Option1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q3option1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q3Option1"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q3option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q3Option2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q3option2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q3Option2"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q3option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q3Option3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q3option3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q3Option3"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q3option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q3Option4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q3option4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q3Option4"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q3option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q3Option5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q3option5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q3Option5"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                    <RadioButton
-                        android:id="@+id/Q3option6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q3Option6"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-                </RadioGroup>
-            </LinearLayout>
+                <RadioButton
+                    android:id="@+id/Q3option6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q3Option6"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </RadioGroup>
             <!-- END: Third Question -->
 
             <!-- START: Fourth Question -->
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/Q4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/horizontalBigMargin"
-                android:orientation="vertical">
+                android:layout_marginBottom="@dimen/horizontalBigMargin">
 
-                <RadioGroup
-                    android:id="@+id/Q4"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:text="@string/Q4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="@dimen/verticalMargin"
-                        android:text="@string/Q4"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q4option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q4Option1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q4option1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q4Option1"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q4option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q4Option2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q4option2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q4Option2"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q4option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q4Option3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q4option3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q4Option3"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q4option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q4Option4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q4option4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q4Option4"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <RadioButton
+                    android:id="@+id/Q4option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q4Option5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <RadioButton
-                        android:id="@+id/Q4option5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q4Option5"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                    <RadioButton
-                        android:id="@+id/Q4option6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Q4Option6"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-                </RadioGroup>
-            </LinearLayout>
+                <RadioButton
+                    android:id="@+id/Q4option6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q4Option6"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </RadioGroup>
             <!-- END: Fourth Question -->
 
             <!-- START: Fifth Question -->

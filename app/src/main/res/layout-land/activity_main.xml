@@ -444,10 +444,11 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/navigateButton"
+                    android:id="@+id/submitButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/globalPadding" />
+                    android:paddingTop="@dimen/globalPadding"
+                    android:text="@string/submitButton" />
             </LinearLayout>
             <!-- END: Submission Button -->
         </LinearLayout>

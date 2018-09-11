@@ -78,4 +78,7 @@
     <string name="Q6Option10">Nicola Spirig</string>
     <string name="Q6Option11">Susan Williams</string>
     <string name="Q6Option12">Vanessa Fernandes</string>
+
+    <!-- Buttons -->
+    <string name="submitButton">Submit Answers</string>
 </resources>

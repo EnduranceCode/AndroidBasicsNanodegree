@@ -15,21 +15,12 @@
         android:paddingBottom="@dimen/globalPadding"
         android:src="@drawable/logo" />
 
-    <Button
-        android:id="@+id/navigateButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:paddingTop="@dimen/globalPadding" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ituLogo">
 
-        <!-- START: First Screen -->
         <LinearLayout
-            android:id="@+id/screen01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -41,19 +32,90 @@
                 android:text="@string/welcomeText"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <TextView
+            <!-- START: First Question -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/question1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:layout_marginBottom="@dimen/horizontalBigMargin"
+                android:orientation="vertical">
 
-            <EditText
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:hint="@string/question1InputHint"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+            <!-- END: First Question -->
+
+            <!-- START: Second Question -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
-                android:hint="@string/question1InputHint"
-                android:inputType="textPersonName" />
+                android:layout_marginBottom="@dimen/horizontalBigMargin"
+                android:orientation="vertical">
+
+            </LinearLayout>
+            <!-- END: Second Question -->
+
+            <!-- START: Third Question -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/horizontalBigMargin"
+                android:orientation="vertical">
+
+            </LinearLayout>
+            <!-- END: Third Question -->
+
+            <!-- START: Fourth Question -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/horizontalBigMargin"
+                android:orientation="vertical">
+
+            </LinearLayout>
+            <!-- END: Fourth Question -->
+
+            <!-- START: Fifth Question -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/horizontalBigMargin"
+                android:orientation="vertical">
+
+            </LinearLayout>
+            <!-- END: Fifth Question -->
+
+            <!-- START: Sixth Question -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/horizontalBigMargin"
+                android:orientation="vertical">
+
+            </LinearLayout>
+            <!-- END: Sixth Question -->
+
+            <!-- START: Submission Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/navigateButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/globalPadding" />
+            </LinearLayout>
+            <!-- END: Submission Button -->
         </LinearLayout>
-        <!-- END: First Screen -->
     </ScrollView>
 </RelativeLayout>

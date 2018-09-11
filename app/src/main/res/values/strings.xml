@@ -23,4 +23,20 @@
     <string name="Q2Option4">2008 Beijing</string>
     <string name="Q2Option5">2012 London</string>
 
+    <!-- Third Question -->
+    <string name="Q3">
+        Select the male Gold Medal Winners in triathlon olympic history up to 2018
+    </string>
+    <string name="Q3Option1">Alistair Brownlee</string>
+    <string name="Q3Option2">Bevan Docherty</string>
+    <string name="Q3Option3">Chris McComark</string>
+    <string name="Q3Option4">Hamish Carter</string>
+    <string name="Q3Option5">Henri Schoeman</string>
+    <string name="Q3Option6">Jan Frodeno</string>
+    <string name="Q3Option7">Jan Řehula</string>
+    <string name="Q3Option8">Javier Gómez Noya</string>
+    <string name="Q3Option9">Jonathan Brownlee</string>
+    <string name="Q3Option10">Simon Whitfield</string>
+    <string name="Q3Option11">Stephan Vuckovic</string>
+    <string name="Q3Option12">Sven Riederer</string>
 </resources>

@@ -23,6 +23,17 @@
     <string name="Q2Option4">2008 Beijing</string>
     <string name="Q2Option5">2012 London</string>
 
+    <!-- Third Question -->
+    <string name="Q3">
+        How many male triathletes have on at least one gold medal in the Olympic Games?
+    </string>
+    <string name="Q3Option1">1</string>
+    <string name="Q3Option2">2</string>
+    <string name="Q3Option3">3</string>
+    <string name="Q3Option4">4</string>
+    <string name="Q3Option5">5</string>
+    <string name="Q3Option6">6</string>
+
     <!-- Fifth Question -->
     <string name="Q5">
         Select the male Gold Medal Winners in triathlon olympic history up to 2018

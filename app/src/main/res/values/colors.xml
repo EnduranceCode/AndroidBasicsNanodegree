@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ITU's brand colors (as shown in https://www.triathlon.org/about/logos) are chosen to the app's theme colors -->
     <color name="colorPrimary">#0d4d84</color>
     <color name="colorPrimaryDark">#083256</color>
     <color name="colorAccent">#f68912</color>

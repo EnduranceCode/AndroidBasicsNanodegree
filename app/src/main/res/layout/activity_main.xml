@@ -119,96 +119,6 @@
                 android:layout_marginBottom="@dimen/horizontalBigMargin"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/verticalMargin"
-                    android:text="@string/Q3"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option3"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option4"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option5"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option6"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option7"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option8"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option9"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option10"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option11"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q3Option12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option12"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
             </LinearLayout>
             <!-- END: Third Question -->
 
@@ -229,6 +139,96 @@
                 android:layout_marginBottom="@dimen/horizontalBigMargin"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:text="@string/Q5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option6"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option7"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option8"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option9"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option10"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option11"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q5Option12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q5Option12"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
             </LinearLayout>
             <!-- END: Fifth Question -->
 

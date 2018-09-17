@@ -25,7 +25,7 @@
 
     <!-- Third Question -->
     <string name="Q3">
-        How many male triathletes have on at least one gold medal in the Olympic Games?
+        How many male triathletes have won at least one gold medal in the Olympic Games (up to 2018)?
     </string>
     <string name="Q3Option1">1</string>
     <string name="Q3Option2">2</string>
@@ -36,7 +36,7 @@
 
     <!-- Third Question -->
     <string name="Q4">
-        How many female triathletes have on at least one gold medal in the Olympic Games?
+        How many female triathletes have won at least one gold medal in the Olympic Games (up to 2018)?
     </string>
     <string name="Q4Option1">1</string>
     <string name="Q4Option2">2</string>

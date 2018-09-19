@@ -425,6 +425,7 @@
                     android:id="@+id/submitButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="calculateScore"
                     android:paddingTop="@dimen/globalPadding"
                     android:text="@string/submitButton" />
             </LinearLayout>

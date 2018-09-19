@@ -81,4 +81,8 @@
 
     <!-- Buttons -->
     <string name="submitButton">Submit Answers</string>
+
+    <!-- Toast Messages -->
+    <string name="Q1ErrorMessage">Enter your name please.</string>
+    <string name="showScore">Congratulatios %1s, your score is %2d ou of 100.</string>
 </resources>

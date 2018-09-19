@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     int score = 0;
+    String userName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState != null) {
             score = savedInstanceState.getInt("SCORE");
+            userName = savedInstanceState.getString("USER_NAME");
         }
     }
 
@@ -22,5 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         outState.putInt("SCORE", score);
+        outState.putString("USER_NAME", userName);
     }
 }

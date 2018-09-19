@@ -1,4 +1,4 @@
-# Project 2" - Score Keeper App
+# Project 2 - Score Keeper App
 
 This branch of the [Google Developer Nanodegree Scholarship](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/master) contains the code for the second project of the [Android Basics Google Developer Nanodegree Scholarship](https://sites.google.com/knowlabs.com/gdnd2017).
 

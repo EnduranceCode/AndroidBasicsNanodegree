@@ -84,5 +84,6 @@
 
     <!-- Toast Messages -->
     <string name="Q1ErrorMessage">Enter your name please.</string>
-    <string name="showScore">Congratulations %1s,\nYour score is %2d out of 100.</string>
+    <string name="showScoreOver50">Congratulations %1s,\nYour score is %2d out of 100.</string>
+    <string name="showScoreBelow50">You can do better %1s,\nYour score is %2d out of 100.\nPlease try again.</string>
 </resources>

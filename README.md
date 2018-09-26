@@ -29,6 +29,12 @@ This project's code is stored in the folder [project3](./project3) of this repos
 #### Project Overview
 The goal is to create an educational app that quizzes a user about Triathlon Olympic History. It is required a minimum of 4 questions and a maximum of 10 quiz questions, including at least one check box, one radio button, and one text entry.
 
+## Lessons
+
+### Multiscreen Apps
+
+The code developed following the Multiscreen Apps lessons is stored in the folder [study-multiscreen-apps](./study-multiscreen-apps) of this repository. 
+
 ## Practice Sets
 
 ### Practice Set: Object-Oriented Programming 

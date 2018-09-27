@@ -33,45 +33,16 @@ public class NumbersActivity extends AppCompatActivity {
         // Find the root view in NumbersActivity
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
-        // Add the TextViews with the english words for numbers to the Numbers layout
-        TextView wordView0 = new TextView(this);
-        wordView0.setText(englishNumbers.get(0));
-        rootView.addView(wordView0);
+        // Set the index foe the while loop to be used
+        int loopIndex = 0;
 
-        TextView wordView1 = new TextView(this);
-        wordView1.setText(englishNumbers.get(1));
-        rootView.addView(wordView1);
+        // Set the loop to add the english words for numbers in NumbersActivity root layout
+        while (loopIndex < englishNumbers.size()) {
+            TextView wordView = new TextView(this);
+            wordView.setText(englishNumbers.get(loopIndex));
+            rootView.addView(wordView);
 
-        TextView wordView2 = new TextView(this);
-        wordView2.setText(englishNumbers.get(2));
-        rootView.addView(wordView2);
-
-        TextView wordView3 = new TextView(this);
-        wordView3.setText(englishNumbers.get(3));
-        rootView.addView(wordView3);
-
-        TextView wordView4 = new TextView(this);
-        wordView4.setText(englishNumbers.get(4));
-        rootView.addView(wordView4);
-
-        TextView wordView5 = new TextView(this);
-        wordView5.setText(englishNumbers.get(5));
-        rootView.addView(wordView5);
-
-        TextView wordView6 = new TextView(this);
-        wordView6.setText(englishNumbers.get(6));
-        rootView.addView(wordView6);
-
-        TextView wordView7 = new TextView(this);
-        wordView7.setText(englishNumbers.get(7));
-        rootView.addView(wordView7);
-
-        TextView wordView8 = new TextView(this);
-        wordView8.setText(englishNumbers.get(8));
-        rootView.addView(wordView8);
-
-        TextView wordView9 = new TextView(this);
-        wordView9.setText(englishNumbers.get(9));
-        rootView.addView(wordView9);
+            loopIndex++;
+        }
     }
 }

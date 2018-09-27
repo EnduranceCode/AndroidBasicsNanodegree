@@ -33,16 +33,11 @@ public class NumbersActivity extends AppCompatActivity {
         // Find the root view in NumbersActivity
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
-        // Set the index foe the while loop to be used
-        int loopIndex = 0;
-
         // Set the loop to add the english words for numbers in NumbersActivity root layout
-        while (loopIndex < englishNumbers.size()) {
+        for (int loopIndex = 0; loopIndex < englishNumbers.size(); loopIndex++) {
             TextView wordView = new TextView(this);
             wordView.setText(englishNumbers.get(loopIndex));
             rootView.addView(wordView);
-
-            loopIndex++;
         }
     }
 }

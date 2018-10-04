@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,14 +32,24 @@ public class NumbersActivity extends AppCompatActivity {
         englishNumbers.add("nine");
         englishNumbers.add("ten");
 
-        // Find the root view in NumbersActivity
-        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        /* Create an {@link ArrayAdapter}, whose data source is a list of Strings. The
+         * adapter knows how to create layouts for each item in the list, using the
+         * simple_list_item_1.xml layout resource defined in the Android framework.
+         * This list item layout contains a single {@link TextView}, which the adapter will set to
+         * display a single word.
+         */
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, englishNumbers);
 
-        // Set the loop to add the english words for numbers in NumbersActivity root layout
-        for (int loopIndex = 0; loopIndex < englishNumbers.size(); loopIndex++) {
-            TextView wordView = new TextView(this);
-            wordView.setText(englishNumbers.get(loopIndex));
-            rootView.addView(wordView);
-        }
+        /* Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
+         * There should be a {@link ListView} with the view ID called list, which is declared in the
+         * activity_numbers.xml layout file.
+         */
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        /* Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
+         * {@link ListView} will display list items for each word in the list of words.
+         * Do this by calling the setAdapter method on the {@link ListView} object and pass in
+         */
+        listView.setAdapter(itemsAdapter);
     }
 }

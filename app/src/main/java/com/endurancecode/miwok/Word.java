@@ -19,8 +19,8 @@ public class Word {
      * Constructs a new Word with initial values for default translation and Miwok translation
      */
     public Word (String defaultTranslation, String miwokTranslation) {
-        mDefaultTranslation = "defaultTranslation";
-        mMiwokTranslation = "miwokTranslation";
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
     }
 
     /**

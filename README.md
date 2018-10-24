@@ -29,6 +29,15 @@ This project's code is stored in the folder [project3](./project3) of this repos
 #### Project Overview
 The goal is to create an educational app that quizzes a user about Triathlon Olympic History. It is required a minimum of 4 questions and a maximum of 10 quiz questions, including at least one check box, one radio button, and one text entry.
 
+### Project 4 - Music Player App
+
+This project's code is stored in the folder [project4](./project4) of this repository.
+
+#### Project Overview
+The goal is to design and layout a music playing app that displays the list of available songs in a ListView or a GridView, navigates to a details screen of the currently playing song and uses explicit intents to navigate around the app. For this project, **the app does not actually needs to play music**.
+
+Data about each song should be stored in a custom class that is retrieved and displayed via a Loop and Adapter.
+
 ## Lessons
 
 ### Multiscreen Apps

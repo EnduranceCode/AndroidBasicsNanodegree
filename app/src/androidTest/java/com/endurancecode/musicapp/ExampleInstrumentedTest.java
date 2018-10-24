@@ -1,4 +1,4 @@
-package com.endurancecode.googledevelopernanodegreescholarship;
+package com.endurancecode.musicapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

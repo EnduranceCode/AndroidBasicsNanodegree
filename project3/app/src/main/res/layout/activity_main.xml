@@ -1,51 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
-    android:orientation="horizontal"
     android:padding="@dimen/globalPadding"
     tools:context="com.endurancecode.quizapp.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/leftColumn"
-        android:layout_width="0dp"
+    <ImageView
+        android:id="@+id/ituLogo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/horizontalMargin"
-        android:layout_marginRight="@dimen/horizontalMargin"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/ituLogo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/appLogoContentDescription"
-            android:paddingBottom="@dimen/globalPadding"
-            android:src="@drawable/logo" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/verticalBigMargin"
-            android:text="@string/welcomeText"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-    </LinearLayout>
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/appLogoContentDescription"
+        android:paddingBottom="@dimen/globalPadding"
+        android:src="@drawable/logo" />
 
     <ScrollView
-        android:id="@+id/rightColumn"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/horizontalMargin"
-        android:layout_marginStart="@dimen/horizontalMargin"
-        android:layout_weight="2">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ituLogo">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/verticalBigMargin"
+                android:text="@string/welcomeText"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
             <!-- START: First Question -->
             <LinearLayout
@@ -72,54 +57,27 @@
             <!-- END: First Question -->
 
             <!-- START: Second Question -->
-            <RadioGroup
-                android:id="@+id/Q2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/horizontalBigMargin">
+                android:layout_marginBottom="@dimen/horizontalBigMargin"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:layout_height="wrap_content"
                     android:text="@string/Q2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <RadioButton
-                    android:id="@+id/Q2option1"
+                <EditText
+                    android:id="@+id/inputCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Q2Option1"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:hint="@string/Q2InputHint"
+                    android:inputType="text"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <RadioButton
-                    android:id="@+id/Q2option2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q2Option2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <RadioButton
-                    android:id="@+id/Q2option3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q2Option3"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <RadioButton
-                    android:id="@+id/Q2option4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q2Option4"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <RadioButton
-                    android:id="@+id/Q2option5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q2Option5"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-            </RadioGroup>
+            </LinearLayout>
             <!-- END: Second Question -->
 
             <!-- START: Third Question -->
@@ -169,13 +127,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Q3Option5"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <RadioButton
-                    android:id="@+id/Q3option6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q3Option6"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
             </RadioGroup>
             <!-- END: Third Question -->
@@ -236,15 +187,14 @@
                     android:text="@string/Q4Option6"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
             </RadioGroup>
-
             <!-- END: Fourth Question -->
 
             <!-- START: Fifth Question -->
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/Q5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/horizontalBigMargin"
-                android:orientation="vertical">
+                android:layout_marginBottom="@dimen/horizontalBigMargin">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -253,90 +203,48 @@
                     android:text="@string/Q5"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <CheckBox
-                    android:id="@+id/Q5Option1"
+                <RadioButton
+                    android:id="@+id/Q5option1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Q5Option1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <CheckBox
-                    android:id="@+id/Q5Option2"
+                <RadioButton
+                    android:id="@+id/Q5option2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Q5Option2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <CheckBox
-                    android:id="@+id/Q5Option3"
+                <RadioButton
+                    android:id="@+id/Q5option3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Q5Option3"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <CheckBox
-                    android:id="@+id/Q5Option4"
+                <RadioButton
+                    android:id="@+id/Q5option4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Q5Option4"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <CheckBox
-                    android:id="@+id/Q5Option5"
+                <RadioButton
+                    android:id="@+id/Q5option5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Q5Option5"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <CheckBox
-                    android:id="@+id/Q5Option6"
+                <RadioButton
+                    android:id="@+id/Q5option6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Q5Option6"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q5Option7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q5Option7"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q5Option8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q5Option8"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q5Option9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q5Option9"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q5Option10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q5Option10"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q5Option11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q5Option11"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                <CheckBox
-                    android:id="@+id/Q5Option12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Q5Option12"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-            </LinearLayout>
+            </RadioGroup>
             <!-- END: Fifth Question -->
 
             <!-- START: Sixth Question -->
@@ -439,6 +347,106 @@
             </LinearLayout>
             <!-- END: Sixth Question -->
 
+            <!-- START: Seventh Question -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/horizontalBigMargin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/verticalMargin"
+                    android:text="@string/Q7"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option6"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option7"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option8"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option9"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option10"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option11"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <CheckBox
+                    android:id="@+id/Q7Option12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q7Option12"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </LinearLayout>
+            <!-- END: Seventh Question -->
+
             <!-- START: Submission Button -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -455,4 +463,4 @@
             <!-- END: Submission Button -->
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</RelativeLayout>

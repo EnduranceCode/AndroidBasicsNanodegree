@@ -73,6 +73,7 @@ proguard/
 .idea/scopes/scope_settings.xml
 .idea/shelf/
 .idea/.name
+.idea/assetWizardSettings.xml
 .idea/compiler.xml
 .idea/copyright/profiles_settings.xml
 .idea/dataSources.ids

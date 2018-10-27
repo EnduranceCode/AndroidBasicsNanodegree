@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Music Player App</string>
+
+    <string name="cover_image_content_description">Musica Player App Logo</string>
+
+    <string name="songs_list_view_name">Songs</string>
 </resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.endurancecode.musicapp.SongsListActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/cover_image_content_description"
+        android:elevation="@dimen/actionBarElevation"
+        android:src="@drawable/cover_image" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/BigMargin"
+        android:text="@string/songs_list_view_name"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+
+    <ListView
+        android:id="@+id/songsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/BigMargin"
+        android:layout_marginRight="@dimen/BigMargin"
+        android:layout_marginBottom="@dimen/BigMargin"
+        android:orientation="vertical">
+
+    </ListView>
+
+</LinearLayout>

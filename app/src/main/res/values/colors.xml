@@ -6,4 +6,7 @@
     <color name="colorPrimaryDark">#D84315</color>
     <!-- Material Palette: Lime 500 -->
     <color name="colorAccent">#CCDC39</color>
+
+    <!-- Launcher icon background color -->
+    <color name="ic_launcher_background">#FFFFFF</color>
 </resources>

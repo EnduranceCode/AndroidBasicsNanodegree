@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/song_item_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/bigMargin"
+    android:layout_marginLeft="@dimen/bigMargin"
+    android:layout_marginEnd="@dimen/bigMargin"
+    android:layout_marginRight="@dimen/bigMargin"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/songItemCoverArt"
+        android:layout_width="@dimen/songItemCoverArt"
+        android:layout_height="@dimen/songItemCoverArt"
+        android:layout_marginTop="@dimen/verticalMargin"
+        android:layout_marginBottom="@dimen/verticalMargin"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/cover_art_content_description"
+        android:scaleType="centerInside" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/bigMargin"
+        android:layout_marginLeft="@dimen/bigMargin"
+        android:layout_marginTop="@dimen/verticalMargin"
+        android:layout_marginEnd="@dimen/bigMargin"
+        android:layout_marginRight="@dimen/bigMargin"
+        android:layout_marginBottom="@dimen/verticalMargin"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/songItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="bottom"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+
+        <TextView
+            android:id="@+id/songItemArtist"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="top"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/songItemPlayButton"
+        android:layout_height="@dimen/songItemPlayButton"
+        android:layout_gravity="center_vertical"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/cover_art_content_description"
+        android:src="@drawable/play_button" />
+</LinearLayout>
+

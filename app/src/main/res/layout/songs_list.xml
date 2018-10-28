@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/BigMargin"
+        android:layout_margin="@dimen/bigMargin"
         android:text="@string/songs_list_view_name"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
@@ -26,11 +26,10 @@
         android:id="@+id/songsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/BigMargin"
-        android:layout_marginRight="@dimen/BigMargin"
-        android:layout_marginBottom="@dimen/BigMargin"
-        android:orientation="vertical">
-
-    </ListView>
-
+        android:layout_marginStart="@dimen/bigMargin"
+        android:layout_marginLeft="@dimen/bigMargin"
+        android:layout_marginEnd="@dimen/bigMargin"
+        android:layout_marginRight="@dimen/bigMargin"
+        android:layout_marginBottom="@dimen/bigMargin"
+        android:orientation="vertical"></ListView>
 </LinearLayout>

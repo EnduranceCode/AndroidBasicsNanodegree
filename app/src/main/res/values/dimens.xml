@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margin -->
-    <dimen name="BigMargin">16dp</dimen>
+    <dimen name="bigMargin">16dp</dimen>
     <dimen name="horizontalBigMargin">16dp</dimen>
     <dimen name="verticalBigMargin">16dp</dimen>
-    <dimen name="Margin">8dp</dimen>
+    <dimen name="margin">8dp</dimen>
     <dimen name="horizontalMargin">8dp</dimen>
     <dimen name="verticalMargin">8dp</dimen>
 
@@ -13,5 +13,10 @@
 
     <!-- Elevation -->
     <dimen name="actionBarElevation">4dp</dimen>
+
+    <!-- Songs List Item -->
+    <dimen name="songItemCoverArt">64dp</dimen>
+    <dimen name="songItemPlayButton">32dp</dimen>
+    <dimen name="songItemTextViewHeight">32dp</dimen>
 
 </resources>

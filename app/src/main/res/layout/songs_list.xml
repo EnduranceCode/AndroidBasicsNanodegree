@@ -31,5 +31,5 @@
         android:layout_marginEnd="@dimen/bigMargin"
         android:layout_marginRight="@dimen/bigMargin"
         android:layout_marginBottom="@dimen/bigMargin"
-        android:orientation="vertical"></ListView>
+        android:orientation="vertical" />
 </LinearLayout>

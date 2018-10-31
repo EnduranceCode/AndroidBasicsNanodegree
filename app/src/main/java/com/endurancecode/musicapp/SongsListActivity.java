@@ -48,12 +48,12 @@ public class SongsListActivity extends AppCompatActivity {
         songs.add(new Song("Party Girl", "U2", "Under a Blood Red Sky", R.drawable.u2_under_a_blood_red_sky, 1983, "Rock", "4:34"));
         songs.add(new Song("Vamos", "Pixies", "Come on Pilgrim", R.drawable.pixies_come_on_pilgrim, 1987, "Rock", "2:53"));
         songs.add(new Song("Where is my mind", "Pixies", "Surfer Rosa", R.drawable.pixies_surfer_rosa, 1988, "Rock", "3:53"));
-        songs.add(new Song("Catus", "Pixies", "Surfer Rosa", R.drawable.pixies_surfer_rosa, 1988, "Rock", "2:16"));
+        songs.add(new Song("Cactus", "Pixies", "Surfer Rosa", R.drawable.pixies_surfer_rosa, 1988, "Rock", "2:16"));
         songs.add(new Song("Here comes your man", "Pixies", "Doolittle", R.drawable.pixies_doolittle, 1989, "Rock", "3:21"));
         songs.add(new Song("Smells like teen spirit", "Nirvana", "Nevermind", R.drawable.nirvana_nevermind, 1991, "Rock", "5:01"));
         songs.add(new Song("Come as you are", "Nirvana", "Nevermind", R.drawable.nirvana_nevermind, 1991, "Rock", "3:39"));
         songs.add(new Song("In bloom", "Nirvana", "Nevermind", R.drawable.nirvana_nevermind, 1991, "Rock", "4:14"));
-        songs.add(new Song("Heart shaped box", "Nirvana", "Nevermind", R.drawable.nirvana_in_utero, 1993, "Rock", "4:41"));
+        songs.add(new Song("Heart shaped box", "Nirvana", "In Utero", R.drawable.nirvana_in_utero, 1993, "Rock", "4:41"));
 
         /* Create a custom {@link SongAdapter}, whose data source is a list of Song objects. The
          * adapter uses song_item_list.xml layout to create layouts for each item in the list.

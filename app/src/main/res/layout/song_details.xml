@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.endurancecode.musicapp.SongsListActivity">
+
+    <ImageView
+        android:id="@+id/songItemCoverArt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/cover_image_content_description"
+        android:elevation="@dimen/actionBarElevation"
+        tools:ignore="UnusedAttribute" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/bigMargin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/songItemTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/verticalMargin"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:padding="@dimen/verticalMargin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/artist"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/songItemArtist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/verticalMargin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/album"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/songItemAlbum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:padding="@dimen/verticalMargin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/year"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/songItemYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/verticalMargin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/genre"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/songItemGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:padding="@dimen/verticalMargin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/length"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/songItemLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

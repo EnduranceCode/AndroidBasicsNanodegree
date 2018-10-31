@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/bigMargin"
-        android:text="@string/songs_list_view_name"
+        android:text="@string/songs_list_view_title"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
     <ListView

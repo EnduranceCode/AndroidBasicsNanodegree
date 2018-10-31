@@ -19,4 +19,8 @@
     <dimen name="songItemPlayButton">32dp</dimen>
     <dimen name="songItemTextViewHeight">32dp</dimen>
 
+    <!-- Song Details -->
+    <dimen name="coverArtHorizontalPadding">96dp</dimen>
+    <dimen name="coverArtVerticalPadding">32dp</dimen>
+
 </resources>

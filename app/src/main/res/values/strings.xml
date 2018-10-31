@@ -2,14 +2,20 @@
     <string name="app_name">Music Player App</string>
     <string name="details_activity">Song Details</string>
 
-    <string name="cover_image_content_description">Musica Player App Logo</string>
+    <string name="cover_image_content_description">Music Player App Logo</string>
     <string name="cover_art_content_description">Album Cover Art</string>
 
-    <string name="songs_list_view_name">Songs</string>
+    <string name="songs_list_view_title">Songs</string>
 
+    <!-- Labels in song's details view -->
     <string name="artist">Artist:</string>
     <string name="album">Album:</string>
     <string name="year">Year:</string>
     <string name="genre">Genre:</string>
     <string name="length">Length:</string>
+
+    <!-- Buttons in song's details view -->
+    <string name="button_songs">Songs</string>
+    <string name="button_play">Play</string>
+    <string name="button_play_toast_message">Playing the song isn\'t in the scope of this project.\nThis functionality wil be added later.</string>
 </resources>

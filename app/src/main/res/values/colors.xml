@@ -4,6 +4,8 @@
     <color name="colorPrimary">#FF5722</color>
     <!-- Material Palette: Deep Orange 800 -->
     <color name="colorPrimaryDark">#D84315</color>
+    <!-- Material Palette: Deep Orange 100 -->
+    <color name="colorPrimaryLight">#FFCCBC</color>
     <!-- Material Palette: Lime 500 -->
     <color name="colorAccent">#CCDC39</color>
 

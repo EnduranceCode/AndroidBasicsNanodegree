@@ -71,7 +71,9 @@ public class SongAdapter extends ArrayAdapter<Song> {
         /* Get the song's artist from the current Song object and set this text on the song artist TextView */
         songArtistTextView.setText(currentSong.getSongArtist());
 
+        /* Find the View in the song_item_list.xml that contains each Song item */
         View viewItem = (View) songItemListView.findViewById(R.id.song_item_list);
+        /* Set an On Click Event Listener */
         viewItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

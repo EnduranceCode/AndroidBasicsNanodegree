@@ -26,8 +26,7 @@
             android:paddingTop="@dimen/mp_song_cover_art_vertical"
             android:paddingEnd="@dimen/mp_song_cover_art_horizontal"
             android:paddingRight="@dimen/mp_song_cover_art_horizontal"
-            android:paddingBottom="32dp"
-            android:src="@drawable/u2_war" />
+            android:paddingBottom="32dp" />
 
     </LinearLayout>
 
@@ -56,6 +55,12 @@
                     android:layout_marginBottom="@dimen/mp_normal_vertical"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/mp_normal_vertical"
+                    android:text="@string/purpose_song_details"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

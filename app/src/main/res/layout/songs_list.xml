@@ -22,6 +22,17 @@
         android:text="@string/songs_list_view_title"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mp_horizontal_big"
+        android:layout_marginLeft="@dimen/mp_horizontal_big"
+        android:layout_marginEnd="@dimen/mp_horizontal_big"
+        android:layout_marginRight="@dimen/mp_horizontal_big"
+        android:layout_marginBottom="@dimen/mp_normal_vertical"
+        android:text="@string/purpose_songs_list"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+
     <ListView
         android:id="@+id/songs_list"
         android:layout_width="match_parent"

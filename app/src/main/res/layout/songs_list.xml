@@ -10,26 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/color_primary"
         android:contentDescription="@string/cover_image_content_description"
-        android:elevation="@dimen/actionBarElevation"
+        android:elevation="@dimen/action_bar_elevation"
         android:src="@drawable/cover_image" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/bigMargin"
+        android:layout_margin="@dimen/mp_global_big"
         android:text="@string/songs_list_view_title"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
     <ListView
-        android:id="@+id/songsList"
+        android:id="@+id/songs_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/bigMargin"
-        android:layout_marginLeft="@dimen/bigMargin"
-        android:layout_marginEnd="@dimen/bigMargin"
-        android:layout_marginRight="@dimen/bigMargin"
-        android:layout_marginBottom="@dimen/bigMargin"
+        android:layout_marginStart="@dimen/mp_global_big"
+        android:layout_marginLeft="@dimen/mp_global_big"
+        android:layout_marginEnd="@dimen/mp_global_big"
+        android:layout_marginRight="@dimen/mp_global_big"
+        android:layout_marginBottom="@dimen/mp_global_big"
         android:orientation="vertical" />
 </LinearLayout>

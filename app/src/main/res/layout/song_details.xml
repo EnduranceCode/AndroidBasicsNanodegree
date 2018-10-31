@@ -7,28 +7,28 @@
     tools:context="com.endurancecode.musicapp.SongsListActivity">
 
     <ImageView
-        android:id="@+id/songItemCoverArt"
+        android:id="@+id/song_album_cover_art"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimary"
-        android:paddingStart="@dimen/coverArtHorizontalPadding"
-        android:paddingLeft="@dimen/coverArtHorizontalPadding"
-        android:paddingTop="@dimen/coverArtVerticalPadding"
-        android:paddingEnd="@dimen/coverArtHorizontalPadding"
-        android:paddingRight="@dimen/coverArtHorizontalPadding"
-        android:paddingBottom="32dp"
         android:adjustViewBounds="true"
+        android:background="@color/color_primary"
         android:contentDescription="@string/cover_image_content_description"
-        android:elevation="@dimen/actionBarElevation"
+        android:elevation="@dimen/action_bar_elevation"
+        android:paddingStart="@dimen/mp_song_cover_art_horizontal"
+        android:paddingLeft="@dimen/mp_song_cover_art_horizontal"
+        android:paddingTop="@dimen/mp_song_cover_art_vertical"
+        android:paddingEnd="@dimen/mp_song_cover_art_horizontal"
+        android:paddingRight="@dimen/mp_song_cover_art_horizontal"
+        android:paddingBottom="32dp"
         android:src="@drawable/u2_war" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/buttons"
-        android:layout_below="@+id/songItemCoverArt"
-        android:layout_margin="@dimen/bigMargin">
+        android:layout_below="@+id/song_album_cover_art"
+        android:layout_margin="@dimen/mp_global_big">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,19 +36,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/songItemTitle"
+                android:id="@+id/song_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/verticalMargin"
+                android:layout_marginBottom="@dimen/mp_normal_vertical"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryLight"
+                android:background="@color/color_primary_light"
                 android:orientation="horizontal"
-                android:padding="@dimen/verticalMargin">
+                android:padding="@dimen/mp_normal_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/songItemArtist"
+                    android:id="@+id/song_artist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -69,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="@dimen/verticalMargin">
+                android:padding="@dimen/mp_normal_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/songItemAlbum"
+                    android:id="@+id/song_album"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -89,9 +89,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryLight"
+                android:background="@color/color_primary_light"
                 android:orientation="horizontal"
-                android:padding="@dimen/verticalMargin">
+                android:padding="@dimen/mp_normal_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/songItemYear"
+                    android:id="@+id/song_year"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -112,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="@dimen/verticalMargin">
+                android:padding="@dimen/mp_normal_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/songItemGenre"
+                    android:id="@+id/song_genre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -132,9 +132,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryLight"
+                android:background="@color/color_primary_light"
                 android:orientation="horizontal"
-                android:padding="@dimen/verticalMargin">
+                android:padding="@dimen/mp_normal_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -159,27 +159,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:paddingStart="@dimen/bigMargin"
-        android:paddingLeft="@dimen/bigMargin"
-        android:paddingEnd="@dimen/bigMargin"
-        android:paddingRight="@dimen/bigMargin"
-        android:paddingBottom="@dimen/bigMargin">
+        android:paddingStart="@dimen/mp_global_big"
+        android:paddingLeft="@dimen/mp_global_big"
+        android:paddingEnd="@dimen/mp_global_big"
+        android:paddingRight="@dimen/mp_global_big"
+        android:paddingBottom="@dimen/mp_global_big">
 
         <Button
-            android:id="@+id/songsButton"
+            android:id="@+id/songs_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/color_accent"
             android:text="@string/button_songs"
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/playButton"
+            android:id="@+id/play_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/color_primary"
             android:text="@string/button_play"
             android:textColor="@android:color/white" />
     </LinearLayout>

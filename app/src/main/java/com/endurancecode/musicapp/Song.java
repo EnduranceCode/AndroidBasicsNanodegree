@@ -76,7 +76,7 @@ public class Song {
     }
 
     // Get the song's album CoverArt image resource ID
-    public int getSongCoverArt() {
+    public int getSongAlbumCoverArt() {
         return mSongCoverArtID;
     }
 
@@ -91,7 +91,7 @@ public class Song {
     }
 
     // Get the song's Length as a string in mm:ss format
-    public String getmSongLength() {
+    public String getSongLength() {
         return mSongLength;
     }
 }

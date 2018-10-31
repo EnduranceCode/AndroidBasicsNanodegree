@@ -60,18 +60,18 @@ public class SongsListActivity extends AppCompatActivity {
          * This list item layout contains two {@link TextView} and two {@link ImageView, which the
          * adapter will set to display some of the data of each Song object in the ArrayList songs.
          */
-        SongAdapter wordAdapter = new SongAdapter(this, songs);
+        SongAdapter songAdapter = new SongAdapter(this, songs);
 
         /* Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
          * There should be a {@link ListView} with the view ID called list, which is declared in the
          * word_list.xml file.
          */
-        ListView listView = (ListView) findViewById(R.id.songsList);
+        ListView listView = (ListView) findViewById(R.id.songs_list);
 
         /* Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
          * {@link ListView} will display list items for each word in the list of words.
          * Do this by calling the setAdapter method on the {@link ListView} object and pass in
          */
-        listView.setAdapter(wordAdapter);
+        listView.setAdapter(songAdapter);
     }
 }

@@ -57,40 +57,40 @@ public class SongAdapter extends ArrayAdapter<Song> {
         final Song currentSong = getItem(position);
 
         /* Find the ImageView in the song_item_list.xml layout with the ID songItemCoverArt */
-        ImageView coverArtImageView = (ImageView) songItemListView.findViewById(R.id.songItemCoverArt);
+        ImageView songAlbumCoverArtView = (ImageView) songItemListView.findViewById(R.id.song_album_cover_art);
         // Get the album cover art from the current Song object and set it on the cover art ImageView
-        coverArtImageView.setImageResource(currentSong.getSongCoverArt());
+        songAlbumCoverArtView.setImageResource(currentSong.getSongAlbumCoverArt());
 
         /* Find the TextView in the song_item_list.xml layout with the ID songItemTitle */
-        TextView songTitleTextView = (TextView) songItemListView.findViewById(R.id.songItemTitle);
+        TextView songTitleView = (TextView) songItemListView.findViewById(R.id.song_title);
         /* Get the song's title from the current Song object and set this text on the song title TextView */
-        songTitleTextView.setText(currentSong.getSongTitle());
+        songTitleView.setText(currentSong.getSongTitle());
 
         /* Find the TextView in the song_item_list.xml layout with the ID */
-        TextView songArtistTextView = (TextView) songItemListView.findViewById(R.id.songItemArtist);
+        TextView songArtistView = (TextView) songItemListView.findViewById(R.id.song_artist);
         /* Get the song's artist from the current Song object and set this text on the song artist TextView */
-        songArtistTextView.setText(currentSong.getSongArtist());
+        songArtistView.setText(currentSong.getSongArtist());
 
         /* Find the View in the song_item_list.xml that contains each Song item */
-        View viewItem = (View) songItemListView.findViewById(R.id.song_item_list);
+        View viewSongListItem = (View) songItemListView.findViewById(R.id.song_list_item);
         /* Set an On Click Event Listener */
-        viewItem.setOnClickListener(new View.OnClickListener() {
+        viewSongListItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /* Create Intent to open the Details Activity */
-                Intent detailsIntent = new Intent(getContext(), SongDetails.class);
+                Intent songDetailsIntent = new Intent(getContext(), SongDetails.class);
 
                 /* Send song's details to Details Activity */
-                detailsIntent.putExtra("TITLE", currentSong.getSongTitle());
-                detailsIntent.putExtra("ARTIST", currentSong.getSongArtist());
-                detailsIntent.putExtra("ALBUM", currentSong.getSongAlbum());
-                detailsIntent.putExtra("ALBUM_COVER", currentSong.getSongCoverArt());
-                detailsIntent.putExtra("YEAR", currentSong.getSongYear());
-                detailsIntent.putExtra("GENRE", currentSong.getSongGenre());
-                detailsIntent.putExtra("LENGTH", currentSong.getmSongLength());
+                songDetailsIntent.putExtra("TITLE", currentSong.getSongTitle());
+                songDetailsIntent.putExtra("ARTIST", currentSong.getSongArtist());
+                songDetailsIntent.putExtra("ALBUM", currentSong.getSongAlbum());
+                songDetailsIntent.putExtra("ALBUM_COVER_ART", currentSong.getSongAlbumCoverArt());
+                songDetailsIntent.putExtra("YEAR", currentSong.getSongYear());
+                songDetailsIntent.putExtra("GENRE", currentSong.getSongGenre());
+                songDetailsIntent.putExtra("LENGTH", currentSong.getSongLength());
 
                 /* Start the detailsIntent (Song Details Activity) */
-                getContext().startActivity(detailsIntent);
+                getContext().startActivity(songDetailsIntent);
             }
         });
 

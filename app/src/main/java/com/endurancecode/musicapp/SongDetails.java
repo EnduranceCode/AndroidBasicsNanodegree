@@ -25,36 +25,36 @@ public class SongDetails extends AppCompatActivity {
         String songTitle = getIntent().getStringExtra("TITLE");
         String songArtist = getIntent().getStringExtra("ARTIST");
         String songAlbum = getIntent().getStringExtra("ALBUM");
-        int songAlbumCover = getIntent().getIntExtra("ALBUM_COVER", 0);
+        int songAlbumCover = getIntent().getIntExtra("ALBUM_COVER_ART", 0);
         int songYear = getIntent().getIntExtra("YEAR", 0);
         String songGenre = getIntent().getStringExtra("GENRE");
         String songLength = getIntent().getStringExtra("LENGTH");
 
-        TextView songTitleTextView = (TextView) findViewById(R.id.songItemTitle);
-        songTitleTextView.setText(songTitle);
+        TextView songTitleView = (TextView) findViewById(R.id.song_title);
+        songTitleView.setText(songTitle);
 
-        TextView songArtistTextView = (TextView) findViewById(R.id.songItemArtist);
-        songArtistTextView.setText(songArtist);
+        TextView songArtistView = (TextView) findViewById(R.id.song_artist);
+        songArtistView.setText(songArtist);
 
-        TextView songAlbumTextView = (TextView) findViewById(R.id.songItemAlbum);
-        songAlbumTextView.setText(songAlbum);
+        TextView songAlbumView = (TextView) findViewById(R.id.song_album);
+        songAlbumView.setText(songAlbum);
 
-        ImageView songAlbumCoverArt = (ImageView) findViewById(R.id.songItemCoverArt);
-        songAlbumCoverArt.setImageResource(songAlbumCover);
+        ImageView songAlbumCoverArtView = (ImageView) findViewById(R.id.song_album_cover_art);
+        songAlbumCoverArtView.setImageResource(songAlbumCover);
 
-        TextView songYearTextView = (TextView) findViewById(R.id.songItemYear);
-        songYearTextView.setText(String.valueOf(songYear));
+        TextView songYearView = (TextView) findViewById(R.id.song_year);
+        songYearView.setText(String.valueOf(songYear));
 
-        TextView songGenreTextView = (TextView) findViewById(R.id.songItemGenre);
-        songGenreTextView.setText(songGenre);
+        TextView songGenreView = (TextView) findViewById(R.id.song_genre);
+        songGenreView.setText(songGenre);
 
-        TextView songLengthTextView = (TextView) findViewById(R.id.songItemLength);
-        songLengthTextView.setText(songLength);
+        TextView songLengthView = (TextView) findViewById(R.id.songItemLength);
+        songLengthView.setText(songLength);
 
         /* Find the "Songs" button */
-        Button buttonSongs = (Button) findViewById(R.id.songsButton);
+        Button songsButton = (Button) findViewById(R.id.songs_button);
         /* Set OnClickListener method for Songs List View */
-        buttonSongs.setOnClickListener(new View.OnClickListener() {
+        songsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent songsListIntent = new Intent(SongDetails.this, SongsListActivity.class);
@@ -63,11 +63,11 @@ public class SongDetails extends AppCompatActivity {
         });
 
         /* Find the "Play" button */
-        Button buttonPlay = (Button) findViewById(R.id.playButton);
+        Button playButton = (Button) findViewById(R.id.play_button);
         /* Set OnClickListener method to play song
          * As actually playing the song isn't in the scope of this project, a toast will be shown
          */
-        buttonPlay.setOnClickListener(new View.OnClickListener() {
+        playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getBaseContext(), getString(R.string.button_play_toast_message), Toast.LENGTH_LONG).show();

@@ -45,13 +45,5 @@
             android:gravity="top"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="@dimen/songItemPlayButton"
-        android:layout_height="@dimen/songItemPlayButton"
-        android:layout_gravity="center_vertical"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/cover_art_content_description"
-        android:src="@drawable/play_button" />
 </LinearLayout>
 

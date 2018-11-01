@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/left_column"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/color_primary"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/cover_image_content_description"
+            android:src="@drawable/cover_image" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/purpose_songs_list"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/right_column"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mp_global_big"
+            android:text="@string/songs_list_view_title"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+
+        <ListView
+            android:id="@+id/songs_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mp_global_big"
+            android:layout_marginLeft="@dimen/mp_global_big"
+            android:layout_marginEnd="@dimen/mp_global_big"
+            android:layout_marginRight="@dimen/mp_global_big"
+            android:layout_marginBottom="@dimen/mp_global_big"
+            android:orientation="vertical" />
+    </LinearLayout>
+</LinearLayout>

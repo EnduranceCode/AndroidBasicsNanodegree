@@ -15,6 +15,9 @@ public class Word {
     // Variable that stores Miwok translation word
     private String mMiwokTranslation;
 
+    // Variable that stores the image resource id of the image representing the word
+    private int mImageResourceId;
+
     /**
      * Constructs a new Word with initial values for default translation and Miwok translation
      */
@@ -35,5 +38,10 @@ public class Word {
     // Method to get the Miwok translation
     public String getMiwokTranslation () {
         return mMiwokTranslation;
+    }
+
+    // Method to get the image resource id
+    public int getImageResourceId() {
+        return mImageResourceId;
     }
 }

@@ -18,12 +18,21 @@ public class Word {
     // Variable that stores the image resource id of the image representing the word
     private int mImageResourceId;
 
-    /**
-     * Constructs a new Word with initial values for default translation and Miwok translation
+    /* Constructs a new Word with initial values for default translation and Miwok translation
      */
     public Word (String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+    }
+
+
+    /* Constructs a new Word with initial values for default translation, Miwok translation and
+     * imageResourceId
+     */
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
     }
 
     /**

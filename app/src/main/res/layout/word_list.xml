@@ -7,6 +7,4 @@
     android:paddingLeft="@dimen/mp_horizontal_big"
     android:paddingTop="@dimen/mp_vertical_big"
     android:paddingRight="@dimen/mp_horizontal_big"
-    android:paddingBottom="@dimen/mp_vertical_big">
-
-</ListView>
+    android:paddingBottom="@dimen/mp_vertical_big" />

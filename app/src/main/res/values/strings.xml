@@ -27,4 +27,7 @@
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
+
+    <!-- Image's content description -->
+    <string name="word_image_description">Image representation of the word</string>
 </resources>

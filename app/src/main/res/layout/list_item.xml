@@ -15,9 +15,9 @@
         android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
+        android:id="@+id/parentTextViews"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
-        android:background="@color/category_numbers"
         android:orientation="vertical"
         android:paddingStart="@dimen/mp_horizontal_big"
         android:paddingLeft="@dimen/mp_horizontal_big">

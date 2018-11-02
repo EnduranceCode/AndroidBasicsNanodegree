@@ -33,7 +33,7 @@ public class ColorsActivity extends AppCompatActivity {
          * This list item layout contains two {@link TextView}, which the adapter will set to
          * display the two words contained by each Word object in the ArrayList words.
          */
-        WordAdapter wordAdapter = new WordAdapter(this, words);
+        WordAdapter wordAdapter = new WordAdapter(this, words, R.color.category_colors);
 
         /* Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
          * There should be a {@link ListView} with the view ID called list, which is declared in the

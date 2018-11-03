@@ -4,7 +4,7 @@
 
 This repository contains all the work developed in the [Google Developer Nanodegree Scholarship](https://sites.google.com/knowlabs.com/gdnd2017).
 
-Each project and in lesson work will be stored in a specific folder of this repository.
+Each project and all the written code following the course's lessons will be stored in a specific folder of this repository.
  
 ## Projects
 
@@ -25,7 +25,6 @@ The goal of this project is to create a Score Keeper App which gives a user the 
 ### Project 3 - Quiz App
 
 This project's code is stored in the folder [project3](./project3) of this repository.
->>>>>>> 1a549f7... Start 'project4'
 
 #### Project Overview
 The goal is to create an educational app that quizzes a user about Triathlon Olympic History. It is required a minimum of 4 questions and a maximum of 10 quiz questions, including at least one check box, one radio button, and one text entry.

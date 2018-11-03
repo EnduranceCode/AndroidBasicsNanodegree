@@ -52,3 +52,13 @@ This Practice Set's code is stored in the folder [practice-oop](./practice-oop) 
 
 #### Practice Set Goal
 The goal of this Practice Set is to use object-oriented programming techniques to create a simple user profile that gives a basic introduction of a person.
+
+## Samples
+
+### Sample: Music Player App
+
+The Music Player Sample App code is stored in the folder [sample-music-player](./sample-music-player) of this repository.
+
+#### Sample's Goal
+
+This is a small app developed to test the use of the [MediaPlayer API](https://developer.android.com/reference/android/media/MediaPlayer).

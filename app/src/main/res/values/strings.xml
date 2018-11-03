@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Sample Music Player</string>
+
+    <!-- Image's content description -->
+    <string name="cd_logo_endurancecode">EnduranceCode\'s logo</string>
+
+    <!-- Button's labels -->
+    <string name="button_play">Play</string>
+    <string name="button_pause">Pause</string>
 </resources>

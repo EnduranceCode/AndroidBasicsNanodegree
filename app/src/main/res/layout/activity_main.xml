@@ -4,4 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.endurancecode.SampleMusicPlayer.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mp_global_big"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_vertical_big"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/button_play"
+            android:textColor="@android:color/white"
+            tools:ignore="UnusedAttribute" />
+
+
+        <Button
+            android:id="@+id/button_pause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/button_pause"
+            android:textColor="@android:color/white"
+            tools:ignore="UnusedAttribute" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logo_endurancecode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/cd_logo_endurancecode"
+        android:src="@drawable/logo_endurancecode" />
 </RelativeLayout>

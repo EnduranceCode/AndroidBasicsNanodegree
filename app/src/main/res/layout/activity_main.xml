@@ -27,8 +27,17 @@
             android:id="@+id/button_pause"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_vertical_big"
             android:backgroundTint="@color/colorAccent"
             android:text="@string/button_pause"
+            android:textColor="@android:color/white"
+            tools:ignore="UnusedAttribute" />
+
+        <Button
+            android:id="@+id/button_forward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_forward"
             android:textColor="@android:color/white"
             tools:ignore="UnusedAttribute" />
     </LinearLayout>

@@ -21,11 +21,14 @@ public class MainActivity extends AppCompatActivity {
         /* Create MediaPlayer object with cha_cappella.mp3 */
         final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.cha_cappella);
 
+        final int totalDuration = mediaPlayer.getDuration();
+
         /* Find buttons UI buttons */
         Button btnPlay = (Button) findViewById(R.id.button_play);
         Button btnPause = (Button) findViewById(R.id.button_pause);
+        Button btnForward = (Button) findViewById(R.id.button_forward);
 
-        /* Set OnClickListener method to the play button */
+        /* Set OnClickListener method to the PLAY button */
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,11 +36,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /* Set OnClickListener method to the pause button */
+        /* Set OnClickListener method to the PAUSE button */
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mediaPlayer.pause();
+            }
+        });
+
+        /* Set OnClickListener method to the FORWARD button */
+        btnForward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int currentPosition = mediaPlayer.getCurrentPosition();
+                int forwardPosition = (int) (totalDuration - currentPosition) / 3;
+                /* Moves the current playing position forward 1/3 of the remaining song duration */
+                mediaPlayer.seekTo(currentPosition + forwardPosition);
             }
         });
     }

@@ -13,13 +13,15 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         /* Create MediaPlayer object with cha_cappella.mp3 */
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.cha_cappella);
+        mediaPlayer = MediaPlayer.create(this, R.raw.cha_cappella);
 
         final int totalDuration = mediaPlayer.getDuration();
 

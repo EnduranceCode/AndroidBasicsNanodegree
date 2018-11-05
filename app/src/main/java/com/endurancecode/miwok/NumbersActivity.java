@@ -1,12 +1,17 @@
 package com.endurancecode.miwok;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
+
+    private MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +53,19 @@ public class NumbersActivity extends AppCompatActivity {
          * Do this by calling the setAdapter method on the {@link ListView} object and pass in
          */
         listView.setAdapter(wordAdapter);
+
+        /* Set OnItemClickListener in the ListView items */
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                /* Creates the MediaPlayer object
+                 *
+                 * To assign a MediaPlayer object for each word, in future iterations, the MediaPlayer object
+                 * will probably be included in the Word class
+                 */
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
+                mMediaPlayer.start();
+            }
+        });
     }
 }

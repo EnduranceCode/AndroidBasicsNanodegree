@@ -3,6 +3,7 @@ package com.endurancecode.miwok;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -61,6 +62,8 @@ public class NumbersActivity extends AppCompatActivity {
                 /* Gets the selected word object */
                 Word selectedWord = words.get(position);
                 /* TODO Study the deference with Word selectedWord = (Word) parent.getItemAtPosition(position); */
+
+                Log.v("NumbersActivity", "Current word: " + selectedWord.toString());
 
                 /* Creates the MediaPlayer object */
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this, selectedWord.getAudioResourceId());

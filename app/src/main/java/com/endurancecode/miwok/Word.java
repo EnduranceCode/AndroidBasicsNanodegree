@@ -74,4 +74,15 @@ public class Word {
     public int getAudioResourceId() {
         return mAudioResourceId;
     }
+
+    /* Print out all the variables in the Word class as a string */
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation = '" + mDefaultTranslation + "\'" +
+                ", mMiwokTranslation = '" + mMiwokTranslation + "\'" +
+                ", mAudioResourceID = '" + mAudioResourceId + "\'" +
+                ", mImageResourceID = '" + mImageResourceId +
+                "}";
+    }
 }

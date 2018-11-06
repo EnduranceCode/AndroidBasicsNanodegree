@@ -13,10 +13,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/*
+/**
  * {@link WordAdapter} is an {@link ArrayAdapter} that can provide the layout for each list
  * based on a data source, which is a list of {@link Word} objects.
- * */
+ */
 public class WordAdapter extends ArrayAdapter<Word> {
 
     /**

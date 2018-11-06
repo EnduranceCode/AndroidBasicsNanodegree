@@ -22,18 +22,18 @@ public class NumbersActivity extends AppCompatActivity {
          * of words: one word is the Miwoki word and the other it's its default translation
          * The Word objects are instantiated with the Word class.
          */
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("one", "lutti", R.drawable.number_one));
-        words.add(new Word("two", "otiiko", R.drawable.number_two));
-        words.add(new Word("three", "tolookosu", R.drawable.number_three));
-        words.add(new Word("four", "oyyisa", R.drawable.number_four));
-        words.add(new Word("five", "massokka", R.drawable.number_five));
-        words.add(new Word("six", "temmokka", R.drawable.number_six));
-        words.add(new Word("seven", "kenekaku", R.drawable.number_seven));
-        words.add(new Word("eight", "kawinta", R.drawable.number_eight));
-        words.add(new Word("nine", "wo'e", R.drawable.number_nine));
-        words.add(new Word("ten", "na'aacha", R.drawable.number_ten));
+        words.add(new Word("one", "lutti", R.drawable.number_one, R.raw.number_one));
+        words.add(new Word("two", "otiiko", R.drawable.number_two, R.raw.number_two));
+        words.add(new Word("three", "tolookosu", R.drawable.number_three, R.raw.number_three));
+        words.add(new Word("four", "oyyisa", R.drawable.number_four, R.raw.number_four));
+        words.add(new Word("five", "massokka", R.drawable.number_five, R.raw.number_five));
+        words.add(new Word("six", "temmokka", R.drawable.number_six, R.raw.number_six));
+        words.add(new Word("seven", "kenekaku", R.drawable.number_seven, R.raw.number_seven));
+        words.add(new Word("eight", "kawinta", R.drawable.number_eight, R.raw.number_eight));
+        words.add(new Word("nine", "wo'e", R.drawable.number_nine, R.raw.number_nine));
+        words.add(new Word("ten", "na'aacha", R.drawable.number_ten, R.raw.number_ten));
 
         /* Create a custom {@link WordAdapter}, whose data source is a list of Word objects. The
          * adapter uses list_item.xml layout to create layouts for each item in the list.
@@ -58,12 +58,12 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /* Creates the MediaPlayer object
-                 *
-                 * To assign a MediaPlayer object for each word, in future iterations, the MediaPlayer object
-                 * will probably be included in the Word class
-                 */
-                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
+                /* Gets the selected word object */
+                Word selectedWord = words.get(position);
+                /* TODO Study the deference with Word selectedWord = (Word) parent.getItemAtPosition(position); */
+
+                /* Creates the MediaPlayer object */
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, selectedWord.getAudioResourceId());
                 mMediaPlayer.start();
             }
         });

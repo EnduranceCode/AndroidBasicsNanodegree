@@ -24,7 +24,9 @@ public class NumbersActivity extends AppCompatActivity {
         }
     };
 
-    /* Clean up the media player by releasing its resources */
+    /**
+     * Clean up the media player by releasing its resources
+     */
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {
@@ -110,5 +112,13 @@ public class NumbersActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        /* Release the MediaPlayer resources when the activity is stopped */
+        releaseMediaPlayer();
     }
 }

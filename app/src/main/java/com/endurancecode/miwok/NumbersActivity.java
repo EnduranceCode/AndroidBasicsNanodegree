@@ -12,7 +12,34 @@ import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
+    /* Handles playback of all the sound files */
     private MediaPlayer mMediaPlayer;
+
+    /* This listener gets triggered when the {@link MediaPlayer} has completed
+     * playing the audio file.
+     */
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+        }
+    };
+
+    /* Clean up the media player by releasing its resources */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            /* Regardless of the current state of the media player, release its resources
+             * because we no longer need it.
+             */
+            mMediaPlayer.release();
+
+            /* Set the media player back to null. For our code, we've decided that
+             * setting the media player to null is an easy way to tell that the media player
+             * is not configured to play an audio file at the moment.
+             */
+            mMediaPlayer = null;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +88,26 @@ public class NumbersActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 /* Gets the selected word object */
                 Word selectedWord = words.get(position);
-                /* TODO Study the deference with Word selectedWord = (Word) parent.getItemAtPosition(position); */
+                /* TODO Study the deference with
+                 * Word selectedWord = (Word) parent.getItemAtPosition(position);
+                 */
 
-                Log.v("NumbersActivity", "Current word: " + selectedWord.toString());
+                /* Release MediaPlayer resources before initialize it to play a new audio */
+                releaseMediaPlayer();
 
                 /* Creates the MediaPlayer object */
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this, selectedWord.getAudioResourceId());
                 mMediaPlayer.start();
+
+                /* Set an OnCompletionListener method to release MediaPlayer
+                 * when audio is finishes playing
+                 */
+                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        releaseMediaPlayer();
+                    }
+                });
             }
         });
     }

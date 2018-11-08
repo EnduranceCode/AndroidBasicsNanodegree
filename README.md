@@ -4,7 +4,7 @@
 
 This repository contains all the work developed in the [Google Developer Nanodegree Scholarship](https://sites.google.com/knowlabs.com/gdnd2017).
 
-Each project and all the written code following the course's lessons will be stored in a specific folder of this repository.
+Each Project, Practice Set, Sample App and all the written code following the course's lessons will be stored in a specific folder of this repository.
  
 ## Projects
 
@@ -62,3 +62,12 @@ The Music Player Sample App code is stored in the folder [sample-music-player](.
 #### Sample's Goal
 
 This is a small app developed to test the use of the [MediaPlayer API](https://developer.android.com/reference/android/media/MediaPlayer).
+
+### Sample: ViewPager App
+
+The ViewPager Sample App code is stored in the folder [sample-viewpager](./sample-viewpager) of this repository.
+
+#### Sample's Goal
+
+This is a small app developed to explore the use of the [ViewPager Class](https://developer.android.com/reference/android/support/v4/view/ViewPager).
+

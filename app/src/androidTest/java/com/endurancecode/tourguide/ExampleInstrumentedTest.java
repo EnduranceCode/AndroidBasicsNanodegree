@@ -1,4 +1,4 @@
-package com.endurancecode.googledevelopernanodegreescholarship;
+package com.endurancecode.tourguide;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

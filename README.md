@@ -38,11 +38,19 @@ The goal is to design and layout a music playing app that displays the list of a
 
 Data about each song should be stored in a custom class that is retrieved and displayed via a Loop and Adapter.
 
+### Project 5 - Tour Guide App
+
+This project's code is stored in the folder [project5](./project5) of this repository.
+
+#### Project Overview
+
+The goal is to create a Tour Guide App which presents relevant information to a user who’s visiting a city. The app can list top attractions, restaurants, public places, or events for the city. It can contain all the best known secrets that only locals know.
+
 ## Lessons
 
 ### Multiscreen Apps
 
-The code developed following the Multiscreen Apps lessons is stored in the folder [study-multiscreen-apps](./study-multiscreen-apps) of this repository. 
+The code developed following the Multi-screen Apps lessons is stored in the folder [study-multi-screen-apps](./study-multi-screen-apps) of this repository. 
 
 ## Practice Sets
 

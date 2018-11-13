@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--
+        Color palette chosen with Material Mixer: http://materialmixer.co/#B71C1C/FFAB40
+        Primary dar color chosen from:
+        https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=B71C1C&secondary.color=FFAB40
+    -->
+    <color name="colorPrimary">#B71C1C</color>
+    <color name="colorPrimaryDark">#7F0000</color>
+    <color name="colorPrimaryLight">#F44336</color>
+    <color name="colorAccent">#FFAB40</color>
+    <color name="colorAccentLight">#FFD180</color>
 </resources>

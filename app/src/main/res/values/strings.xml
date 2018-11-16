@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Almeirim Tour Guide</string>
+
+    <!-- Image content description -->
+    <string name="office_image_description">Tourism Office Icon</string>
+    <string name="culture_image_description">Culture Icon</string>
+    <string name="park_sport_image_description">Parks &amp; Sports</string>
+    <string name="restaurants_image_description">Restaurants Icon</string>
+    <string name="hotels_image_description">Hotels Icon</string>
+
+    <!-- Category Titles -->
+    <string name="tourism_office_category">Tourism Office</string>
+    <string name="culture_category">Culture</string>
+    <string name="park_sport_category">Parks &amp; Sports</string>
+    <string name="restaurants_category">Restaurants</string>
+    <string name="hotels_category">Hotels</string>
 </resources>

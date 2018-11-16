@@ -7,4 +7,7 @@
     <dimen name="mp_global_normal">8dp</dimen>
     <dimen name="mp_normal_horizontal">8dp</dimen>
     <dimen name="mp_normal_vertical">8dp</dimen>
+
+    <!-- Cards -->
+    <dimen name="card_corner_radius">4dp</dimen>
 </resources>

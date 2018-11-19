@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mp_horizontal_big"
+        android:layout_marginLeft="@dimen/mp_horizontal_big"
+        android:layout_marginEnd="@dimen/mp_horizontal_big"
+        android:layout_marginRight="@dimen/mp_horizontal_big"
+        android:layout_marginBottom="@dimen/mp_vertical_big"
+        card_view:cardCornerRadius="@dimen/card_corner_radius">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/mp_normal_vertical">
+
+            <ImageView
+                android:id="@+id/list_item_card_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/card_besteiros" />
+
+            <TextView
+                android:id="@+id/list_item_card_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/mp_normal_horizontal"
+                android:paddingLeft="@dimen/mp_normal_horizontal"
+                android:paddingTop="@dimen/mp_normal_vertical"
+                android:paddingEnd="@dimen/mp_normal_horizontal"
+                android:paddingRight="@dimen/mp_normal_horizontal"
+                android:text="Casa de Besteiros"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+            <TextView
+                android:id="@+id/list_item_card_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/mp_normal_horizontal"
+                android:paddingLeft="@dimen/mp_normal_horizontal"
+                android:paddingEnd="@dimen/mp_normal_horizontal"
+                android:paddingRight="@dimen/mp_normal_horizontal"
+                android:paddingBottom="@dimen/mp_normal_vertical"
+                android:text="Turismo Rural"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

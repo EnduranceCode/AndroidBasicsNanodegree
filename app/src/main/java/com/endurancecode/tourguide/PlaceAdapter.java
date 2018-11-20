@@ -49,6 +49,7 @@ public class PlaceAdapter extends ArrayAdapter {
         }
 
         /* Get the {@link Place} object located at this position in the list */
+        /* TODO: Check why we have to cast getItem(position) */
         Place currentPlace = (Place) getItem(position);
 
         /* Find the views on the list_item_card.xml layout
@@ -70,7 +71,7 @@ public class PlaceAdapter extends ArrayAdapter {
         /* Get the title from the current Place object and set it on the title TextView of list_item_card.xml layout */
         titleTextView.setText(currentPlace.getTitle());
 
-        if (currentPlace.getHasSubtitle() != null) {
+        if (currentPlace.getSubtitle() != null) {
             subTitleTextView.setText(currentPlace.getSubtitle());
             subTitleTextView.setVisibility((View.VISIBLE));
         } else {

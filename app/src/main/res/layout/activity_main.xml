@@ -193,7 +193,7 @@
                     android:layout_alignParentBottom="true"
                     android:gravity="center"
                     android:padding="@dimen/mp_global_normal"
-                    android:text="@string/restaurants_category"
+                    android:text="@string/restaurant_category"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/colorPrimary" />
             </RelativeLayout>
@@ -235,7 +235,7 @@
                     android:layout_alignParentBottom="true"
                     android:gravity="center"
                     android:padding="@dimen/mp_global_normal"
-                    android:text="@string/hotels_category"
+                    android:text="@string/hotel_category"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/colorPrimary" />
             </RelativeLayout>

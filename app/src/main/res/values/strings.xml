@@ -12,6 +12,96 @@
     <string name="tourism_office_category">Tourism Office</string>
     <string name="culture_category">Culture</string>
     <string name="park_sport_category">Parks &amp; Sports</string>
-    <string name="restaurants_category">Restaurants</string>
-    <string name="hotels_category">Hotels</string>
+    <string name="restaurant_category">Restaurants</string>
+    <string name="hotel_category">Hotels</string>
+
+    <!-- Strings for culture category place objects -->
+    <string name="culture_000_description">Para falarmos da actual biblioteca devemos recuar ao ano de 1937, mais precisamente o dia 25 de Novembro, data em que foi inaugurada a Biblioteca Pública de Almeirim, fruto da iniciativa do períodico "O Vale do Tejo" e a colaboração de alguns ilustres almeirinenses de boa vontade.</string>
+    <string name="culture_001_description">O Centro Cultural da Vila de Fazendas de Almeirim inaugurado em 2016, com sala de exposições, cine-teatro, biblioteca no primeiro piso com parque de estacionamento</string>
+    <string name="culture_002_description">O Cinema em Almeirim quando se radicou, em Almeirm, como um dos mais populares meios de diversão, nas primeiras décadas do século XX, foi um grande acontecimento.</string>
+    <string name="culture_003_description">Inaugurada em Setembro de 2001, a Galeria Municipal funciona como um eixo de dinamização cultural, em estreita colaboração com o Posto de Turismo.</string>
+    <string name="culture_004_description">A Igreja Matriz de Almeirim é datada de meados do século XVI. No seu interior, pode-se contemplar a famosa imagem do Senhor Jesus dos Paços.</string>
+    <string name="culture_005_description">Tendo sido atribuída uma Menção Honrosa, na categoria de Melhor Museu Português, pela APOM, o Museu Municipal de Almeirim é um espaço de cultura e tradição onde pode viajar no tempo e redescobrir a história de um povo à beira Tejo plantado.</string>
+    <string name="culture_006_description">Desde sempre com grandes tradições taurinas, Almeirim viu ser construída, em terrenos que pertencem à Quinta da Alorna, uma praça de toiros em madeira com capacidade para 3000 pessoas. Tendo sido inaugurada em 22 de Outubro de 1938 foi palco de várias corridas, demolida mais tarde para dar lugar a uma moderna construção com excelentes condições não só para os artistas mas também para o publico aficcionado.</string>
+
+    <string name="culture_000_opening_hours_01">Monday to Friday: 09:30 &#8211; 12:30 e 14:00 &#8211; 18:00 </string>
+    <string name="culture_000_opening_hours_02">Second Saturday of each month: 9:30 &#8211; 13:00</string>
+    <string name="culture_001_opening_hours_01">One hour before the scheduled of the show</string>
+    <string name="culture_002_opening_hours_01">One hour before the scheduled of the show</string>
+    <string name="culture_003_opening_hours_01">Monday to Friday: 9h00 &#8211; 18:00</string>
+    <string name="culture_005_opening_hours_01">Tuesday to Friday: 9h30 &#8211; 12:30 e 14:00 &#8211; 16:30</string>
+
+    <string name="culture_000_title">Municipality Library</string>
+    <string name="culture_001_title">Cultural Center of Fazendas de Almeirim</string>
+    <string name="culture_002_title">Cine-Theater</string>
+    <string name="culture_003_title">Municipality Art Gallery</string>
+    <string name="culture_004_title">Matrice Church</string>
+    <string name="culture_005_title">Municipality Museum</string>
+    <string name="culture_006_title">Bullfight Arena</string>
+
+    <!-- Strings for hotels category place objects -->
+    <string name="hotel_000_description">A Casa de Besteiros, de arquitectura ribatejana, com alpendres formados por arcos de volta inteira, é, pode afirmar-se, uma casa senhorial. Do amplo largo fronteiro à Casa desenvolve-se, a escadaria e a rampa de acesso ao patamar da porta principal, daqui já se pode apreciar o desafogo de vistas. </string>
+    <string name="hotel_001_description">A Hospedaria Abílio está localizada no centro de Almeirim, apenas a 7 km de Santarém. Com uma situação geogŕafica priviligiada, com acesso fácil às principais vias rodoviária de todo o País.</string>
+    <string name="hotel_002_description">A hospedaria Dom António é uma pousada modesta mas que aposta numa excelente relação qualidade preço.</string>
+    <string name="hotel_003_description">Hospedaria associada ao restaurante do mesmo nome que serve diariamente a afamada sopa da pedra cuja lenda (e especialiade associada) é emblemática de Almeirim.</string>
+    <string name="hotel_004_description">Com acesso Wi-Fi e estacionamento gratuitos, o Hotel O Novo Príncipe fica em Almeirim, uma cidade na zona rural perto do Rio Tejo. Dispõe de quartos modernos, uma recepção 24 horas e sala de jogos com mesas de bilhar.</string>
+    <string name="hotel_005_description">A menos de uma hora de Lisboa em plena lezíria ribatejana e a curta distância das áreas urbanas de Santarém e Almeirim com os seus múltiplos serviços e pontos de interesse, dotada de habitações de elevada qualidade a um preço atrativo com todos os serviços e comodidades como ar condicionado e acesso sem fios à internet.</string>
+
+    <string name="hotel_001_opening_hours_01">Todos os dias: 09:00 &#8211; 24:00</string>
+    <string name="hotel_004_opening_hours_01">Aberto 24</string>
+
+    <string name="hotel_001_subtitle">Confort and quality at your service</string>
+    <string name="hotel_005_subtitle">A unique experience of tourism in a rural area</string>
+
+    <string name="hotel_000_title">Casa de Besteiros</string>
+    <string name="hotel_001_title">Hostel Abílio</string>
+    <string name="hotel_002_title">Hostel Dom António</string>
+    <string name="hotel_003_title">Hostel O Minhoto</string>
+    <string name="hotel_004_title">Hotel O Novo Príncipe</string>
+    <string name="hotel_005_title">Quinta da Gafaria</string>
+
+    <!-- Strings for parks and sports category place objects -->
+    <string name="park_sport_000_description">Circuito ideal para a prática de exercício ou para momentos de lazer ao ar livre.</string>
+    <string name="park_sport_001_description">Um campo de futebol de 11 e um campo de futebol de 7, ambos com relva sintética.</string>
+    <string name="park_sport_002_description">Fazia parte dos Largos que existiam em Almeirim, com o particular interesse de ter sido ali o Terreiro do Paço Real. Perdido o Paço, do qual ficou um Pórtico demolido em 1890, o terreno foi então transformado em Praça do Comércio, onde se comerciava, se realizavam festas populares e passeio público.</string>
+    <string name="park_sport_003_description">A Zona Norte de Almeirim é uma das mais recentes requalificações urbanas de Almeirim. Toda uma área desaproveitada de pinhal foram completamente transformados numa bela zona verde, com uma grande área de relva, um Complexo de Ténis, Circuito de Manutenção, Skate Park, Mini Golf, um Parque Infantil e um Lago.</string>
+    <string name="park_sport_004_description">Parque com excelentes condições e equipamentos, dos quais fazem parte campos de futebol, pista de atletismo e um pavilhão.</string>
+    <string name="park_sport_005_description">No interior existem duas piscinas, uma de 25 metros, e um "chapinheiro". No exterior, 2 piscinas, uma grande com duas zonas distintas (uma de natação e outra de lazer) e uma pequena para bebés.</string>
+
+    <string name="park_sport_005_opening_hours_01">Monday to Friday: 08:00 &#8211; 21:30</string>
+    <string name="park_sport_005_opening_hours_02">Saturday: 8:00 &#8211; 18:00</string>
+
+    <string name="park_sport_000_title">Sport Leisure Circuit</string>
+    <string name="park_sport_001_title">Municipality Stadium</string>
+    <string name="park_sport_002_title">Jardim da Républica</string>
+    <string name="park_sport_003_title">North Zone Park</string>
+    <string name="park_sport_004_title">Municipality Sports Park</string>
+    <string name="park_sport_005_title">Almeirim\'s Aquatic Center</string>
+
+    <!-- Strings for restaurants category place objects -->
+    <string name="restaurant_000_description">"Com gestão de Fernando David e Elsa David, o Restaurante David Parque apresenta-se  aos seus clientes desde  3 de junho de 1990.
+Ao longo do seu percurso procurou sempre respeitar as tradições, seguindo os métodos ensinados pelos mais velhos para manter  ""o gosto dos cozinhados do antigamente""."</string>
+    <string name="restaurant_001_description">"O Restaurante O Forno está localizado junto à praça de touros de Almeirim e oferece aos seus clientes os melhores pratos de cozinha regional portuguesa do distrito Santarém. Algumas das suas especialidades são a sopa da pedra, grelhados de carne e peixe, carne de porco preto, enchidos de porco e famoso vinho regional de Ribatejo."</string>
+    <string name="restaurant_002_description">Situado junto à Praça de Touros de Almeirim, na típica zona dos restaurantes, é uma casa com tradição, a servir bons grelhados de carne e peixe, bem como especialidades regionais. Não falta a sopa da pedra, servida diariamente. A acompanhar, figuram os vinhos de produtores locais como os da Adega Cooperativa de Almeirim.</string>
+    <string name="restaurant_003_description">Não é lenda, é verdade que foi nesta casa que, com a Avó Mariana a fazer a Sopa de Pedra, Manuela e José Manuel Toucinho se iniciaram na actividade de restauração no ano de 1962. Hoje têm na filha Hélia, no genro João Simões, assim como nos netos (João e André Simões os continuadores da tradição.</string>
+    <string name="restaurant_004_description">Dos saberes das gentes ribatejanas, nasceram paladares inesquecíveis, mil sabores esventrados das terras e das pachorrentas águas do Tejo. A paixão de dizer Ribatejo, é a paixão da equipa da Tertúlia da Quinta , que se envolveu no legado gastronómico das gentes ribatejanas e privilegiou a cultura dos saberes e sabores típicos desta região e de Almeirim em particular.</string>
+    <string name="restaurant_005_description">Excelente comida tradicional onde não falta a famosa sopa de pedra, tudo servido com elevada qualidade e muita simpatia.</string>
+
+    <string name="restaurant_001_opening_hours_01">Wednesday to Monday: 11:30 &#8211; 15h30 e 18:30 &#8211; 22h30</string>
+    <string name="restaurant_001_opening_hours_02">Tuesday: Closed</string>
+    <string name="restaurant_002_opening_hours_01">Friday to Wednsday: 11:30 &#8211; 15:00 e 18:30 &#8211; 22:00</string>
+    <string name="restaurant_002_opening_hours_02">Thursday: Closed</string>
+    <string name="restaurant_003_opening_hours_01">Friday to Wednsday: 11:30 &#8211; 15:00 e 18:30 &#8211; 22:00</string>
+    <string name="restaurant_003_opening_hours_02">Thursday: Closed</string>
+    <string name="restaurant_004_opening_hours_01">Tuesday to Subday: 12:00 &#8211; 15:00 e 19:00h &#8211; 22:30</string>
+    <string name="restaurant_004_opening_hours_02">Monday: Closed</string>
+
+    <string name="restaurant_003_subtitle">The stone\'s soup pioneer</string>
+
+    <string name="restaurant_000_title">David Park</string>
+    <string name="restaurant_001_title">O Forno</string>
+    <string name="restaurant_002_title">O Pinheiro</string>
+    <string name="restaurant_003_title">O Toucinho</string>
+    <string name="restaurant_004_title">Tertulia da Quinta</string>
+    <string name="restaurant_005_title">Zezano</string>
 </resources>

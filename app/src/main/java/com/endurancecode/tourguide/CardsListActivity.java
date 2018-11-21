@@ -11,6 +11,11 @@ public class CardsListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /* Remove Action Bar drop shadow */
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setElevation(0);
+        }
+
         /* Set the content of the activity to use the activity_main.xml layout file */
         setContentView(R.layout.activity_cards_list);
 

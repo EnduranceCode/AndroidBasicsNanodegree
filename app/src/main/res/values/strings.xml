@@ -7,6 +7,7 @@
     <string name="park_sport_image_description">Parks &amp; Sports</string>
     <string name="restaurants_image_description">Restaurants Icon</string>
     <string name="hotels_image_description">Hotels Icon</string>
+    <string name="place_card_image">Place Card Image</string>
 
     <!-- Category Titles -->
     <string name="tourism_office_category">Tourism Office</string>

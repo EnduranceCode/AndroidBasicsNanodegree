@@ -133,8 +133,8 @@ public class HotelFragment extends Fragment {
         mSubtitle[1] = getString(R.string.hotel_001_subtitle);
         mSubtitle[2] = null;
         mSubtitle[3] = null;
-        mSubtitle[4] = getString(R.string.hotel_005_subtitle);
-        mSubtitle[5] = null;
+        mSubtitle[4] = null;
+        mSubtitle[5] = getString(R.string.hotel_005_subtitle);
 
         /* Initialize mTitle[] with the values for the existing {@link Place} object
          */

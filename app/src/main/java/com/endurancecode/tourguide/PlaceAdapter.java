@@ -78,7 +78,6 @@ public class PlaceAdapter extends ArrayAdapter {
             subTitleTextView.setVisibility(View.GONE);
         }
 
-
         /* Return the whole list item layout so that it can be shown in the ListView */
         return listItemView;
     }

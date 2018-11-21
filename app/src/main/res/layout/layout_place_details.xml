@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PlaceDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/card_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/place_card_image"
+            android:src="@drawable/card_hospedaria_abilio" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/mp_horizontal_big"
+            android:paddingLeft="@dimen/mp_horizontal_big"
+            android:paddingTop="@dimen/mp_normal_vertical"
+            android:paddingEnd="@dimen/mp_horizontal_big"
+            android:paddingRight="@dimen/mp_horizontal_big"
+            android:text="@string/hotel_001_title"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+
+        <TextView
+            android:id="@+id/subtitle_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/mp_horizontal_big"
+            android:paddingLeft="@dimen/mp_horizontal_big"
+            android:paddingEnd="@dimen/mp_horizontal_big"
+            android:paddingRight="@dimen/mp_horizontal_big"
+            android:paddingBottom="@dimen/mp_normal_vertical"
+            android:text="@string/hotel_001_subtitle"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+
+        <TextView
+            android:id="@+id/description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/mp_horizontal_big"
+            android:paddingLeft="@dimen/mp_horizontal_big"
+            android:paddingEnd="@dimen/mp_horizontal_big"
+            android:paddingRight="@dimen/mp_horizontal_big"
+            android:paddingBottom="@dimen/mp_vertical_big"
+            android:text="@string/hotel_001_description"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_vertical_big"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/address_icon"
+                android:paddingStart="@dimen/mp_horizontal_big"
+                android:paddingLeft="@dimen/mp_horizontal_big"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:src="@drawable/ic_map" />
+
+            <TextView
+                android:id="@+id/address_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="Rua São Tomé e Príncipe\nAlmeirim"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/coordinates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_vertical_big"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/coordinates_icon"
+                android:paddingStart="@dimen/mp_horizontal_big"
+                android:paddingLeft="@dimen/mp_horizontal_big"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:src="@drawable/ic_place" />
+
+            <TextView
+                android:id="@+id/coordinates_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="39.0000, 8.000"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/opening_hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_vertical_big"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/opening_hours_icon"
+                android:paddingStart="@dimen/mp_horizontal_big"
+                android:paddingLeft="@dimen/mp_horizontal_big"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:src="@drawable/ic_access_time" />
+
+            <TextView
+                android:id="@+id/opening_hours_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="@string/hotel_001_opening_hours_01"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_vertical_big"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/phone_icon"
+                android:paddingStart="@dimen/mp_horizontal_big"
+                android:paddingLeft="@dimen/mp_horizontal_big"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:src="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/phone_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="243 000 000"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/website_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_vertical_big"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/website_url_icon"
+                android:paddingStart="@dimen/mp_horizontal_big"
+                android:paddingLeft="@dimen/mp_horizontal_big"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:src="@drawable/ic_language" />
+
+            <TextView
+                android:id="@+id/website_url_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="https://abilio.com"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mp_vertical_big"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/email_icon"
+                android:paddingStart="@dimen/mp_horizontal_big"
+                android:paddingLeft="@dimen/mp_horizontal_big"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:src="@drawable/ic_email" />
+
+            <TextView
+                android:id="@+id/email_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mp_horizontal_big"
+                android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="abilio@abilio.com"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -8,6 +8,12 @@
     <string name="restaurants_image_description">Restaurants Icon</string>
     <string name="hotels_image_description">Hotels Icon</string>
     <string name="place_card_image">Place Card Image</string>
+    <string name="address_icon">Address Icon</string>
+    <string name="coordinates_icon">GPS Coordinates Icon</string>
+    <string name="opening_hours_icon">Opening Icon</string>
+    <string name="phone_icon">Phone Icon</string>
+    <string name="website_url_icon">Website URL Icon</string>
+    <string name="email_icon">E-Mail Icon</string>
 
     <!-- Category Titles -->
     <string name="tourism_office_category">Tourism Office</string>
@@ -25,12 +31,12 @@
     <string name="culture_005_description">Tendo sido atribuída uma Menção Honrosa, na categoria de Melhor Museu Português, pela APOM, o Museu Municipal de Almeirim é um espaço de cultura e tradição onde pode viajar no tempo e redescobrir a história de um povo à beira Tejo plantado.</string>
     <string name="culture_006_description">Desde sempre com grandes tradições taurinas, Almeirim viu ser construída, em terrenos que pertencem à Quinta da Alorna, uma praça de toiros em madeira com capacidade para 3000 pessoas. Tendo sido inaugurada em 22 de Outubro de 1938 foi palco de várias corridas, demolida mais tarde para dar lugar a uma moderna construção com excelentes condições não só para os artistas mas também para o publico aficcionado.</string>
 
-    <string name="culture_000_opening_hours_01">Monday to Friday: 09:30 &#8211; 12:30 e 14:00 &#8211; 18:00 </string>
-    <string name="culture_000_opening_hours_02">Second Saturday of each month: 9:30 &#8211; 13:00</string>
-    <string name="culture_001_opening_hours_01">One hour before the scheduled of the show</string>
-    <string name="culture_002_opening_hours_01">One hour before the scheduled of the show</string>
-    <string name="culture_003_opening_hours_01">Monday to Friday: 9h00 &#8211; 18:00</string>
-    <string name="culture_005_opening_hours_01">Tuesday to Friday: 9h30 &#8211; 12:30 e 14:00 &#8211; 16:30</string>
+    <string name="culture_000_opening_hours_01">Monday to Friday:\n9:30 &#8211; 12:30 and 14:00 &#8211; 18:00 </string>
+    <string name="culture_000_opening_hours_02">Second Saturday of each month:\n9:30 &#8211; 13:00</string>
+    <string name="culture_001_opening_hours_01">One hour before the show\'s schedule</string>
+    <string name="culture_002_opening_hours_01">One hour before the show\'s schedule</string>
+    <string name="culture_003_opening_hours_01">Monday to Friday:\n9h00 &#8211; 18:00</string>
+    <string name="culture_005_opening_hours_01">Tuesday to Friday:\n9h30 &#8211; 12:30 and 14:00 &#8211; 16:30</string>
 
     <string name="culture_000_title">Municipality Library</string>
     <string name="culture_001_title">Cultural Center of Fazendas de Almeirim</string>
@@ -48,7 +54,7 @@
     <string name="hotel_004_description">Com acesso Wi-Fi e estacionamento gratuitos, o Hotel O Novo Príncipe fica em Almeirim, uma cidade na zona rural perto do Rio Tejo. Dispõe de quartos modernos, uma recepção 24 horas e sala de jogos com mesas de bilhar.</string>
     <string name="hotel_005_description">A menos de uma hora de Lisboa em plena lezíria ribatejana e a curta distância das áreas urbanas de Santarém e Almeirim com os seus múltiplos serviços e pontos de interesse, dotada de habitações de elevada qualidade a um preço atrativo com todos os serviços e comodidades como ar condicionado e acesso sem fios à internet.</string>
 
-    <string name="hotel_001_opening_hours_01">Todos os dias: 09:00 &#8211; 24:00</string>
+    <string name="hotel_001_opening_hours_01">Todos os dias:\n09:00 &#8211; 24:00</string>
     <string name="hotel_004_opening_hours_01">Aberto 24</string>
 
     <string name="hotel_001_subtitle">Confort and quality at your service</string>
@@ -69,8 +75,8 @@
     <string name="park_sport_004_description">Parque com excelentes condições e equipamentos, dos quais fazem parte campos de futebol, pista de atletismo e um pavilhão.</string>
     <string name="park_sport_005_description">No interior existem duas piscinas, uma de 25 metros, e um "chapinheiro". No exterior, 2 piscinas, uma grande com duas zonas distintas (uma de natação e outra de lazer) e uma pequena para bebés.</string>
 
-    <string name="park_sport_005_opening_hours_01">Monday to Friday: 08:00 &#8211; 21:30</string>
-    <string name="park_sport_005_opening_hours_02">Saturday: 8:00 &#8211; 18:00</string>
+    <string name="park_sport_005_opening_hours_01">Monday to Friday:\n8:00 &#8211; 21:30</string>
+    <string name="park_sport_005_opening_hours_02">Saturday:\n8:00 &#8211; 18:00</string>
 
     <string name="park_sport_000_title">Sport Leisure Circuit</string>
     <string name="park_sport_001_title">Municipality Stadium</string>
@@ -88,14 +94,14 @@ Ao longo do seu percurso procurou sempre respeitar as tradições, seguindo os m
     <string name="restaurant_004_description">Dos saberes das gentes ribatejanas, nasceram paladares inesquecíveis, mil sabores esventrados das terras e das pachorrentas águas do Tejo. A paixão de dizer Ribatejo, é a paixão da equipa da Tertúlia da Quinta , que se envolveu no legado gastronómico das gentes ribatejanas e privilegiou a cultura dos saberes e sabores típicos desta região e de Almeirim em particular.</string>
     <string name="restaurant_005_description">Excelente comida tradicional onde não falta a famosa sopa de pedra, tudo servido com elevada qualidade e muita simpatia.</string>
 
-    <string name="restaurant_001_opening_hours_01">Wednesday to Monday: 11:30 &#8211; 15h30 e 18:30 &#8211; 22h30</string>
-    <string name="restaurant_001_opening_hours_02">Tuesday: Closed</string>
-    <string name="restaurant_002_opening_hours_01">Friday to Wednsday: 11:30 &#8211; 15:00 e 18:30 &#8211; 22:00</string>
-    <string name="restaurant_002_opening_hours_02">Thursday: Closed</string>
-    <string name="restaurant_003_opening_hours_01">Friday to Wednsday: 11:30 &#8211; 15:00 e 18:30 &#8211; 22:00</string>
-    <string name="restaurant_003_opening_hours_02">Thursday: Closed</string>
-    <string name="restaurant_004_opening_hours_01">Tuesday to Subday: 12:00 &#8211; 15:00 e 19:00h &#8211; 22:30</string>
-    <string name="restaurant_004_opening_hours_02">Monday: Closed</string>
+    <string name="restaurant_001_opening_hours_01">Wednesday to Monday:\n11:30 &#8211; 15h30 and 18:30 &#8211; 22h30</string>
+    <string name="restaurant_001_opening_hours_02">Tuesday:\nClosed</string>
+    <string name="restaurant_002_opening_hours_01">Friday to Wednsday:\n11:30 &#8211; 15:00 and 18:30 &#8211; 22:00</string>
+    <string name="restaurant_002_opening_hours_02">Thursday:\nClosed</string>
+    <string name="restaurant_003_opening_hours_01">Friday to Wednsday:\n11:30 &#8211; 15:00 and 18:30 &#8211; 22:00</string>
+    <string name="restaurant_003_opening_hours_02">Thursday:\nClosed</string>
+    <string name="restaurant_004_opening_hours_01">Tuesday to Subday:\n12:00 &#8211; 15:00 and 19:00h &#8211; 22:30</string>
+    <string name="restaurant_004_opening_hours_02">Monday:\nClosed</string>
 
     <string name="restaurant_003_subtitle">The stone\'s soup pioneer</string>
 

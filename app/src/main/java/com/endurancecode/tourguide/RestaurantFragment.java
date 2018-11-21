@@ -1,10 +1,12 @@
 package com.endurancecode.tourguide;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -190,6 +192,33 @@ public class RestaurantFragment extends Fragment {
          * Do this by calling the setAdapter method on the {@link ListView} object and pass in
          */
         listView.setAdapter(placeAdapter);
+
+        /* Set OnItemClickListener in the ListView items */
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                /* Get the selected {@link Place} object */
+                Place selectedPlace = places.get(position);
+
+                /* Create Intent to open the Place Details Activity */
+                Intent placeDetailsIntent = new Intent(getContext(), PlaceDetailsActivity.class);
+
+                /* Send song's details to Details Activity */
+                placeDetailsIntent.putExtra("ADDRESS", selectedPlace.getAddress());
+                placeDetailsIntent.putExtra("CARD_IMAGE", selectedPlace.getCardImageResourceID());
+                placeDetailsIntent.putExtra("COORDINATES", selectedPlace.getCoordinates());
+                placeDetailsIntent.putExtra("DESCRIPTION", selectedPlace.getDescription());
+                placeDetailsIntent.putExtra("EMAIL", selectedPlace.getEmail());
+                placeDetailsIntent.putExtra("OPENING_HOURS", selectedPlace.getOpeningHours());
+                placeDetailsIntent.putExtra("PHONE", selectedPlace.getPhone());
+                placeDetailsIntent.putExtra("SUBTITLE", selectedPlace.getSubtitle());
+                placeDetailsIntent.putExtra("TITLE", selectedPlace.getTitle());
+                placeDetailsIntent.putExtra("WEBSITE_URL", selectedPlace.getWebsiteURL());
+
+                /* Start the detailsIntent (Place Details Activity) */
+                getContext().startActivity(placeDetailsIntent);
+            }
+        });
 
         /* Returns the culture's Place objects ListView */
         return parkSportView;

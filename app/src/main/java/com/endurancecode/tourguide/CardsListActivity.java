@@ -11,13 +11,18 @@ public class CardsListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /* Set the content of the activity to use the activity_cards_list layout file */
+        setContentView(R.layout.activity_cards_list);
+
+        /* Provide up navigation following documentation at
+         * https://developer.android.com/training/implementing-navigation/ancestral
+         */
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         /* Remove Action Bar drop shadow */
         if (getSupportActionBar() != null) {
             getSupportActionBar().setElevation(0);
         }
-
-        /* Set the content of the activity to use the activity_main.xml layout file */
-        setContentView(R.layout.activity_cards_list);
 
         /* Find the view pager that will allow the user to swipe between fragments */
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);

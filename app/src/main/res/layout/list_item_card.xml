@@ -26,8 +26,7 @@
                 android:id="@+id/list_item_card_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@drawable/card_besteiros" />
+                android:adjustViewBounds="true" />
 
             <TextView
                 android:id="@+id/list_item_card_title"
@@ -38,9 +37,7 @@
                 android:paddingTop="@dimen/mp_normal_vertical"
                 android:paddingEnd="@dimen/mp_normal_horizontal"
                 android:paddingRight="@dimen/mp_normal_horizontal"
-                android:text="Casa de Besteiros"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
             <TextView
                 android:id="@+id/list_item_card_subtitle"
@@ -51,7 +48,6 @@
                 android:paddingEnd="@dimen/mp_normal_horizontal"
                 android:paddingRight="@dimen/mp_normal_horizontal"
                 android:paddingBottom="@dimen/mp_normal_vertical"
-                android:text="Turismo Rural"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
         </LinearLayout>
     </android.support.v7.widget.CardView>

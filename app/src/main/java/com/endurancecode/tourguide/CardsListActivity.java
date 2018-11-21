@@ -28,6 +28,12 @@ public class CardsListActivity extends AppCompatActivity {
         /* Set the adapter onto the view pager */
         viewPager.setAdapter(categoryAdapter);
 
+        /* Get the chosen item in the main activity*/
+        int chosenItem = getIntent().getIntExtra("CHOSEN_ITEM", 0);
+
+        /* Sets the chosen item in the main activity */
+        viewPager.setCurrentItem(chosenItem);
+
         /* Find the tab layout that shows the tabs */
         TabLayout tabLayout = (TabLayout) findViewById(R.id.category_menu_tabs);
 

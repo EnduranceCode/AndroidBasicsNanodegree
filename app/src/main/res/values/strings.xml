@@ -22,6 +22,13 @@
     <string name="restaurant_category">Restaurants</string>
     <string name="hotel_category">Hotels</string>
 
+    <!-- Strings for culture tourism office -->
+    <string name="tourism_office_address">Rua Dionísio Saraiva\n2080&#8211;052 Almeirim</string>
+    <string name="tourism_office_coordinates">39.208902, -8.628723</string>
+    <string name="tourism_office_opening_hours_01">Monday to Friday:\n9h00 &#8211; 18:00</string>
+    <string name="tourism_office_phone">243 594 107</string>
+    <string name="tourism_office_title">Tourism Office</string>
+
     <!-- Strings for culture category place objects -->
     <string name="culture_000_description">Para falarmos da actual biblioteca devemos recuar ao ano de 1937, mais precisamente o dia 25 de Novembro, data em que foi inaugurada a Biblioteca Pública de Almeirim, fruto da iniciativa do períodico "O Vale do Tejo" e a colaboração de alguns ilustres almeirinenses de boa vontade.</string>
     <string name="culture_001_description">O Centro Cultural da Vila de Fazendas de Almeirim inaugurado em 2016, com sala de exposições, cine-teatro, biblioteca no primeiro piso com parque de estacionamento</string>

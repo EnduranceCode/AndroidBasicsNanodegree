@@ -12,6 +12,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /* Find the tourism office card */
+        View tourismOfficeCardView = (View) findViewById(R.id.tourism_office);
+
+        tourismOfficeCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tourismOfficeActivityIntent = new Intent(MainActivity.this, TourismOfficeActivity.class);
+                startActivity(tourismOfficeActivityIntent);
+            }
+        });
+
         /* Find the culture's category card */
         View cultureCardView = (View) findViewById(R.id.culture);
 

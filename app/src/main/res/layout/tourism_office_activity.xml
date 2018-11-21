@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PlaceDetailsActivity">
+    tools:context=".TourismOfficeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,10 +16,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/place_card_image" />
+            android:contentDescription="@string/place_card_image"
+            android:src="@drawable/card_posto_turismo" />
 
         <TextView
-            android:id="@+id/title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/mp_horizontal_big"
@@ -27,29 +27,9 @@
             android:paddingTop="@dimen/mp_normal_vertical"
             android:paddingEnd="@dimen/mp_horizontal_big"
             android:paddingRight="@dimen/mp_horizontal_big"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
-
-        <TextView
-            android:id="@+id/subtitle_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/mp_horizontal_big"
-            android:paddingLeft="@dimen/mp_horizontal_big"
-            android:paddingEnd="@dimen/mp_horizontal_big"
-            android:paddingRight="@dimen/mp_horizontal_big"
             android:paddingBottom="@dimen/mp_normal_vertical"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
-
-        <TextView
-            android:id="@+id/description_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/mp_horizontal_big"
-            android:paddingLeft="@dimen/mp_horizontal_big"
-            android:paddingEnd="@dimen/mp_horizontal_big"
-            android:paddingRight="@dimen/mp_horizontal_big"
-            android:paddingBottom="@dimen/mp_vertical_big"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+            android:text="@string/tourism_office_title"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,17 +49,16 @@
                 android:src="@drawable/ic_map" />
 
             <TextView
-                android:id="@+id/address_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingEnd="@dimen/mp_horizontal_big"
                 android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="@string/tourism_office_address"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/coordinates"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/mp_vertical_big"
@@ -97,17 +76,16 @@
                 android:src="@drawable/ic_place" />
 
             <TextView
-                android:id="@+id/coordinates_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingEnd="@dimen/mp_horizontal_big"
                 android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="@string/tourism_office_coordinates"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/opening_hours"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/mp_vertical_big"
@@ -125,17 +103,16 @@
                 android:src="@drawable/ic_access_time" />
 
             <TextView
-                android:id="@+id/opening_hours_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingEnd="@dimen/mp_horizontal_big"
                 android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="@string/tourism_office_opening_hours_01"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/mp_vertical_big"
@@ -158,62 +135,7 @@
                 android:layout_height="wrap_content"
                 android:paddingEnd="@dimen/mp_horizontal_big"
                 android:paddingRight="@dimen/mp_horizontal_big"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-                tools:ignore="RtlSymmetry" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/website_url"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/mp_vertical_big"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/website_url_icon"
-                android:paddingStart="@dimen/mp_horizontal_big"
-                android:paddingLeft="@dimen/mp_horizontal_big"
-                android:paddingEnd="@dimen/mp_horizontal_big"
-                android:paddingRight="@dimen/mp_horizontal_big"
-                android:src="@drawable/ic_language" />
-
-            <TextView
-                android:id="@+id/website_url_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingEnd="@dimen/mp_horizontal_big"
-                android:paddingRight="@dimen/mp_horizontal_big"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-                tools:ignore="RtlSymmetry" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/mp_vertical_big"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/email_icon"
-                android:paddingStart="@dimen/mp_horizontal_big"
-                android:paddingLeft="@dimen/mp_horizontal_big"
-                android:paddingEnd="@dimen/mp_horizontal_big"
-                android:paddingRight="@dimen/mp_horizontal_big"
-                android:src="@drawable/ic_email" />
-
-            <TextView
-                android:id="@+id/email_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingEnd="@dimen/mp_horizontal_big"
-                android:paddingRight="@dimen/mp_horizontal_big"
+                android:text="@string/tourism_office_phone"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>

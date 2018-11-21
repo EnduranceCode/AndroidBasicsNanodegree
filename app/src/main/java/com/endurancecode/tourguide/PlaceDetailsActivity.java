@@ -12,7 +12,7 @@ public class PlaceDetailsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /* Set the content of the activity to use the song_details.xmllayout file */
+        /* Set the content of the activity to use the song_details.xml layout file */
         setContentView(R.layout.layout_place_details);
 
         /* Provide up navigation following documentation at

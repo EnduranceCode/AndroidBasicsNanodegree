@@ -24,8 +24,8 @@ public class PlaceAdapter extends ArrayAdapter {
     public PlaceAdapter(Activity context, ArrayList<Place> places) {
         /* Here, we initialize the ArrayAdapter's internal storage for the context and the list.
          * the second argument is used when the ArrayAdapter is populating a single TextView.
-         * Because this is a custom adapter for two TextViews, the adapter is not
-         * going to use this second argument, so it can be any value. Here, we used 0.
+         * Because this is a custom adapter, the adapter is not going to use this second argument,
+         * so it can be any value. Here, we used 0.
          */
         super(context, 0, places);
     }
@@ -43,9 +43,8 @@ public class PlaceAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         /* Check if the existing view is being reused, otherwise inflate the view */
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_card, parent, false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_card, parent, false);
         }
 
         /* Get the {@link Place} object located at this position in the list */
@@ -55,13 +54,13 @@ public class PlaceAdapter extends ArrayAdapter {
         /* Find the views on the list_item_card.xml layout
          */
         /* Find the ImageView for the card image on the list_item_card.xml layout */
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.list_item_card_image);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.list_item_card_image);
 
         /* Find the TextView for the card title in the list_item_card.xml layout */
-        TextView titleTextView = (TextView) listItemView.findViewById(R.id.list_item_card_title);
+        TextView titleTextView = (TextView) convertView.findViewById(R.id.list_item_card_title);
 
         /* Find the TextView for the card subtitle in the list_item_card.xml layout */
-        TextView subTitleTextView = (TextView) listItemView.findViewById(R.id.list_item_card_subtitle);
+        TextView subTitleTextView = (TextView) convertView.findViewById(R.id.list_item_card_subtitle);
 
         /* Set the current Place object data on the views of the list_item_card.xml layout
          */
@@ -79,6 +78,6 @@ public class PlaceAdapter extends ArrayAdapter {
         }
 
         /* Return the whole list item layout so that it can be shown in the ListView */
-        return listItemView;
+        return convertView;
     }
 }

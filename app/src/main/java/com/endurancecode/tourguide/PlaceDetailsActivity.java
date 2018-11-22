@@ -20,7 +20,7 @@ public class PlaceDetailsActivity extends AppCompatActivity {
          */
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /* Stores the data sent from SongAdapter */
+        /* Stores the data sent from PlaceAdapter */
         String address = getIntent().getStringExtra("ADDRESS");
         int cardImage = getIntent().getIntExtra("CARD_IMAGE", 0);
         double[] coordinates = getIntent().getDoubleArrayExtra("COORDINATES");
@@ -75,14 +75,14 @@ public class PlaceDetailsActivity extends AppCompatActivity {
         /* Check if opening hours exists and if so set it */
         if (openingHours != null) {
             openingHoursView.setVisibility(View.VISIBLE);
-            String openingHoursTextDisplay = "";
+            StringBuilder openingHoursTextDisplay = new StringBuilder();
             for (int index = 0; index < openingHours.length; index++) {
-                openingHoursTextDisplay = openingHoursTextDisplay + openingHours[index];
+                openingHoursTextDisplay.append(openingHours[index]);
                 if (index != openingHours.length - 1) {
-                    openingHoursTextDisplay += "\n";
+                    openingHoursTextDisplay.append("\n");
                 }
             }
-            openingHoursTextView.setText(openingHoursTextDisplay);
+            openingHoursTextView.setText(openingHoursTextDisplay.toString());
         } else {
             openingHoursView.setVisibility(View.GONE);
         }

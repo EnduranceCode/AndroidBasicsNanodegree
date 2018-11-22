@@ -12,7 +12,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PlaceAdapter extends ArrayAdapter {
+/**
+ * {@link PlaceAdapter} is an {@link ArrayAdapter} that can provide the layout for each list
+ * based on a data source, which is a list of {@link Place} objects.
+ * Since this adapter is used to convert the data source of type Place to a view, we can avoid
+ * explicit casting by having the class extend ArrayAdapter<Place>
+ */
+public class PlaceAdapter extends ArrayAdapter<Place> {
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
      * The context is used to inflate the layout file, and the list is the data we want
@@ -48,8 +54,7 @@ public class PlaceAdapter extends ArrayAdapter {
         }
 
         /* Get the {@link Place} object located at this position in the list */
-        /* TODO: Check why we have to cast getItem(position) */
-        Place currentPlace = (Place) getItem(position);
+        Place currentPlace = getItem(position);
 
         /* Find the views on the list_item_card.xml layout
          */

@@ -1,4 +1,4 @@
-package com.endurancecode.googledevelopernanodegreescholarship;
+package com.endurancecode.quakereport;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

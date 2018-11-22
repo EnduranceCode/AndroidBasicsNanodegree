@@ -64,12 +64,12 @@ public class HotelFragment extends Fragment {
 
         /* Initialize mAddress[] with the values for the existing {@link Place} object
          */
-        mAddress[0] = "Quinta do Variorum\nEstrada do Arneiro\nArneiro da Volta\n2080-074 Almeirim";
-        mAddress[1] = "Travessa do Calvário, 2\n2080-174 Almeirim\"";
-        mAddress[2] = "Rua Alfredo Godinho, 6\n2080-067 Almeirim";
-        mAddress[3] = "Rua de Timor, 4\n2080-103 Almeirim";
-        mAddress[4] = "Rua de Timor, 1\n2080-103 Almeirim";
-        mAddress[5] = "Almeirim\n2080-052 Almeirim";
+        mAddress[0] = getString(R.string.hotel_000_address);
+        mAddress[1] = getString(R.string.hotel_001_address);
+        mAddress[2] = getString(R.string.hotel_002_address);
+        mAddress[3] = getString(R.string.hotel_003_address);
+        mAddress[4] = getString(R.string.hotel_004_address);
+        mAddress[5] = getString(R.string.hotel_005_address);
 
         /* Initialize mCardImage[] with the values for the existing {@link Place} object
          */
@@ -101,12 +101,12 @@ public class HotelFragment extends Fragment {
         /* Initialize mEmail[] with the values for the existing {@link Place} object
          * it CAN have null values
          */
-        mEmail[0] = "agroturismo@casadebesteiros.pt";
-        mEmail[1] = "reservas@hospedariaoabilio.com";
+        mEmail[0] = getString(R.string.hotel_000_email);
+        mEmail[1] = getString(R.string.hotel_001_email);
         mEmail[2] = null;
         mEmail[3] = null;
-        mEmail[4] = "geral@hotelonovoprincipe.com";
-        mEmail[5] = "reservas.quintagafaria@gmail.com";
+        mEmail[4] = getString(R.string.hotel_004_email);
+        mEmail[5] = getString(R.string.hotel_005_email);
 
         /* Initialize mOpeningHours[] with the values for the existing {@link Place} object
          * it CAN have null values
@@ -121,12 +121,12 @@ public class HotelFragment extends Fragment {
         /* Initialize mPhone[] with the values for the existing {@link Place} object
          * it CAN have null values
          */
-        mPhone[0] = "243 595 474";
-        mPhone[1] = "243 592 602";
-        mPhone[2] = "243 593 263";
-        mPhone[3] = "243 592 057";
-        mPhone[4] = "243 570 600";
-        mPhone[5] = "919 762 584";
+        mPhone[0] = getString(R.string.hotel_000_phone);
+        mPhone[1] = getString(R.string.hotel_001_phone);
+        mPhone[2] = getString(R.string.hotel_002_phone);
+        mPhone[3] = getString(R.string.hotel_003_phone);
+        mPhone[4] = getString(R.string.hotel_004_phone);
+        mPhone[5] = getString(R.string.hotel_005_phone);
 
         /* Initialize mSubtitle[] with the values for the existing {@link Place} object
          * it CAN have null values
@@ -149,12 +149,12 @@ public class HotelFragment extends Fragment {
 
         /* Initialize mWebsiteURL[] with the values for the existing {@link Place} object
          */
-        mWebsiteURL[0] = "www.casadebesteiros.pt";
-        mWebsiteURL[1] = "www.hospedariaoabilio.com";
+        mWebsiteURL[0] = getString(R.string.hotel_000_website_url);
+        mWebsiteURL[1] = getString(R.string.hotel_001_website_url);
         mWebsiteURL[2] = null;
         mWebsiteURL[3] = null;
-        mWebsiteURL[4] = "http://hotelonovoprincipe.com";
-        mWebsiteURL[5] = "http://www.quintadagafaria.com";
+        mWebsiteURL[4] = getString(R.string.hotel_004_website_url);
+        mWebsiteURL[5] = getString(R.string.hotel_005_website_url);
 
         /* Create an ArrayList that stores objects of type Place. Those objects contain the data about
          * the places shown in the app.

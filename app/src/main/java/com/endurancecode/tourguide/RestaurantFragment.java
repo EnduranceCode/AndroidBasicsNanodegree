@@ -64,12 +64,12 @@ public class RestaurantFragment extends Fragment {
 
         /* Initialize mAddress[] with the values for the existing {@link Place} object
          */
-        mAddress[0] = "Largo da Praça de Toiros, 15\n2080-030 Almeirim";
-        mAddress[1] = "Largo da Praça de Toiros, 23\n2080-030 Almeirim";
-        mAddress[2] = "Largo da Praça de Toiros, 41\n2080-030 Almeirim";
-        mAddress[3] = "Rua de Timor, 2 - 5\n2080-095 Almeirim";
-        mAddress[4] = "Largo da Praça de Toiros, 37\n2080-030 Almeirim";
-        mAddress[5] = "Largo da Praça de Toiros, 5\n2080-030 Almeirim";
+        mAddress[0] = getString(R.string.restaurant_000_address);
+        mAddress[1] = getString(R.string.restaurant_001_address);
+        mAddress[2] = getString(R.string.restaurant_002_address);
+        mAddress[3] = getString(R.string.restaurant_003_address);
+        mAddress[4] = getString(R.string.restaurant_004_address);
+        mAddress[5] = getString(R.string.restaurant_005_address);
 
         /* Initialize mCardImage[] with the values for the existing {@link Place} object
          */
@@ -105,7 +105,7 @@ public class RestaurantFragment extends Fragment {
         mEmail[1] = null;
         mEmail[2] = null;
         mEmail[3] = null;
-        mEmail[4] = "reservas@tertuliadaquinta.com";
+        mEmail[4] = getString(R.string.restaurant_004_email);
         mEmail[5] = null;
 
         /* Initialize mOpeningHours[] with the values for the existing {@link Place} object
@@ -121,12 +121,12 @@ public class RestaurantFragment extends Fragment {
         /* Initialize mPhone[] with the values for the existing {@link Place} object
          * it CAN have null values
          */
-        mPhone[0] = "243 591 475";
-        mPhone[1] = "243 241 163";
-        mPhone[2] = "243 592 052";
-        mPhone[3] = "243 592 237";
-        mPhone[4] = "243 593 008";
-        mPhone[5] = "243 594 130";
+        mPhone[0] = getString(R.string.restaurant_000_phone);
+        mPhone[1] = getString(R.string.restaurant_001_phone);
+        mPhone[2] = getString(R.string.restaurant_002_phone);
+        mPhone[3] = getString(R.string.restaurant_003_phone);
+        mPhone[4] = getString(R.string.restaurant_004_phone);
+        mPhone[5] = getString(R.string.restaurant_005_phone);
 
         /* Initialize mSubtitle[] with the values for the existing {@link Place} object
          * it CAN have null values
@@ -149,11 +149,11 @@ public class RestaurantFragment extends Fragment {
 
         /* Initialize mWebsiteURL[] with the values for the existing {@link Place} object
          */
-        mWebsiteURL[0] = "http://www.davidparque.rbx.pt";
-        mWebsiteURL[1] = "http://restauranteoforno.pt";
+        mWebsiteURL[0] = getString(R.string.restaurant_000_website_url);
+        mWebsiteURL[1] = getString(R.string.restaurant_001_website_url);
         mWebsiteURL[2] = null;
-        mWebsiteURL[3] = "http://www.toucinho.com";
-        mWebsiteURL[4] = "http://www.tertuliadaquinta.com";
+        mWebsiteURL[3] = getString(R.string.restaurant_003_website_url);
+        mWebsiteURL[4] = getString(R.string.restaurant_004_website_url);
         mWebsiteURL[5] = null;
 
         /* Create an ArrayList that stores objects of type Place. Those objects contain the data about
@@ -176,8 +176,8 @@ public class RestaurantFragment extends Fragment {
                     mWebsiteURL[index]));
         }
 
-        /* Create a custom {@link PlaceAdapter}, whose data source is a list of {@link Place} objects. The
-         * adapter uses list_item_card.xml layout to create layouts for each item in the list.
+        /* Create a custom {@link PlaceAdapter}, whose data source is a list of {@link Place} objects.
+         * The adapter uses list_item_card.xml layout to create layouts for each item in the list.
          */
         PlaceAdapter placeAdapter = new PlaceAdapter(getActivity(), places);
 

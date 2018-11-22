@@ -64,13 +64,13 @@ public class CultureFragment extends Fragment {
 
         /* Initialize mAddress[] with the values for the existing {@link Place} object
          */
-        mAddress[0] = "Parque Alfredo Bento Calado\nAvenida 25 de Abril\n2080-094 Almeirim";
-        mAddress[1] = "Rua Marechal Carmona\n2080-587 Fazendas de Almeirim";
-        mAddress[2] = "Praça da Républica\n2080-044 Almeirim";
-        mAddress[3] = "Rua Dionísio Saraiva\n2080-052 Almeirim";
-        mAddress[4] = "Rua Conde da Taipa\n2080-126 Almeirim";
-        mAddress[5] = "Centro Coordenador de Transportes Terrestres\nRua de Coruche\n2080-094 Almeirim";
-        mAddress[6] = "Largo da Praça de Touros\n2080-030 Almeirim";
+        mAddress[0] = getString(R.string.culture_000_address);
+        mAddress[1] = getString(R.string.culture_001_address);
+        mAddress[2] = getString(R.string.culture_002_address);
+        mAddress[3] = getString(R.string.culture_003_address);
+        mAddress[4] = getString(R.string.culture_004_address);
+        mAddress[5] = getString(R.string.culture_005_address);
+        mAddress[6] = getString(R.string.culture_006_address);
 
         /* Initialize mCardImage[] with the values for the existing {@link Place} object
          */
@@ -105,12 +105,12 @@ public class CultureFragment extends Fragment {
         /* Initialize mEmail[] with the values for the existing {@link Place} object
          * it CAN have null values
          */
-        mEmail[0] = "biblioteca@almeirim.pt";
-        mEmail[1] = "actividadesculturais@cm-almeirim.pt";
-        mEmail[2] = "actividadesculturais@cm-almeirim.pt";
+        mEmail[0] = getString(R.string.culture_000_email);
+        mEmail[1] = getString(R.string.culture_001_email);
+        mEmail[2] = getString(R.string.culture_002_email);
         mEmail[3] = null;
         mEmail[4] = null;
-        mEmail[5] = "museu@cm-almeirim.pt";
+        mEmail[5] = getString(R.string.culture_005_email);
         mEmail[6] = null;
 
         /* Initialize mOpeningHours[] with the values for the existing {@link Place} object
@@ -127,13 +127,13 @@ public class CultureFragment extends Fragment {
         /* Initialize mPhone[] with the values for the existing {@link Place} object
          * it CAN have null values
          */
-        mPhone[0] = "243 594 122";
+        mPhone[0] = getString(R.string.culture_000_phone);
         mPhone[1] = null;
         mPhone[2] = null;
         mPhone[3] = null;
         mPhone[4] = null;
-        mPhone[5] = "243 594 136";
-        mPhone[6] = "243 594 020";
+        mPhone[5] = getString(R.string.culture_005_phone);
+        mPhone[6] = getString(R.string.culture_006_phone);
 
         /* Initialize mSubtitle[] with the values for the existing {@link Place} object
          * it CAN have null values
@@ -163,7 +163,7 @@ public class CultureFragment extends Fragment {
         mWebsiteURL[2] = null;
         mWebsiteURL[3] = null;
         mWebsiteURL[4] = null;
-        mWebsiteURL[5] = "http://museualmeirim.blogspot.com";
+        mWebsiteURL[5] = getString(R.string.culture_005_website_url);
         mWebsiteURL[6] = null;
 
         /* Create an ArrayList that stores objects of type Place. Those objects contain the data about

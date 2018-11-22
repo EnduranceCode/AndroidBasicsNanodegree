@@ -64,12 +64,12 @@ public class ParkSportFragment extends Fragment {
 
         /* Initialize mAddress[] with the values for the existing {@link Place} object
          */
-        mAddress[0] = "Rua do Campo da Bola\n2080-147 Almeirim";
-        mAddress[1] = "Av. D Joáo I\n2080-014 Almeirim";
-        mAddress[2] = "Praça da República\n2080-000 Almeirim";
-        mAddress[3] = "Av. D Joáo I\n2080-014 Almeirim";
-        mAddress[4] = "Rua Condessa da Junqueira\n2080-069 Almeirim ";
-        mAddress[5] = "Av. D Joáo I\n2080-014 Almeirim";
+        mAddress[0] = getString(R.string.park_sport_000_address);
+        mAddress[1] = getString(R.string.park_sport_001_address);
+        mAddress[2] = getString(R.string.park_sport_002_address);
+        mAddress[3] = getString(R.string.park_sport_003_address);
+        mAddress[4] = getString(R.string.park_sport_004_address);
+        mAddress[5] = getString(R.string.park_sport_005_address);
 
         /* Initialize mCardImage[] with the values for the existing {@link Place} object
          */
@@ -126,7 +126,7 @@ public class ParkSportFragment extends Fragment {
         mPhone[2] = null;
         mPhone[3] = null;
         mPhone[4] = null;
-        mPhone[5] = "243 594 130";
+        mPhone[5] = getString(R.string.park_sport_005_phone);
 
         /* Initialize mSubtitle[] with the values for the existing {@link Place} object
          * it CAN have null values

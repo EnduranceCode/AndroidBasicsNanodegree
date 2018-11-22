@@ -52,6 +52,10 @@ The goal is to create a Tour Guide App which presents relevant information to a 
 
 The code developed following the Multi-screen Apps lessons is stored in the folder [study-multi-screen-apps](./study-multi-screen-apps) of this repository. 
 
+### Networking
+
+The code developed following the Networking lessons is stored in the folder [study-networking](./study-networking).
+
 ## Practice Sets
 
 ### Practice Set: Object-Oriented Programming 

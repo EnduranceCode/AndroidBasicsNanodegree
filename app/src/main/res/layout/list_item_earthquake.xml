@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_earthquake"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingEnd="@dimen/mp_horizontal_big"
+    android:paddingRight="@dimen/mp_horizontal_big">
+
+    <TextView
+        android:id="@+id/magnitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mp_horizontal_big"
+        android:layout_marginLeft="@dimen/mp_horizontal_big"
+        android:paddingTop="@dimen/mp_vertical_normal"
+        android:paddingBottom="@dimen/mp_vertical_normal"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        tools:text="6.2" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mp_horizontal_big"
+        android:layout_marginLeft="@dimen/mp_horizontal_big"
+        android:layout_weight="1"
+        android:paddingTop="@dimen/mp_vertical_normal"
+        android:paddingBottom="@dimen/mp_vertical_normal"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        tools:text="San Francisco" />
+
+    <TextView
+        android:id="@+id/date_human"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mp_horizontal_big"
+        android:layout_marginLeft="@dimen/mp_horizontal_big"
+        android:paddingTop="@dimen/mp_vertical_normal"
+        android:paddingBottom="@dimen/mp_vertical_normal"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        tools:text="Feb 6, 1971" />
+</LinearLayout>

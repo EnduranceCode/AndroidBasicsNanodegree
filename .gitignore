@@ -67,6 +67,7 @@ proguard/
 .signing/
 
 # User-specific configurations
+.idea/assetWizardSettings.xml
 .idea/caches/
 .idea/dictionaries/
 .idea/libraries/

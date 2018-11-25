@@ -30,16 +30,11 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        /* Create an ArrayList that stores objects of type {@link Earthquake}
+        /*
+         * Create an ArrayList that stores objects of type {@link Earthquake} using the method
+         * extractEarthquakes() from the {@link QueryUtils} class
          */
-        ArrayList<Earthquake> earthquakes = new ArrayList<>();
-        earthquakes.add(new Earthquake(6.2, "San Francisco", 0));
-        earthquakes.add(new Earthquake(6.2, "London", 0));
-        earthquakes.add(new Earthquake(6.2, "Tokyo", 0));
-        earthquakes.add(new Earthquake(6.2, "Mexico City", 0));
-        earthquakes.add(new Earthquake(6.2, "Moscow", 0));
-        earthquakes.add(new Earthquake(6.2, "Rio de Janeiro", 0));
-        earthquakes.add(new Earthquake(6.2, "Paris", 0));
+        ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
 
         /* Find a reference to the {@link ListView} in the layout */
         ListView earthquakeListView = findViewById(R.id.list);

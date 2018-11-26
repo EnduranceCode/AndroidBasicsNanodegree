@@ -21,6 +21,12 @@ import java.util.Locale;
  * explicit casting by having the class extend ArrayAdapter<Earthquake>
  */
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
+    /*
+     * The part of the location string from the USGS service that we use to determine
+     * whether or not there is a location offset present ("5km N of Cairo, Egypt").
+     */
+    private static final String LOCATION_SEPARATOR = " of ";
+
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
      * The context is used to inflate the layout file, and the list is the data we want
@@ -61,19 +67,62 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         /* Find TextView for the earthquake location */
         TextView locationTextView = convertView.findViewById(R.id.location);
 
+        /* Find TextView for the earthquake location offset */
+        TextView locationOffsetTextView = convertView.findViewById(R.id.location_offset);
+
         /* Find the TextView for the earthquake date */
         TextView dateTextView = convertView.findViewById(R.id.formatted_date);
 
         /* Find the TextView for the earthquake time */
         TextView timeTextView = convertView.findViewById(R.id.formatted_time);
 
-        /* Set the current {@link Earthquake} object data on the TextViews of list_item_earthquake.xml
+        /*
+         * Set the current {@link Earthquake} object data on the TextViews of list_item_earthquake.xml
          */
         /* Get the magnitude from the current {@link Earthquake} object and set it on the adequate TextView */
         magnitudeTextView.setText(Double.toString(currentEarthquake.getMagnitude()));
 
-        /* Get the location from the current {@link Earthquake} object and set it on the adequate TextView */
-        locationTextView.setText(currentEarthquake.getLocation());
+        /*
+         * Get the location from the current {@link Earthquake} object and
+         * if the original location string (i.e. "5km N of Cairo, Egypt") contains
+         * a primary location (Cairo, Egypt) and a location offset (5km N of that city)
+         * then store the primary location separately from the location offset in 2 Strings,
+         * so they can be displayed in 2 TextViews.
+         */
+        String jsonLocation = currentEarthquake.getLocation();
+        String location_primary;
+        String location_offset;
+
+        /* Check whether the originalLocation string contains the " of " text */
+        if (jsonLocation.contains(LOCATION_SEPARATOR)) {
+            /*
+             * Split the string into different parts (as an array of Strings)
+             * based on the " of " text. We expect an array of 2 Strings, where
+             * the first String will be "5km N" and the second String will be "Cairo, Egypt".
+             */
+            String[] locationParts = jsonLocation.split(LOCATION_SEPARATOR);
+
+            /* Location offset should be "5km N " + " of " --> "5km N of" */
+            location_offset = locationParts[0] + LOCATION_SEPARATOR;
+
+            /* Primary location should be "Cairo, Egypt" */
+            location_primary = locationParts[1];
+        } else {
+            /*
+             * Otherwise, there is no " of " text in the originalLocation string.
+             * Hence, set the default location offset to say "Near the".
+             */
+            location_offset = getContext().getString(R.string.near_the);
+
+            /* The primary location will be the full location string "Pacific-Antarctic Ridge" */
+            location_primary = jsonLocation;
+        }
+
+        /* Set the offset location on the adequate TextView */
+        locationOffsetTextView.setText(location_offset);
+
+        /* Set the location on the adequate TextView */
+        locationTextView.setText(location_primary);
 
         /* Get the time from the current {@link Earthquake} and create a new {@link Date} object with it */
         Date timeDateObject = new Date(currentEarthquake.getTimeMilliseconds());
@@ -90,7 +139,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
     /**
      * Return the formatted date string (i.e. "Jun 6, 2001") from a {@link Date} object
-     * <p>
+     *
      * Android documentation on SimpleDateFormat:
      * https://developer.android.com/reference/java/text/SimpleDateFormat
      *
@@ -103,7 +152,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
     /**
      * Return the formatted time string (i.e. "3:00 AM") from a {@link Date} object
-     * <p>
+     *
      * Android documentation on SimpleDateFormat:
      * https://developer.android.com/reference/java/text/SimpleDateFormat
      *

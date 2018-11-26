@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_earthquake"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
     android:orientation="horizontal"
     android:paddingEnd="@dimen/mp_horizontal_big"
     android:paddingRight="@dimen/mp_horizontal_big"
@@ -14,6 +14,7 @@
         android:id="@+id/magnitude"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
         android:layout_marginStart="@dimen/mp_horizontal_big"
         android:layout_marginLeft="@dimen/mp_horizontal_big"
         android:background="@drawable/magnitude_circle"
@@ -23,49 +24,69 @@
         app:fontFamily="sans-serif-medium"
         tools:text="6.2" />
 
-    <TextView
-        android:id="@+id/location_offset"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginStart="@dimen/mp_horizontal_big"
         android:layout_marginLeft="@dimen/mp_horizontal_big"
         android:layout_weight="1"
-        android:paddingTop="@dimen/mp_vertical_normal"
-        android:paddingBottom="@dimen/mp_vertical_normal"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        tools:text="66 km of" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/location"
+        <TextView
+            android:id="@+id/location_offset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            app:fontFamily="sans-serif-medium"
+            tools:text="66 km of" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/textColorEarthquakeLocation"
+            android:textSize="16sp"
+            app:fontFamily="sans-serif-medium"
+            tools:text="San Francisco" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginStart="@dimen/mp_horizontal_big"
         android:layout_marginLeft="@dimen/mp_horizontal_big"
         android:layout_weight="1"
-        android:paddingTop="@dimen/mp_vertical_normal"
-        android:paddingBottom="@dimen/mp_vertical_normal"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        tools:text="San Francisco" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/formatted_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mp_horizontal_big"
-        android:layout_marginLeft="@dimen/mp_horizontal_big"
-        android:paddingTop="@dimen/mp_vertical_normal"
-        android:paddingBottom="@dimen/mp_vertical_normal"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        tools:text="Feb 6, 1971" />
+        <TextView
+            android:id="@+id/formatted_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/mp_horizontal_big"
+            android:layout_marginLeft="@dimen/mp_horizontal_big"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            app:fontFamily="sans-serif-medium"
+            tools:text="Feb 6, 1971" />
 
-    <TextView
-        android:id="@+id/formatted_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mp_horizontal_big"
-        android:layout_marginLeft="@dimen/mp_horizontal_big"
-        android:paddingTop="@dimen/mp_vertical_normal"
-        android:paddingBottom="@dimen/mp_vertical_normal"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        tools:text="3:00 PM" />
+        <TextView
+            android:id="@+id/formatted_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/mp_horizontal_big"
+            android:layout_marginLeft="@dimen/mp_horizontal_big"
+            android:textSize="12sp"
+            app:fontFamily="sans-serif-medium"
+            tools:text="3:00 PM" />
+    </LinearLayout>
 </LinearLayout>

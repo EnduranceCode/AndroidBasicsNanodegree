@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_earthquake"
     android:layout_width="match_parent"
@@ -11,13 +12,15 @@
 
     <TextView
         android:id="@+id/magnitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_marginStart="@dimen/mp_horizontal_big"
         android:layout_marginLeft="@dimen/mp_horizontal_big"
-        android:paddingTop="@dimen/mp_vertical_normal"
-        android:paddingBottom="@dimen/mp_vertical_normal"
+        android:background="@drawable/magnitude_circle"
+        android:gravity="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        app:fontFamily="sans-serif-medium"
         tools:text="6.2" />
 
     <TextView

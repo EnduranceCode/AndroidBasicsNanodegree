@@ -1,8 +1,10 @@
 package com.endurancecode.quakereport;
 
 import android.app.Activity;
+import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,10 +62,15 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         /* Get the {@link Earthquake} object located at this position in the list */
         Earthquake currentEarthquake = getItem(position);
 
-        /* Find the views on the list_item_earthquake.xml layout
+        /*
+         * Find the views on the list_item_earthquake.xml layout
          */
+
         /* Find the TextView for the earthquake magnitude */
         TextView magnitudeTextView = convertView.findViewById(R.id.magnitude);
+
+        /* Find the magnitude circle background */
+        GradientDrawable magnitudeBackgroundCircle = (GradientDrawable) magnitudeTextView.getBackground();
 
         /* Find TextView for the earthquake location */
         TextView locationTextView = convertView.findViewById(R.id.location);
@@ -80,9 +87,15 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         /*
          * Set the current {@link Earthquake} object data on the TextViews of list_item_earthquake.xml
          */
-        /* Get the magnitude from the current {@link Earthquake} object and
+
+        /*
+         * Get the magnitude from the current {@link Earthquake} object and
          * format it with one decimal place and set it on the adequate TextView */
         magnitudeTextView.setText(formatMagnitude(currentEarthquake.getMagnitude()));
+
+        /* */
+        int colorMagnitudeCircleBackground = getMagnitudeColor(currentEarthquake.getMagnitude());
+        magnitudeBackgroundCircle.setColor(colorMagnitudeCircleBackground);
 
         /*
          * Get the location from the current {@link Earthquake} object and
@@ -137,6 +150,51 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         /* Return the whole list item layout so that it can be shown in the ListView */
         return convertView;
+    }
+
+    /**
+     * Return a color according to the magnitude value
+     *
+     * @param magnitude the magnitude of the earthquake
+     * @return color resource id
+     */
+    private int getMagnitudeColor(double magnitude) {
+        int magnitudeColorResourceID;
+        int magnitudeLevel = (int) magnitude;
+        switch (magnitudeLevel) {
+            case 0:
+            case 1:
+                magnitudeColorResourceID = R.color.magnitude1;
+                break;
+            case 2:
+                magnitudeColorResourceID = R.color.magnitude2;
+                break;
+            case 3:
+                magnitudeColorResourceID = R.color.magnitude3;
+                break;
+            case 4:
+                magnitudeColorResourceID = R.color.magnitude4;
+                break;
+            case 5:
+                magnitudeColorResourceID = R.color.magnitude5;
+                break;
+            case 6:
+                magnitudeColorResourceID = R.color.magnitude6;
+                break;
+            case 7:
+                magnitudeColorResourceID = R.color.magnitude7;
+                break;
+            case 8:
+                magnitudeColorResourceID = R.color.magnitude8;
+                break;
+            case 9:
+                magnitudeColorResourceID = R.color.magnitude9;
+                break;
+            default:
+                magnitudeColorResourceID = R.color.magnitude10plus;
+                break;
+        }
+        return ContextCompat.getColor(getContext(), magnitudeColorResourceID);
     }
 
     /**

@@ -15,8 +15,12 @@
  */
 package com.endurancecode.quakereport;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -34,7 +38,7 @@ public class EarthquakeActivity extends AppCompatActivity {
          * Create an ArrayList that stores objects of type {@link Earthquake} using the method
          * extractEarthquakes() from the {@link QueryUtils} class
          */
-        ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
+        final ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
 
         /* Find a reference to the {@link ListView} in the layout */
         ListView earthquakeListView = findViewById(R.id.list);
@@ -44,5 +48,19 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         /* Set the adapter on the {@link ListView} so the list can be populated in the user interface */
         earthquakeListView.setAdapter(earthquakeAdapter);
+
+        /* Set OnItemClickListener in the ListView items */
+        earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                /* Get the selected {@link Earthquake} object */
+                Earthquake selectedEarthquake = earthquakes.get(position);
+
+                /* Set and start a web browser intent with the earthquake url */
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse(selectedEarthquake.getUrl()));
+                startActivity(browserIntent);
+            }
+        });
     }
 }

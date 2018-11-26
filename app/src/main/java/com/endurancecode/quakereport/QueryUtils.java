@@ -71,8 +71,9 @@ public final class QueryUtils {
                 double mag = jsonPropertiesObject.getDouble("mag");
                 String place = jsonPropertiesObject.getString("place");
                 long time = jsonPropertiesObject.getLong("time");
+                String url = jsonPropertiesObject.getString("url");
 
-                earthquakes.add(new Earthquake(mag, place, time));
+                earthquakes.add(new Earthquake(mag, place, time, url));
             }
 
 

@@ -32,7 +32,7 @@
         tools:text="San Francisco" />
 
     <TextView
-        android:id="@+id/date_human"
+        android:id="@+id/formatted_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/mp_horizontal_big"
@@ -41,4 +41,15 @@
         android:paddingBottom="@dimen/mp_vertical_normal"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         tools:text="Feb 6, 1971" />
+
+    <TextView
+        android:id="@+id/formatted_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mp_horizontal_big"
+        android:layout_marginLeft="@dimen/mp_horizontal_big"
+        android:paddingTop="@dimen/mp_vertical_normal"
+        android:paddingBottom="@dimen/mp_vertical_normal"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        tools:text="3:00 PM" />
 </LinearLayout>

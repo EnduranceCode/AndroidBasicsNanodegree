@@ -9,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * {@link EarthquakeAdapter} is an {@link ArrayAdapter} that can provide the layout for each list
@@ -58,8 +61,11 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         /* Find TextView for the earthquake location */
         TextView locationTextView = convertView.findViewById(R.id.location);
 
+        /* Find the TextView for the earthquake date */
+        TextView dateTextView = convertView.findViewById(R.id.formatted_date);
+
         /* Find the TextView for the earthquake time */
-        TextView dateHumanTextView = convertView.findViewById(R.id.date_human);
+        TextView timeTextView = convertView.findViewById(R.id.formatted_time);
 
         /* Set the current {@link Earthquake} object data on the TextViews of list_item_earthquake.xml
          */
@@ -69,10 +75,42 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         /* Get the location from the current {@link Earthquake} object and set it on the adequate TextView */
         locationTextView.setText(currentEarthquake.getLocation());
 
-        /* Get the date from the current {@link Earthquake} object and set it on the adequate TextView */
-        dateHumanTextView.setText(currentEarthquake.getDateHuman());
+        /* Get the time from the current {@link Earthquake} and create a new {@link Date} object with it */
+        Date timeDateObject = new Date(currentEarthquake.getTimeMilliseconds());
+
+        /* Format the timeDateObject as a date String and set it on the adequate TextView */
+        dateTextView.setText(formatDate(timeDateObject));
+
+        /* Format the timeDateObject as a time String and set it on the adequate TextView */
+        timeTextView.setText(formaTime(timeDateObject));
 
         /* Return the whole list item layout so that it can be shown in the ListView */
         return convertView;
+    }
+
+    /**
+     * Return the formatted date string (i.e. "Jun 6, 2001") from a {@link Date} object
+     * <p>
+     * Android documentation on SimpleDateFormat:
+     * https://developer.android.com/reference/java/text/SimpleDateFormat
+     *
+     * @param dateObject {@link Date} object to be formatted
+     */
+    private String formatDate(Date dateObject) {
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault());
+        return dateFormatter.format(dateObject);
+    }
+
+    /**
+     * Return the formatted time string (i.e. "3:00 AM") from a {@link Date} object
+     * <p>
+     * Android documentation on SimpleDateFormat:
+     * https://developer.android.com/reference/java/text/SimpleDateFormat
+     *
+     * @param dateObject {@link Date} object to be formatted
+     */
+    private String formaTime(Date dateObject) {
+        SimpleDateFormat timeFormatter = new SimpleDateFormat("h:mm a", Locale.getDefault());
+        return timeFormatter.format(dateObject);
     }
 }

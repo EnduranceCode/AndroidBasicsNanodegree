@@ -54,7 +54,7 @@ The code developed following the Multi-screen Apps lessons is stored in the fold
 
 ### Networking
 
-The code developed following the Networking lessons is stored in the folder [study-networking](./study-networking).
+The code developed following the Networking lessons is stored in the folder [study-networking](./study-networking) of this repository.
 
 ## Practice Sets
 
@@ -83,3 +83,12 @@ The ViewPager Sample App code is stored in the folder [sample-viewpager](./sampl
 
 This is a small app developed to explore the use of the [ViewPager Class](https://developer.android.com/reference/android/support/v4/view/ViewPager).
 
+### Sample: Soonami App
+
+The Soonami App code is stored in the folder [sample-http-request](./sample/http-request) of this repository.
+
+This app displays information about a single earthquake event and whether or not there was a tsunami alert issued for it. The original code of this app is stored at [GitHub](https://github.com/udacity/ud843_Soonami).
+
+#### Sample's Goal
+
+This is a small app developed to explore the use of [http requests](https://developer.android.com/reference/java/net/HttpURLConnection).

@@ -180,9 +180,12 @@ public class MainActivity extends AppCompatActivity {
                 if (urlConnection.getResponseCode() == 200) {
                     inputStream = urlConnection.getInputStream();
                     jsonResponse = readFromStream(inputStream);
+                } else {
+                    Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
                 }
             } catch (IOException e) {
                 // TODO: Handle the exception
+                Log.e(LOG_TAG, "Problem retrieving the JSON results.", e);
             } finally {
                 if (urlConnection != null) {
                     urlConnection.disconnect();

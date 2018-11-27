@@ -16,15 +16,14 @@
 package com.endurancecode.pokemon;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             Log.e(TAG, "Response from url: " + jsonString);
             if (jsonString != null) {
                 try {
-                    //TODO: Create a new JSONObject
+                    JSONObject jsonObject = new JSONObject(jsonString);
 
                     // TODO: Get the JSON Array node and name it "pokemons"
 

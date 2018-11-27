@@ -59,10 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
             String url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
 
-
             String jsonString = "";
             try {
-                // TODO: make a request to the URL
+                jsonString = sh.makeHttpRequest(createUrl(url));
 
             } catch (IOException e) {
                 return null;

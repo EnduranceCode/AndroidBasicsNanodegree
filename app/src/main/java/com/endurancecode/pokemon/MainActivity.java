@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -71,13 +72,14 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(jsonString);
 
-                    // TODO: Get the JSON Array node and name it "pokemons"
-
+                    JSONArray pokemons = jsonObject.getJSONArray("pokemon");
 
                     // looping through all Contacts
                     for (int i = 0; i < pokemons.length(); i++) {
-                        //TODO: get the JSONObject and its three attributes
-
+                        JSONObject c = pokemons.getJSONObject(i);
+                        String name = c.getString("name");
+                        String id = c.getString("id");
+                        String candy = c.getString("candy");
 
                         // tmp hash map for a single pokemon
                         HashMap<String, String> pokemon = new HashMap<>();

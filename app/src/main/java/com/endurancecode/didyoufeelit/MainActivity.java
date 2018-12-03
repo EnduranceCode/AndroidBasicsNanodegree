@@ -16,6 +16,7 @@
 package com.endurancecode.didyoufeelit;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -37,11 +38,44 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Perform the HTTP request for earthquake data and process the response.
-        Event earthquake = Utils.fetchEarthquakeData(USGS_REQUEST_URL);
+        /*
+         * Create an {@link AsyncTask} to perform the HTTP request to the given URL
+         * on a background thread. When the result is received on the main UI thread,
+         * then update the UI.
+         * Perform the HTTP request for earthquake data and process the response.
+         */
+        EarthquakeAsyncTask task = new EarthquakeAsyncTask();
+        task.execute(USGS_REQUEST_URL);
+    }
 
-        // Update the information displayed to the user.
-        updateUi(earthquake);
+    /**
+     * {@link AsyncTask} to perform the network request on a background thread, and then
+     * update the UI with the first earthquake in the response.
+     */
+    private class EarthquakeAsyncTask extends AsyncTask<String, Void, Event> {
+        /**
+         * This method is invoked (or called) on a background thread, so we can perform
+         * long-running operations like making a network request.
+         * <p>
+         * It is NOT okay to update the UI from a background thread, so we just return an
+         * {@link Event} object as the result.
+         */
+        @Override
+        protected Event doInBackground(String... urls) {
+            Event result = Utils.fetchEarthquakeData(urls[0]);
+            return result;
+        }
+
+        /**
+         * This method is invoked on the main UI thread after the background work has been
+         * completed.
+         * <p>
+         * It IS okay to modify the UI within this method. We take the {@link Event} object
+         * (which was returned from the doInBackground() method) and update the views on the screen.
+         */
+        protected void onPostExecute(Event result) {
+            updateUi(result);
+        }
     }
 
     /**

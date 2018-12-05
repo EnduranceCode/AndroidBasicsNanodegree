@@ -25,6 +25,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -37,11 +38,16 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
 
     /* URL for earthquake data from the USGS dataset */
     private static final String USGS_REQUEST_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&orderby=time&minmag=6&limit=10";
+
     /*
      * Constant value for the earthquake loader ID. We can choose any integer.
      * This really only comes into play if you're using multiple loaders.
      */
     private static final int EARTHQUAKE_LOADER_ID = 1;
+
+    /* We set the loading spinner as global variable, so we can refer to it in a later method */
+    private ProgressBar loadingSpinner;
+
     /* We set the empty state TextView as global variable, so we can refer to it in a later method */
     private TextView emptyStateTextView;
 
@@ -103,6 +109,10 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> data) {
         /* Clear the adapter of previous earthquake data */
         earthquakeAdapter.clear();
+
+        /* Hide the loading spinner */
+        loadingSpinner = findViewById(R.id.loading_spinner);
+        loadingSpinner.setVisibility(View.GONE);
 
         /* Set empty state text to display "No earthquakes found." */
         emptyStateTextView.setText(R.string.no_earthquakes);

@@ -46,6 +46,15 @@ This project's code is stored in the folder [project5](./project5) of this repos
 
 The goal is to create a Tour Guide App which presents relevant information to a user who’s visiting a city. The app can list top attractions, restaurants, public places, or events for the city. It can contain all the best known secrets that only locals know.
 
+### Project 6 - News App, Stage 1
+
+This project's code is stored in the branch [project6](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project6).
+
+#### Project Overview
+
+The goal is to make an app that connects to the Internet to provide news articles on a chosen topic. 
+ 
+
 ## Lessons
 
 ### Multiscreen Apps

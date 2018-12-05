@@ -17,8 +17,11 @@ package com.endurancecode.quakereport;
 
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -44,9 +47,6 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
      * This really only comes into play if you're using multiple loaders.
      */
     private static final int EARTHQUAKE_LOADER_ID = 1;
-
-    /* We set the loading spinner as global variable, so we can refer to it in a later method */
-    private ProgressBar loadingSpinner;
 
     /* We set the empty state TextView as global variable, so we can refer to it in a later method */
     private TextView emptyStateTextView;
@@ -89,15 +89,28 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
             }
         });
 
-        /* Get a reference to the LoaderManager, in order to interact with loaders. */
-        LoaderManager loaderManager = getLoaderManager();
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
 
-        /*
-         * Initialize the loader. Pass in the int ID constant defined above and pass in null for
-         * the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
-         * because this activity implements the LoaderCallbacks interface).
-         */
-        loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, this);
+        if (activeNetwork != null && activeNetwork.isConnectedOrConnecting()) {
+
+            /* Get a reference to the LoaderManager, in order to interact with loaders. */
+            LoaderManager loaderManager = getLoaderManager();
+
+            /*
+             * Initialize the loader. Pass in the int ID constant defined above and pass in null for
+             * the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
+             * because this activity implements the LoaderCallbacks interface).
+             */
+            loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, this);
+
+        } else {
+            /* Hide the loading spinner */
+            hideLoadingSpinner();
+
+            /* Display the message  */
+            emptyStateTextView.setText(R.string.no_internet);
+        }
     }
 
     @Override
@@ -111,8 +124,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
         earthquakeAdapter.clear();
 
         /* Hide the loading spinner */
-        loadingSpinner = findViewById(R.id.loading_spinner);
-        loadingSpinner.setVisibility(View.GONE);
+        hideLoadingSpinner();
 
         /* Set empty state text to display "No earthquakes found." */
         emptyStateTextView.setText(R.string.no_earthquakes);
@@ -130,5 +142,11 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
     public void onLoaderReset(Loader<List<Earthquake>> loader) {
         /* Loader reset, so we can clear out our existing data */
         earthquakeAdapter.clear();
+    }
+
+    /* We avoid code repetitions by setting this helper method that hides the loading spinner */
+    private void hideLoadingSpinner() {
+        ProgressBar loadingSpinner = findViewById(R.id.loading_spinner);
+        loadingSpinner.setVisibility(View.GONE);
     }
 }

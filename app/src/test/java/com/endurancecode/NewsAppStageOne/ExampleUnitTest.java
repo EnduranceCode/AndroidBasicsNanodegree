@@ -1,4 +1,4 @@
-package com.endurancecode.googledevelopernanodegreescholarship;
+package com.endurancecode.NewsAppStageOne;
 
 import org.junit.Test;
 

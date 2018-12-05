@@ -1,4 +1,4 @@
-package com.endurancecode.googledevelopernanodegreescholarship;
+package com.endurancecode.NewsAppStageOne;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

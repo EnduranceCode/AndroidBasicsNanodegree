@@ -1,4 +1,4 @@
-package com.endurancecode.googledevelopernanodegreescholarship;
+package com.endurancecode.NewsAppStageOne;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

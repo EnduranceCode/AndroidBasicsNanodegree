@@ -106,7 +106,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
     }
 
     @Override
-    public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> data) {
+    public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> earthquakes) {
         /* Clear the adapter of previous earthquake data */
         earthquakeAdapter.clear();
 
@@ -121,7 +121,9 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
          * If there is a valid list of {@link Earthquake}s, then add them to the adapter's
          * data set. This will trigger the ListView to update.
          */
-        earthquakeAdapter.addAll(data);
+        if (earthquakes != null && !earthquakes.isEmpty()) {
+            earthquakeAdapter.addAll(earthquakes);
+        }
     }
 
     @Override

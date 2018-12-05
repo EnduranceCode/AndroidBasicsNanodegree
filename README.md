@@ -48,7 +48,7 @@ The goal is to create a Tour Guide App which presents relevant information to a 
 
 ### Project 6 - News App, Stage 1
 
-This project's code is stored in the branch [project6](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project6).
+This project's code is stored in the folder [project6](./project6) of this repository.
 
 #### Project Overview
 

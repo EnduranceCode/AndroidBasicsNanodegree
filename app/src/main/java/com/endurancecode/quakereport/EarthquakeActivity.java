@@ -25,6 +25,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,14 +35,15 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
 
     private static final String LOG_TAG = EarthquakeActivity.class.getName();
 
-    /**
+    /* URL for earthquake data from the USGS dataset */
+    private static final String USGS_REQUEST_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&orderby=time&minmag=6&limit=10";
+    /*
      * Constant value for the earthquake loader ID. We can choose any integer.
      * This really only comes into play if you're using multiple loaders.
      */
     private static final int EARTHQUAKE_LOADER_ID = 1;
-
-    /* URL for earthquake data from the USGS dataset */
-    private static final String USGS_REQUEST_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&orderby=time&minmag=6&limit=10";
+    /* We set the empty state TextView as global variable, so we can refer to it in a later method */
+    private TextView emptyStateTextView;
 
     /*
      * To access and modify the instance of the EarthquakeAdapter from the onPostExecute() method,
@@ -62,6 +64,10 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
 
         /* Set the adapter on the {@link ListView} so the list can be populated in the user interface */
         earthquakeListView.setAdapter(earthquakeAdapter);
+
+        /* Set am empty view if the Earthquake adapter has no data */
+        emptyStateTextView = findViewById(R.id.empty_view);
+        earthquakeListView.setEmptyView(emptyStateTextView);
 
         /* Set OnItemClickListener in the ListView items */
         earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -97,6 +103,9 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> data) {
         /* Clear the adapter of previous earthquake data */
         earthquakeAdapter.clear();
+
+        /* Set empty state text to display "No earthquakes found." */
+        emptyStateTextView.setText(R.string.no_earthquakes);
 
         /*
          * If there is a valid list of {@link Earthquake}s, then add them to the adapter's

@@ -7,4 +7,10 @@
     <dimen name="mp_global_normal">8dp</dimen>
     <dimen name="mp_normal_horizontal">8dp</dimen>
     <dimen name="mp_normal_vertical">8dp</dimen>
+
+    <!-- Elevations -->
+    <dimen name="powered_by_bar_elevation">4dp</dimen>
+
+    <!-- Image sizes -->
+    <dimen name="powered_by_bar_height">48dp</dimen>
 </resources>

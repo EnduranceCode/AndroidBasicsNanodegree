@@ -4,4 +4,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.endurancecode.NewsAppStageOne.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/powered_by"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/mp_global_big"
+        android:paddingLeft="@dimen/mp_global_big"
+        android:paddingEnd="@dimen/mp_global_big"
+        android:paddingRight="@dimen/mp_global_big">
+
+        <ProgressBar
+            android:id="@+id/loading_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ListView
+            android:id="@+id/news_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/empty_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/powered_by"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/powered_by_bar_height"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:elevation="@dimen/powered_by_bar_elevation"
+        android:gravity="end"
+        android:paddingStart="@dimen/mp_horizontal_big"
+        android:paddingLeft="@dimen/mp_horizontal_big"
+        android:paddingEnd="@dimen/mp_horizontal_big"
+        android:paddingRight="@dimen/mp_horizontal_big"
+        tools:ignore="UnusedAttribute">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/powered_by_content_description"
+            android:src="@drawable/ic_powered_by" />
+    </LinearLayout>
 </RelativeLayout>

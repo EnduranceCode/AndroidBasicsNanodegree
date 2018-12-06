@@ -49,7 +49,7 @@
             android:paddingBottom="@dimen/mp_normal_vertical">
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/web_title"
                 style="@style/main_line"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_line_height"
@@ -61,7 +61,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/author"
+                    android:id="@+id/byline"
                     style="@style/sub_line"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

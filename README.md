@@ -56,7 +56,7 @@ The goal is to make an app that connects to the Internet to provide news article
 
 ### Project 7 - News App, Stage 2
 
-This project's code is stored in the branch [project7](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project7).
+This project's code is stored in the folder [project7](./project7).
 
 #### Project Overview
 

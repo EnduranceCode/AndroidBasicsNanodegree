@@ -4,8 +4,8 @@ This branch of the [Google Developer Nanodegree Scholarship](https://github.com/
 
 ## Project Overview
 
-The goal is to make an app that connects to the Internet to provide news articles on a chosen topic. 
- 
+The goal is to provide a way for users to adjust preferences in app developed in [Project 6](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project6) and remember which preferences they've chosen previously.
+
 ### Attributions
 
 The logos used in the app were downloaded from

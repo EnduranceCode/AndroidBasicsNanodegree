@@ -53,8 +53,15 @@ This project's code is stored in the folder [project6](./project6) of this repos
 #### Project Overview
 
 The goal is to make an app that connects to the Internet to provide news articles on a chosen topic. 
- 
 
+### Project 7 - News App, Stage 2
+
+This project's code is stored in the branch [project7](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project7).
+
+#### Project Overview
+
+The goal is to provide a way for users to adjust preferences in app developed in [Project6](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project6) and remember which preferences they've chosen previously. 
+ 
 ## Lessons
 
 ### Multiscreen Apps

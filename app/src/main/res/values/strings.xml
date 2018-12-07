@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">News App</string>
     <string name="powered_by_content_description">Powered by The Guardian logo</string>
+
+    <string name="no_news">No triathlon news found</string>
+    <string name="no_internet">No internet connection</string>
 </resources>

@@ -1,9 +1,9 @@
 package com.endurancecode.NewsAppStageOne;
 
+import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.AsyncTaskLoader;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import java.util.List;
  * Loads a list of news by using an AsyncTask to perform the
  * network request to the given URL.
  */
+@SuppressWarnings("ALL")
 public class NewsLoader extends AsyncTaskLoader<List<News>> {
 
     /* Tag for log messages */

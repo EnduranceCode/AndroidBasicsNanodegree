@@ -9,11 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/powered_by"
-        android:orientation="vertical"
-        android:paddingStart="@dimen/mp_big_global"
-        android:paddingLeft="@dimen/mp_big_global"
-        android:paddingEnd="@dimen/mp_big_global"
-        android:paddingRight="@dimen/mp_big_global">
+        android:orientation="vertical">
 
         <ProgressBar
             android:id="@+id/loading_spinner"
@@ -25,6 +21,7 @@
             android:id="@+id/news_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:divider="@null"
             android:orientation="vertical" />
 
         <TextView

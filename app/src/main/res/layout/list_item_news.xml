@@ -1,81 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/mp_normal_vertical"
-    android:layout_marginBottom="@dimen/mp_normal_vertical"
-    android:padding="@dimen/mp_normal_global"
-    app:cardCornerRadius="@dimen/card_corner_radius">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/mp_normal_global">
-
-        <LinearLayout
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/mp_big_horizontal"
-            android:layout_marginRight="@dimen/mp_big_horizontal"
-            android:background="@drawable/rectangle_border"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/day"
-                style="@style/text_day"
-                android:layout_width="@dimen/date_width"
-                android:layout_height="@dimen/day_height"
-                android:gravity="center"
-                tools:text="28" />
-
-            <TextView
-                android:id="@+id/month"
-                style="@style/text_month"
-                android:layout_width="@dimen/date_width"
-                android:layout_height="@dimen/month_height"
-                tools:text="Fev" />
-        </LinearLayout>
+        android:layout_marginStart="@dimen/mp_big_horizontal"
+        android:layout_marginLeft="@dimen/mp_big_horizontal"
+        android:layout_marginTop="@dimen/mp_normal_vertical"
+        android:layout_marginEnd="@dimen/mp_big_horizontal"
+        android:layout_marginRight="@dimen/mp_big_horizontal"
+        android:layout_marginBottom="@dimen/mp_normal_vertical"
+        android:padding="@dimen/mp_normal_global"
+        app:cardCornerRadius="@dimen/card_corner_radius">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/mp_normal_vertical"
-            android:paddingBottom="@dimen/mp_normal_vertical">
+            android:orientation="horizontal"
+            android:padding="@dimen/mp_normal_global">
 
-            <TextView
-                android:id="@+id/web_title"
-                style="@style/main_line"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/main_line_height"
-                tools:text="News Tittle" />
+            <LinearLayout
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/mp_big_horizontal"
+                android:layout_marginRight="@dimen/mp_big_horizontal"
+                android:background="@drawable/rectangle_border"
+                android:orientation="vertical">
 
-            <RelativeLayout
+                <TextView
+                    android:id="@+id/day"
+                    style="@style/text_day"
+                    android:layout_width="@dimen/date_width"
+                    android:layout_height="@dimen/day_height"
+                    android:gravity="center"
+                    tools:text="28" />
+
+                <TextView
+                    android:id="@+id/month"
+                    style="@style/text_month"
+                    android:layout_width="@dimen/date_width"
+                    android:layout_height="@dimen/month_height"
+                    tools:text="Fev" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/sub_line_height"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/web_title"
+                    style="@style/main_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="News Tittle" />
 
                 <TextView
                     android:id="@+id/byline"
                     style="@style/sub_line"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     tools:text="News Author" />
 
                 <TextView
                     android:id="@+id/section"
                     style="@style/sub_line"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
                     tools:text="Section" />
-            </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

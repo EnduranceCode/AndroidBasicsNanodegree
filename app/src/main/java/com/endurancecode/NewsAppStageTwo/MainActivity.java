@@ -1,4 +1,4 @@
-package com.endurancecode.NewsAppStageOne;
+package com.endurancecode.NewsAppStageTwo;
 
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;

@@ -1,4 +1,4 @@
-package com.endurancecode.NewsAppStageOne;
+package com.endurancecode.NewsAppStageTwo;
 
 import org.junit.Test;
 

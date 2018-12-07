@@ -18,6 +18,8 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.net.HttpURLConnection.HTTP_OK;
+
 /**
  * Helper methods related to requesting and receiving news data from The Guardian API.
  */
@@ -25,6 +27,20 @@ public final class FetchUtils {
 
     /* Set the log tag */
     private static final String LOG_TAG = FetchUtils.class.getSimpleName();
+
+    /* Set HTTP connection request timeouts */
+    private static final int READ_TIMEOUT = 10000;
+    private static final int CONNECT_TIMEOUT = 15000;
+
+    /* Set JSON keys */
+    private static final String KEY_RESPONSE = "response";
+    private static final String KEY_RESULTS = "results";
+    private static final String KEY_SECTION_NAME = "sectionName";
+    private static final String KEY_WEB_PUBLICATION_DATE = "webPublicationDate";
+    private static final String KEY_WEB_TITLE = "webTitle";
+    private static final String KEY_WEB_URL = "webUrl";
+    private static final String KEY_FIELDS = "fields";
+    private static final String KEY_BYLINE = "byline";
 
     /**
      * Create a private constructor because no one should ever create a {@link FetchUtils} object.
@@ -92,15 +108,15 @@ public final class FetchUtils {
         try {
             urlConnection = (HttpURLConnection) urlObject.openConnection();
             urlConnection.setRequestMethod("GET");
-            urlConnection.setReadTimeout(10000);
-            urlConnection.setConnectTimeout(15000);
+            urlConnection.setReadTimeout(READ_TIMEOUT);
+            urlConnection.setConnectTimeout(CONNECT_TIMEOUT);
             urlConnection.connect();
 
             /*
              * If the request was successful (response code 200) then
              * read the input stream and parse the response
              */
-            if (urlConnection.getResponseCode() == 200) {
+            if (urlConnection.getResponseCode() == HTTP_OK) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
             } else {
@@ -169,13 +185,13 @@ public final class FetchUtils {
              * Get the JSONObject that contains the "response" object. This object contains
              * all the data returned by the server
              */
-            JSONObject jsonResponseObject = jsonObject.optJSONObject("response");
+            JSONObject jsonResponseObject = jsonObject.optJSONObject(KEY_RESPONSE);
 
             /*
              * Get the JSONArray that contains the "results" objects. Those objects represent the
              * news whose data we want to display
              */
-            JSONArray jsonResultsArray = jsonResponseObject.optJSONArray("results");
+            JSONArray jsonResultsArray = jsonResponseObject.optJSONArray(KEY_RESULTS);
 
             /* Transverse the jsonFeaturesArray to get the data from each earthquake ("feature"),
              * build an {@link Earthquake} object for each earthquake with that data and then
@@ -187,11 +203,11 @@ public final class FetchUtils {
                 JSONObject jsonResultsObject = jsonResultsArray.getJSONObject(index);
 
                 /* Get the data to instantiate a new {@link News} object */
-                String sectionName = jsonResultsObject.getString("sectionName");
-                String webPublicationDate = jsonResultsObject.getString("webPublicationDate");
-                String webTitle = jsonResultsObject.getString("webTitle");
-                String webUrl = jsonResultsObject.getString("webUrl");
-                String byline = jsonResultsObject.optJSONObject("fields").getString("byline");
+                String sectionName = jsonResultsObject.getString(KEY_SECTION_NAME);
+                String webPublicationDate = jsonResultsObject.getString(KEY_WEB_PUBLICATION_DATE);
+                String webTitle = jsonResultsObject.getString(KEY_WEB_TITLE);
+                String webUrl = jsonResultsObject.getString(KEY_WEB_URL);
+                String byline = jsonResultsObject.optJSONObject(KEY_FIELDS).getString(KEY_BYLINE);
 
                 /* Add the new {@link News} object to the list News */
                 news.add(new News(sectionName, webPublicationDate, webTitle, webUrl, byline));

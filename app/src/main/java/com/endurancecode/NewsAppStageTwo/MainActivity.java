@@ -5,11 +5,14 @@ import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private static final String LOG_TAG = MainActivity.class.getName();
 
     /* Query URL to request */
-    private static final String QUERY_URL = "https://content.guardianapis.com/search?&q=triathlon&type=article&use-date=published&order-by=newest&show-fields=byline&page-size=20&api-key=test";
+    private static final String QUERY_URL = "https://content.guardianapis.com/search?";
 
     /*
      * Constant value for the news loader ID. We can choose any integer.
@@ -120,7 +123,50 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
-        return new NewsLoader(this, QUERY_URL);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        /*
+         * getString retrieves a String value from the preferences.
+         * The second parameter is the default value for this preference.
+         */
+        String pageSize = sharedPreferences.getString(
+                getString(R.string.settings_page_size_key),
+                getString(R.string.settings_page_size_default)
+        );
+
+        /* We are limiting the number of results to 50
+         * so we check if the input settings is bigger than 50
+         * and if it is we change it to 50
+         */
+        int pageSizeInteger = Integer.valueOf(pageSize);
+        if (pageSizeInteger > 50) {
+            pageSize = "50";
+        }
+
+        /* Parse breaks apart the URI string that's passed into its parameter */
+        Uri baseUri = Uri.parse(QUERY_URL);
+
+        /* buildUpon() prepares the baseUri that we just parsed so we can add query parameters to it */
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        /* Append query parameter and its value. For example, the `q=triathlon` */
+        uriBuilder.appendQueryParameter("q", "triathlon");
+        uriBuilder.appendQueryParameter("type", "article");
+        uriBuilder.appendQueryParameter("use-date", "published");
+        uriBuilder.appendQueryParameter("show-fields", "byline");
+        uriBuilder.appendQueryParameter("order-by", "newest");
+        uriBuilder.appendQueryParameter("page-size", pageSize);
+        uriBuilder.appendQueryParameter("api-key", "test");
+
+        /* Log the query URL */
+        Log.e(LOG_TAG, "The query URL is " + uriBuilder.toString());
+
+        /*
+         * Return the completed URI
+         * https://content.guardianapis.com/search?&q=triathlon&type=article&use-date=published&show-fields=byline&page-size=pageSize&order-by=newest&api-key=test
+         */
+        return new NewsLoader(this, uriBuilder.toString());
     }
 
     @Override

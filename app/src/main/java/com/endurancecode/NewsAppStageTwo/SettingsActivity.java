@@ -16,5 +16,10 @@ public class SettingsActivity extends AppCompatActivity {
     @SuppressWarnings("deprecation")
     public static class NewsPreferencesFragment extends PreferenceFragment {
 
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.settings_main);
+        }
     }
 }

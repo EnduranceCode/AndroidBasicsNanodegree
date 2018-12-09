@@ -149,20 +149,18 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     /* This method is called whenever a preference is changed */
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (key.equals(R.string.settings_page_size_key) || key.equals(R.string.settings_order_by_key)) {
-            /* Clear the ListView because a new query will be kicked off */
-            newsAdapter.clear();
+        /* Clear the ListView because a new query will be kicked off */
+        newsAdapter.clear();
 
-            /* Hide the empty state text view because the loading indicator will be displayed */
-            emptyStateTextView.setVisibility(View.GONE);
+        /* Hide the empty state text view because the loading indicator will be displayed */
+        emptyStateTextView.setVisibility(View.GONE);
 
-            /* Show the loading indicator while new data is being fetched */
-            ProgressBar loadingSpinner = findViewById(R.id.loading_spinner);
-            loadingSpinner.setVisibility(View.VISIBLE);
+        /* Show the loading indicator while new data is being fetched */
+        ProgressBar loadingSpinner = findViewById(R.id.loading_spinner);
+        loadingSpinner.setVisibility(View.VISIBLE);
 
-            /* Restart the loader to requery the server as the query settings have been updated */
-            getLoaderManager().restartLoader(NEWS_LOADER_ID, null, this);
-        }
+        /* Restart the loader to requery the server as the query settings have been updated */
+        getLoaderManager().restartLoader(NEWS_LOADER_ID, null, this);
     }
 
     @Override

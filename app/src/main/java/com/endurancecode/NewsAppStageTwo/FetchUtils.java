@@ -207,7 +207,10 @@ public final class FetchUtils {
                 String webPublicationDate = jsonResultsObject.getString(KEY_WEB_PUBLICATION_DATE);
                 String webTitle = jsonResultsObject.getString(KEY_WEB_TITLE);
                 String webUrl = jsonResultsObject.getString(KEY_WEB_URL);
-                String byline = jsonResultsObject.optJSONObject(KEY_FIELDS).getString(KEY_BYLINE);
+                String byline = null;
+                if (jsonResultsObject.has(KEY_FIELDS)) {
+                    byline = jsonResultsObject.optJSONObject(KEY_FIELDS).getString(KEY_BYLINE);
+                }
 
                 /* Add the new {@link News} object to the list News */
                 news.add(new News(sectionName, webPublicationDate, webTitle, webUrl, byline));

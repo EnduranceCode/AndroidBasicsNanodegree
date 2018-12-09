@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public class MainActivity extends AppCompatActivity implements LoaderCallbacks<List<News>> {
+public class MainActivity extends AppCompatActivity implements LoaderCallbacks<List<News>>, SharedPreferences.OnSharedPreferenceChangeListener {
 
     /* Tag for log messages */
     private static final String LOG_TAG = MainActivity.class.getName();
@@ -71,6 +71,15 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         /* Set an empty view if the news adapter has no data to populate */
         emptyStateTextView = findViewById(R.id.empty_list);
         newsListView.setEmptyView(emptyStateTextView);
+
+        /* Obtain a reference to the SharedPreferences file for this app */
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        /*
+         * And register to be notified of preference changes
+         * So we know when the user has adjusted the query settings
+         */
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
         /* Set an OnItemClickListener on the ListView items */
         newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -121,6 +130,25 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         }
     }
 
+    /* This method is called whenever a preference is changed */
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (key.equals(R.string.settings_page_size_key) || key.equals(R.string.settings_order_by_key)) {
+            /* Clear the ListView because a new query will be kicked off */
+            newsAdapter.clear();
+
+            /* Hide the empty state text view because the loading indicator will be displayed */
+            emptyStateTextView.setVisibility(View.GONE);
+
+            /* Show the loading indicator while new data is being fetched */
+            ProgressBar loadingSpinner = findViewById(R.id.loading_spinner);
+            loadingSpinner.setVisibility(View.VISIBLE);
+
+            /* Restart the loader to requery the server as the query settings have been updated */
+            getLoaderManager().restartLoader(NEWS_LOADER_ID, null, this);
+        }
+    }
+
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
 
@@ -135,13 +163,19 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 getString(R.string.settings_page_size_default)
         );
 
-        /* We are limiting the number of results to 50
-         * so we check if the input settings is bigger than 50
-         * and if it is we change it to 50
+        String orderBy = sharedPreferences.getString(
+                getString(R.string.settings_order_by_key),
+                getString(R.string.settings_order_by_default)
+        );
+
+        /*
+         * The server's number of results limit is 200
+         * so we check if the input settings is bigger than 200
+         * and if it is we change it to 200
          */
         int pageSizeInteger = Integer.valueOf(pageSize);
-        if (pageSizeInteger > 50) {
-            pageSize = "50";
+        if (pageSizeInteger > 200) {
+            pageSize = "200";
         }
 
         /* Parse breaks apart the URI string that's passed into its parameter */
@@ -155,8 +189,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         uriBuilder.appendQueryParameter("type", "article");
         uriBuilder.appendQueryParameter("use-date", "published");
         uriBuilder.appendQueryParameter("show-fields", "byline");
-        uriBuilder.appendQueryParameter("order-by", "newest");
         uriBuilder.appendQueryParameter("page-size", pageSize);
+        uriBuilder.appendQueryParameter("order-by", orderBy);
         uriBuilder.appendQueryParameter("api-key", "test");
 
         /* Log the query URL */
@@ -164,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
         /*
          * Return the completed URI
-         * https://content.guardianapis.com/search?&q=triathlon&type=article&use-date=published&show-fields=byline&page-size=pageSize&order-by=newest&api-key=test
+         * https://content.guardianapis.com/search?&q=triathlon&type=article&use-date=published&show-fields=byline&page-size=pageSize&order-by=orderBy&api-key=test
          */
         return new NewsLoader(this, uriBuilder.toString());
     }

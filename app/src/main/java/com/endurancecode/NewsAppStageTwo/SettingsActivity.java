@@ -2,6 +2,7 @@ package com.endurancecode.NewsAppStageTwo;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -26,6 +27,9 @@ public class SettingsActivity extends AppCompatActivity {
 
             Preference pageSize = findPreference(getString(R.string.settings_page_size_key));
             bindPreferenceSummaryToValue(pageSize);
+
+            Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
+            bindPreferenceSummaryToValue(orderBy);
         }
 
         @Override
@@ -34,8 +38,27 @@ public class SettingsActivity extends AppCompatActivity {
             /* The code in this method takes care of updating the displayed preference summary
              * after it has been changed
              */
-            String settingsPageSizeValue = newValue.toString();
-            preference.setSummary(settingsPageSizeValue);
+            String stringValue = newValue.toString();
+            if (preference instanceof ListPreference) {
+                ListPreference listPreference = (ListPreference) preference;
+                int preferenceIndex = listPreference.findIndexOfValue(stringValue);
+                if (preferenceIndex >= 0) {
+                    CharSequence[] labels = listPreference.getEntries();
+                    preference.setSummary(labels[preferenceIndex]);
+                }
+            } else {
+
+                /*
+                 * The server's number of results limit is 200
+                 * so we check if the input settings is bigger than 200
+                 * and if it is we change it to 200
+                 */
+                int pageSizeInteger = Integer.valueOf(stringValue);
+                if (pageSizeInteger > 200) {
+                    stringValue = "200";
+                }
+                preference.setSummary(stringValue);
+            }
             return true;
         }
 

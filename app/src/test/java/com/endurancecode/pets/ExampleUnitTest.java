@@ -1,4 +1,4 @@
-package com.endurancecode.googledevelopernanodegreescholarship;
+package com.endurancecode.pets;
 
 import org.junit.Test;
 

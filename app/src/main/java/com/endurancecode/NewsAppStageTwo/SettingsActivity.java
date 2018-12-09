@@ -59,6 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
                 }
                 preference.setSummary(stringValue);
             }
+
             return true;
         }
 

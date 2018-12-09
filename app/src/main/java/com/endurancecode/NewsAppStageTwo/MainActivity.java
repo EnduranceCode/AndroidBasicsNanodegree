@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
      */
     private NewsAdapter newsAdapter;
 
+    /* Get a reference to the LoaderManager in order to interact with the loaders */
+    private LoaderManager loaderManager = getLoaderManager();
+
+    /* Variable to store the reference to the SharedPreferences file */
+    private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
         /* Find a reference to the {@link ListView} in the main activity layout */
         ListView newsListView = findViewById(R.id.news_list);
+
+        /* Set an empty view if the news adapter has no data to populate */
+        emptyStateTextView = findViewById(R.id.empty_list);
+        newsListView.setEmptyView(emptyStateTextView);
 
         /*
          * Create a new {@Link NewsAdapter} that takes an empty ArrayList as input that will be
@@ -68,12 +78,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
          */
         newsListView.setAdapter(newsAdapter);
 
-        /* Set an empty view if the news adapter has no data to populate */
-        emptyStateTextView = findViewById(R.id.empty_list);
-        newsListView.setEmptyView(emptyStateTextView);
-
         /* Obtain a reference to the SharedPreferences file for this app */
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         /*
          * And register to be notified of preference changes
@@ -103,15 +109,9 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         if (activeNetwork != null && activeNetwork.isConnectedOrConnecting()) {
 
             /*
-             * We will initiate the {@Link NewsLoader} if there is an active network connection
-             */
-
-            /* Get a reference to the LoaderManager in order to interact with the loaders */
-            LoaderManager loaderManager = getLoaderManager();
-
-            /*
-             * Initialize the loader. Pass in the int ID constant defined above and pass in null for
-             * the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
+             * We will initialize the {@Link NewsLoader} if there is an active network connection.
+             * Pass in the int ID constant defined above and pass in null for the bundle.
+             * Pass in this activity for the LoaderCallbacks parameter (which is valid
              * because this activity implements the LoaderCallbacks interface).
              */
             loaderManager.initLoader(NEWS_LOADER_ID, null, this);
@@ -128,6 +128,22 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
             /* Display a message stating that there is no available network connection */
             emptyStateTextView.setText(R.string.no_internet);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        /* Set up a listener whenever a key changes */
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        /* Unregister the listener whenever a key changes */
+        sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
     }
 
     /* This method is called whenever a preference is changed */

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margin & Padding-->
-    <dimen name="mp_global_big">16dp</dimen>
-    <dimen name="mp_horizontal_big">16dp</dimen>
-    <dimen name="mp_vertical_big">16dp</dimen>
-    <dimen name="mp_global_normal">8dp</dimen>
+    <dimen name="mp_big">16dp</dimen>
+    <dimen name="mp_big_horizontal">16dp</dimen>
+    <dimen name="mp_big_vertical">16dp</dimen>
+    <dimen name="mp_normal">8dp</dimen>
     <dimen name="mp_normal_horizontal">8dp</dimen>
     <dimen name="mp_normal_vertical">8dp</dimen>
+
+    <!-- Margin around the floating action button in CatalogActivity -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Common margin value used throughout the app -->
+    <dimen name="activity_margin">16dp</dimen>
 </resources>

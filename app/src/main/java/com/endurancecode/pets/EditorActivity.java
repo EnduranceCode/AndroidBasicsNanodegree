@@ -16,6 +16,8 @@
 
 package com.endurancecode.pets;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
@@ -27,8 +29,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.endurancecode.pets.data.PetContract.PetEntry;
+import com.endurancecode.pets.data.PetDbHelper;
 
 /**
  * Allows user to create a new pet or edit an existing one.
@@ -114,6 +118,44 @@ public class EditorActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Get user input from editor and save new pet into database.
+     */
+    private void insertPet() {
+        String stringName = mNameEditText.getText().toString().trim();
+        String stringBreed = mBreedEditText.getText().toString().trim();
+        Integer weight = Integer.parseInt(mWeightEditText.getText().toString().trim());
+
+        /* Create database helper */
+        PetDbHelper mDbHelper = new PetDbHelper(this);
+
+        /* Gets the database in write mode */
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        /*
+         * Create a ContentValues object where column names are the keys,
+         * and pet attributes from the editor are the values.
+         */
+        ContentValues values = new ContentValues();
+        values.put(PetEntry.COLUMN_PET_NAME, stringName);
+        values.put(PetEntry.COLUMN_PET_BREED, stringBreed);
+        values.put(PetEntry.COLUMN_PET_GENDER, mGender);
+        values.put(PetEntry.COLUMN_PET_WEIGHT, weight);
+
+        /* Insert a new row for pet in the database, returning the ID of that new row. */
+        long newRowId = db.insert(PetEntry.TABLE_NAME, null, values);
+
+        /* Show a toast message depending on whether or not the insertion was successful */
+        if (newRowId == -1) {
+            /* If the row ID is -1, then there was an error with insertion. */
+            Toast.makeText(this, "Error with saving pet", Toast.LENGTH_SHORT).show();
+        } else {
+            /* Otherwise, the insertion was successful and we can display a toast with the row ID. */
+            Toast.makeText(this, "Pet saved with row id: " + newRowId, Toast.LENGTH_LONG).show();
+        }
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu options from the res/menu/menu_editor.xml file.
@@ -128,7 +170,10 @@ public class EditorActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to a click on the "Save" menu option
             case R.id.action_save:
-                // Do nothing for now
+                /* Save pet to database */
+                insertPet();
+                /* Exit activity */
+                finish();
                 return true;
             // Respond to a click on the "Delete" menu option
             case R.id.action_delete:

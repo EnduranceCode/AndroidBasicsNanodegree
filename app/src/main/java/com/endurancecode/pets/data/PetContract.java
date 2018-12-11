@@ -15,7 +15,8 @@ public final class PetContract {
     }
 
     /* Inner class that defines the table contents */
-    public static class PetsEntry implements BaseColumns {
+    public static class PetEntry implements BaseColumns {
+
         /* Name of the database table for pets */
         public static final String TABLE_NAME = "pets";
 

@@ -1,4 +1,4 @@
-package com.endurancecode.googledevelopernanodegreescholarship;
+package com.endurancecode.inventoryappstageone;
 
 import org.junit.Test;
 

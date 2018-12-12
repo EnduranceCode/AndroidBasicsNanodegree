@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /* Temporary method call to test the insertData() method */
+        insertData("Test Product", 12.34, 1, "EnduranceCode", "243 000 000");
     }
 
     /**

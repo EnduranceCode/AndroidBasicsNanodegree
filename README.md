@@ -61,6 +61,14 @@ This project's code is stored in the folder [project7](./project7).
 #### Project Overview
 
 The goal is to provide a way for users to adjust preferences in app developed in [Project6](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project6) and remember which preferences they've chosen previously. 
+
+### Project 8 - Inventory App, Stage 1
+
+This project's code is stored in the branch [project8](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project8).
+
+#### Project Overview
+
+The goal is to set up a database schema for an Book Store App. This project **does not have any UI components**; instead, the main focus is what happens behind the scenes, implementing a simple database. It contains a subclass of SQLiteOpenHelper and a Contract.
  
 ## Lessons
 

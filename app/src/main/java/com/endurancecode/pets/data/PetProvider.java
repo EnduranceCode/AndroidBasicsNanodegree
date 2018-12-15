@@ -8,6 +8,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.endurancecode.pets.data.PetContract.PetEntry;
@@ -128,6 +129,29 @@ public class PetProvider extends ContentProvider {
      * for that specific row in the database.
      */
     private Uri insertPet(Uri uri, ContentValues values) {
+
+        /* Check that the name is not null */
+        String name = values.getAsString(PetEntry.COLUMN_PET_NAME);
+        if (TextUtils.isEmpty(name)) {
+            throw new IllegalArgumentException("Pet requires a name");
+        }
+
+        /*
+         * Checks if the gender is not null and is one of the allowed values:
+         *  #GENDER_MAIL
+         *  #GENDER_FEMALE
+         *  #GENDER_UNKNOWN
+         */
+        int gender = values.getAsInteger(PetEntry.COLUMN_PET_GENDER);
+        if (!PetEntry.isValidGender(gender)) {
+            throw new IllegalArgumentException("Pet requires a valid gender");
+        }
+
+        /* Checks if weight is negative */
+        int weight = values.getAsInteger(PetEntry.COLUMN_PET_WEIGHT);
+        if (weight < 0) {
+            throw new IllegalArgumentException("Pet requires valid weight");
+        }
 
         /* Get readable database */
         SQLiteDatabase database = mDbHelper.getWritableDatabase();

@@ -16,6 +16,7 @@
 
 package com.endurancecode.pets;
 
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -31,6 +32,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.endurancecode.pets.data.PetContract.PetEntry;
@@ -81,9 +83,32 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         /* Attach cursor adapter to the ListView */
         petListView.setAdapter(petCursorAdapter);
 
+        /* Setup item click listener */
+        petListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent editorActivityIntent = new Intent(CatalogActivity.this, EditorActivity.class);
+
+                /*
+                 * Form the content URI that represents the specific pet that was clicked on,
+                 * by appending the "id" (passed as input to this method) onto the
+                 * {@link PetEntry#CONTENT_URI}.
+                 * For example, the URI would be "content://com.example.android.pets/pets/2"
+                 * if the pet with ID 2 was clicked on.
+                 */
+                Uri currentPetURI = ContentUris.withAppendedId(PetEntry.CONTENT_URI, id);
+
+                /* Set the URI on the data field of the intent */
+                editorActivityIntent.setData(currentPetURI);
+
+                /* Launch the {@link EditorActivity} to display the data for the current pet */
+                startActivity(editorActivityIntent);
+            }
+        });
+
         /* Kick off the loader */
         //noinspection deprecation
-        getSupportLoaderManager().initLoader(PET_LOADER,null,this);
+        getSupportLoaderManager().initLoader(PET_LOADER, null, this);
     }
 
     /**
@@ -154,7 +179,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
          *  - Provider content URI to query
          *  - Columns to include in the resulting Cursor
          *  - No selection clause
-         *  - No selection clause
+         *  - No selection arguments
          *  - Default sort order
          */
         return new CursorLoader(this,

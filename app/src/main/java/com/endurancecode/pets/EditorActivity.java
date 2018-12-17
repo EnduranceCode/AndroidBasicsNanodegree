@@ -16,7 +16,6 @@
 
 package com.endurancecode.pets;
 
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -161,7 +160,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     /**
      * Get user input from editor and save new pet into database.
      */
-    private void insertPet() {
+    private void savePet() {
         String stringName = mNameEditText.getText().toString().trim();
         String stringBreed = mBreedEditText.getText().toString().trim();
         Integer weight = Integer.parseInt(mWeightEditText.getText().toString().trim());
@@ -177,19 +176,36 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         values.put(PetEntry.COLUMN_PET_WEIGHT, weight);
 
         if (mCurrentPetUri != null) {
-            String selection = PetEntry._ID + "=?";
-            String[] selectionArgs = new String[]{String.valueOf(ContentUris.parseId(mCurrentPetUri))};
-            int rowUpdated = getContentResolver().update(mCurrentPetUri, values, selection, selectionArgs);
+            /*
+             * This is an EXISTING pet, so update the pet with content URI: mCurrentPetUri
+             * and pass in the new ContentValues. Pass in null for the selection and selection args
+             * because mCurrentPetUri will already identify the correct row in the database that
+             * we want to modify.
+             */
+            int rowUpdated = getContentResolver().update(mCurrentPetUri, values, null, null);
 
-            if (rowUpdated < 1) {
-                Toast.makeText(this, getString(R.string.editor_insert_pet_failed), Toast.LENGTH_SHORT).show();
+            /* Show a toast message depending on whether or not the update was successful */
+            if (rowUpdated == 0) {
+                /* If no rows were affected, then there was an error with the update */
+                Toast.makeText(this, getString(R.string.editor_update_pet_failed), Toast.LENGTH_SHORT).show();
+            } else {
+                /* Otherwise, the update was successful and we can display a toast */
+                Toast.makeText(this, getString(R.string.editor_update_pet_successful), Toast.LENGTH_SHORT).show();
             }
         } else {
-
+            /*
+             * This is a NEW pet, so insert a new pet into the provider,
+             * returning the content URI for the new pet.
+             */
             Uri newUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
 
+            /* Show a toast message depending on whether or not the insertion was successful */
             if (newUri == null) {
+                /* If the new content URI is null, then there was an error with insertion */
                 Toast.makeText(this, getString(R.string.editor_insert_pet_failed), Toast.LENGTH_SHORT).show();
+            } else {
+                /* Otherwise, the insertion was successful and we can display a toast */
+                Toast.makeText(this, getString(R.string.editor_insert_pet_successful), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -209,7 +225,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             // Respond to a click on the "Save" menu option
             case R.id.action_save:
                 /* Save pet to database */
-                insertPet();
+                savePet();
                 /* Exit activity */
                 finish();
                 return true;

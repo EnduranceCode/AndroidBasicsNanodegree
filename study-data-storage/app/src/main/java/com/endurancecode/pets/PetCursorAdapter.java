@@ -2,6 +2,7 @@ package com.endurancecode.pets;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,6 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.endurancecode.pets.data.PetContract;
-
-import org.w3c.dom.Text;
 
 /**
  * {@link PetCursorAdapter} is an adapter for a list or grid view
@@ -65,6 +64,11 @@ public class PetCursorAdapter extends CursorAdapter {
 
         /* Populate fields with extracted properties */
         nameTextView.setText(name);
-        summaryTextView.setText(summary);
+
+        if (TextUtils.isEmpty(summary)) {
+            summaryTextView.setText(context.getString(R.string.unknown_breed));
+        } else {
+            summaryTextView.setText(summary);
+        }
     }
 }

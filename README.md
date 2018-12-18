@@ -69,6 +69,14 @@ This project's code is stored in the branch [project8](https://github.com/Endura
 #### Project Overview
 
 The goal is to set up a database schema for an Book Store App. This project **does not have any UI components**; instead, the main focus is what happens behind the scenes, implementing a simple database. It contains a subclass of SQLiteOpenHelper and a Contract.
+
+### Project 9 - Inventory App, Stage 2
+
+This project's code is stored in the branch [project9](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project9).
+
+#### Project Overview
+
+This project builds upon the database scheme developed in [Project 8](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project8) to develop the UI that will allow users to add and remove products from the inventory, review details about a particular product, and see all the currently available products in stock.
  
 ## Lessons
 

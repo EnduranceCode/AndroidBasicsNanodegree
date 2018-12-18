@@ -1,4 +1,4 @@
-package com.endurancecode.inventoryappstageone;
+package com.endurancecode.inventoryappstagetwo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

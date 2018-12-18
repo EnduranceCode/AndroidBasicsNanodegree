@@ -1,11 +1,11 @@
-package com.endurancecode.inventoryappstageone.data;
+package com.endurancecode.inventoryappstagetwo.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.endurancecode.inventoryappstageone.data.InventoryContract.Products;
+import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
 
 /**
  * Database helper for Inventory App. Manages database creation and version management.

@@ -1,4 +1,4 @@
-package com.endurancecode.inventoryappstageone.data;
+package com.endurancecode.inventoryappstagetwo.data;
 
 import android.provider.BaseColumns;
 

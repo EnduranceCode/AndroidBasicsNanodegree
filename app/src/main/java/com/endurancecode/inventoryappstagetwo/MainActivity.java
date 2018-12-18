@@ -1,4 +1,4 @@
-package com.endurancecode.inventoryappstageone;
+package com.endurancecode.inventoryappstagetwo;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -8,8 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.endurancecode.inventoryappstageone.data.InventoryContract.Products;
-import com.endurancecode.inventoryappstageone.data.ProductDatabaseHelper;
+import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
+import com.endurancecode.inventoryappstagetwo.data.ProductDatabaseHelper;
 
 
 public class MainActivity extends AppCompatActivity {

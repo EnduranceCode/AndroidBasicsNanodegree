@@ -1,10 +1,10 @@
 # Google Developer Nanodegree Scholarship
 
-This branch of the [AndroidBasicsNanodegree](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/master) repository contains the code written for the **Eighth Project** of the [Google Developers Android Basics Nanodegree Scholarship by Udacity](https://sites.google.com/knowlabs.com/gdnd2017).
+This folder of the [AndroidBasicsNanodegree](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/master) repository contains the code written for the **Ninth (and last Project**  of the [Google Developers Android Basics Nanodegree Scholarship by Udacity](https://sites.google.com/knowlabs.com/gdnd2017).
 
 ## Project Overview
 
-The goal is to set up a database schema for an Book Store App. This project **does not have any UI components**; instead, the main focus is what happens behind the scenes, implementing a simple database. It contains a subclass of SQLiteOpenHelper and a Contract.
+This project builds upon the database scheme developed in [Project 8](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/project8) to develop the UI that will allow users to add and remove products from the inventory, review details about a particular product, and see all the currently available products in stock.
 
 ### Attributions
 

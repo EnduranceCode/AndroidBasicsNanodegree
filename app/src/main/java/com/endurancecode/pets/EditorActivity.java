@@ -378,7 +378,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
          * for the positive and negative buttons on the dialog.
          */
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.delete_dialog_msg);
+        builder.setMessage(R.string.delete_dialog_single_pet_msg);
         builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 /* User clicked the "Delete" button, so delete the pet */

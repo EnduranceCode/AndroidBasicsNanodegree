@@ -3,6 +3,7 @@ package com.endurancecode.inventoryappstagetwo.data;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.provider.BaseColumns;
+import android.text.TextUtils;
 
 public final class InventoryContract {
 
@@ -37,6 +38,14 @@ public final class InventoryContract {
 
     /**
      * Inner class that defines the table contents
+     * <p>
+     * METHODS INDEX
+     * -------------
+     * - isInvalidName()
+     * - isInvalidPrice()
+     * - isInvalidQuantity()
+     * - isInvalidSupplier()
+     * - isInvalidSupplierPhone()
      */
     public static class Products implements BaseColumns {
 
@@ -105,5 +114,50 @@ public final class InventoryContract {
          * Type: TEXT
          */
         public static final String SUPPLIER_PHONE = "supplier_phone";
+
+        /**
+         * Checks if the product's name is invalid, i.e., if it is null or empty
+         *
+         * @param name Product's name
+         */
+        public static boolean isInvalidProductName(String name) {
+            return TextUtils.isEmpty(name);
+        }
+
+        /**
+         * Checks if the product's price is invalid, i.e., if it is less or equal to zero
+         *
+         * @param price Product's price
+         */
+        public static boolean isInvalidPrice(double price) {
+            return price <= 0;
+        }
+
+        /**
+         * Checks if the product's quantity is invalid, i.e., if it is less than zero
+         *
+         * @param quantity Product's quantity
+         */
+        public static boolean isInvalidQuantity(int quantity) {
+            return quantity < 0;
+        }
+
+        /**
+         * Checks if the product's supplier is invalid, i.e., if it is null or empty
+         *
+         * @param supplier Product's supplier
+         */
+        public static boolean isInvalidSupplier(String supplier) {
+            return TextUtils.isEmpty(supplier);
+        }
+
+        /**
+         * Checks if the product's supplier phone is invalid, i.e., if it is null or empty
+         *
+         * @param supplierPhone Product's supplier phone
+         */
+        public static boolean isInvalidSupplierPhone(String supplierPhone) {
+            return TextUtils.isEmpty(supplierPhone);
+        }
     }
 }

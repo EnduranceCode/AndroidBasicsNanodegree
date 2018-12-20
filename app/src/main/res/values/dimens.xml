@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margin & Padding-->
-    <dimen name="mp_global_big">16dp</dimen>
-    <dimen name="mp_horizontal_big">16dp</dimen>
-    <dimen name="mp_vertical_big">16dp</dimen>
-    <dimen name="mp_global_normal">8dp</dimen>
+    <dimen name="mp_big_global">16dp</dimen>
+    <dimen name="mp_big_horizontal">16dp</dimen>
+    <dimen name="mp_big_vertical">16dp</dimen>
+    <dimen name="mp_normal_global">8dp</dimen>
     <dimen name="mp_normal_horizontal">8dp</dimen>
     <dimen name="mp_normal_vertical">8dp</dimen>
+    <dimen name="mp_small_global">4dp</dimen>
+    <dimen name="mp_small_horizontal">4dp</dimen>
+    <dimen name="mp_small_vertical">4dp</dimen>
 </resources>

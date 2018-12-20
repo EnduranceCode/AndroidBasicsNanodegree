@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">Inventory App</string>
 
+    <!-- Main Activity -->
+    <string name="empty_view_headline">Database is empty!</string>
+    <string name="empty_view_subhead">Use the Add Button to insert a new product.</string>
+    <string name="empty_view_instructions">
+        The inserted products must contain the following fields:
+        \n\t- Name
+        \n\t- Price
+        \n\t- Quantity
+        \n\t- Supplier
+        \n\t- Supplier\'s phone number
+    </string>
+
     <!-- Products List Item -->
     <string name="price_label">Price:</string>
     <string name="currency_symbol">€</string>

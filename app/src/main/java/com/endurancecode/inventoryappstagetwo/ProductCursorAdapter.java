@@ -12,19 +12,19 @@ import android.widget.TextView;
 import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
 
 /**
- * {@link ProductAdapter} is an adapter for a list or grid view
+ * {@link ProductCursorAdapter} is an adapter for a list or grid view
  * that uses a {@link Cursor} of pet data as its data source. This adapter knows
  * how to create list items for each row of pet data in the {@link Cursor}.
  */
-public class ProductAdapter extends CursorAdapter {
+public class ProductCursorAdapter extends CursorAdapter {
 
     /**
-     * Constructs a new {@link ProductAdapter}.
+     * Constructs a new {@link ProductCursorAdapter}.
      *
      * @param context The context
      * @param cursor  The cursor from which to get the data.
      */
-    public ProductAdapter(Context context, Cursor cursor) {
+    public ProductCursorAdapter(Context context, Cursor cursor) {
         super(context, cursor, 0 /* flags */);
     }
 

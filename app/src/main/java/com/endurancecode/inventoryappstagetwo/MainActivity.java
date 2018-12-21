@@ -1,6 +1,8 @@
 package com.endurancecode.inventoryappstagetwo;
 
+import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
@@ -21,7 +24,7 @@ import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     /**
-     * Identifier for the products data loader
+     * Identifier for the product's data loader
      */
     private static final int PRODUCT_LOADER = 1;
 
@@ -58,7 +61,30 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         /* Attach the CursorAdapter to the ListView */
         productListView.setAdapter(productCursorAdapter);
 
-        /* TODO: Set an onItemClickListener to load the product's detail view */
+        /* Setup item click listener */
+        productListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent detailsActivityIntent = new Intent(MainActivity.this, DetailsActivity.class);
+
+                /*
+                 * Form the content URI that represents the specific product that was clicked on,
+                 * by appending the "id" (passed as input to this method) onto the
+                 * {@link ProductEntry#CONTENT_URI}.
+                 * For example, the URI would be
+                 * "content://com.endurancecode.inventoryappstagetwo/products/2" if the pet with
+                 * ID 2 was clicked on.
+                 */
+                Uri currentProductUri = ContentUris.withAppendedId(Products.CONTENT_URI, id);
+
+                /* Set the URI on the data field of the intent */
+                detailsActivityIntent.setData(currentProductUri);
+
+                /* Launch the {@link DetailsActivity} to display the data for the current product */
+                startActivity(detailsActivityIntent);
+            }
+        });
 
         /* Kick off the loader */
         getSupportLoaderManager().initLoader(PRODUCT_LOADER, null, this);

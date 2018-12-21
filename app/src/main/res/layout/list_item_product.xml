@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    We have a button on the ListItem, so in order to prevent it from blocking focus
+    and disabling the onItemClickListener on the ListView we have to set
+    android:descendantFocusability="blocksDescendants"
+
+    Source:
+    https://syedasaraahmed.wordpress.com/2012/10/03/android-onitemclicklistener-not-responding-clickable-rowitem-of-custom-listview
+
+    See also: https://stackoverflow.com/a/45522137/8352877
+-->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
     android:paddingTop="@dimen/mp_normal_vertical"
     android:paddingBottom="@dimen/mp_normal_vertical">
 

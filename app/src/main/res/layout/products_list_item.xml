@@ -3,93 +3,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/mp_normal_vertical"
-    android:layout_marginBottom="@dimen/mp_normal_vertical"
-    android:orientation="horizontal">
+    android:paddingTop="@dimen/mp_normal_vertical"
+    android:paddingBottom="@dimen/mp_normal_vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/quantity_layout"
-        android:layout_toLeftOf="@+id/quantity_layout"
-        android:orientation="vertical">
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        tools:text="Product Name" />
 
-        <TextView
-            android:id="@+id/name"
+    <RelativeLayout
+        android:id="@+id/second_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name">
+
+        <Button
+            android:id="@+id/sale_button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-            tools:text="Product Name" />
+            android:text="@string/sale" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:id="@+id/data_layout"
+            android:layout_width="@dimen/data_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/mp_big_horizontal"
+            android:layout_marginLeft="@dimen/mp_big_horizontal"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/quantity"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/price_label"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:text="5" />
 
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/price_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/mp_normal_horizontal"
-                android:layout_marginLeft="@dimen/mp_normal_horizontal"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                tools:text="12.34" />
+                android:gravity="center">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/mp_small_horizontal"
-                android:layout_marginLeft="@dimen/mp_small_horizontal"
-                android:text="@string/currency_symbol"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    tools:text="12.34" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mp_small_horizontal"
+                    android:layout_marginLeft="@dimen/mp_small_horizontal"
+                    android:text="@string/currency_symbol"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/quantity_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="@dimen/mp_big_horizontal"
-        android:layout_marginLeft="@dimen/mp_big_horizontal"
-        android:layout_toStartOf="@+id/sale_button"
-        android:layout_toLeftOf="@+id/sale_button"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/quantity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-            tools:text="5" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingStart="@dimen/mp_small_horizontal"
-            android:paddingLeft="@dimen/mp_small_horizontal"
-            android:paddingEnd="@dimen/mp_small_horizontal"
-            android:paddingRight="@dimen/mp_small_horizontal"
-            android:text="@string/in_stock"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/sale_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/mp_big_horizontal"
-        android:layout_marginLeft="@dimen/mp_big_horizontal"
-        android:text="@string/sale" />
+    </RelativeLayout>
 </RelativeLayout>

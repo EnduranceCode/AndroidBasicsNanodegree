@@ -14,8 +14,6 @@
     </string>
 
     <!-- Products List Item -->
-    <string name="price_label">Price:</string>
     <string name="currency_symbol">€</string>
-    <string name="in_stock">In Stock</string>
     <string name="sale">sale</string>
 </resources>

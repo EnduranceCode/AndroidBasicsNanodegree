@@ -10,4 +10,7 @@
     <dimen name="mp_small_global">4dp</dimen>
     <dimen name="mp_small_horizontal">4dp</dimen>
     <dimen name="mp_small_vertical">4dp</dimen>
+
+    <!-- Product List Item -->
+    <dimen name="data_layout_width">72dp</dimen>
 </resources>

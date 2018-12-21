@@ -62,8 +62,12 @@ public class ProductProvider extends ContentProvider {
     /* Database Helper Object */
     ProductDatabaseHelper productDatabaseHelper;
 
+    /**
+     * Initialize the provider and the database helper object.
+     */
     @Override
     public boolean onCreate() {
+
         productDatabaseHelper = new ProductDatabaseHelper(getContext());
         return true;
     }
@@ -97,9 +101,9 @@ public class ProductProvider extends ContentProvider {
         switch (match) {
             case PRODUCTS:
                 /*
-                 * For the PRODUCTS code, query the pets table directly with the given
+                 * For the PRODUCTS code, query the products table directly with the given
                  * projection, selection, selection arguments, and sort order.
-                 * The cursor could contain multiple rows of the pets table.
+                 * The cursor could contain multiple rows of the products table.
                  */
                 cursor = database.query(Products.TABLE_NAME,
                         projection,
@@ -245,7 +249,7 @@ public class ProductProvider extends ContentProvider {
             Log.e(LOG_TAG, "Failed to insert data for " + uri);
             return null;
         } else {
-            /* Notify all listeners that the data has changed for the pet content URI */
+            /* Notify all listeners that the data has changed for the product content URI */
             getContext().getContentResolver().notifyChange(uri, null);
 
             /* Return the new URI with the ID appended to the end of it */
@@ -327,8 +331,8 @@ public class ProductProvider extends ContentProvider {
     }
 
     /**
-     * Update pets in the database with the given content values. Apply the changes to the rows
-     * specified in the selection and selection arguments (which could be 0 or 1 or more pets).
+     * Update products in the database with the given content values. Apply the changes to the rows
+     * specified in the selection and selection arguments (which could be 0 or 1 or more products).
      * Return the number of rows that were successfully updated.
      */
     private int updateProduct(Uri uri, ContentValues contentValues, String selection, String[] selectionArgs) {

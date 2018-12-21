@@ -13,13 +13,19 @@
         \n\t- Supplier\'s phone number
     </string>
 
-    <!-- Products List Item & Products Detail View -->
+    <!-- Products -->
     <string name="sale">sale</string>
-    <string name="quantity_label">Quantity in stock:</string>
+    <string name="name_label">Name:</string>
+    <string name="name_hint">Name</string>
+    <string name="quantity_label">Quantity:</string>
+    <string name="quantity_hint">Quantity</string>
     <string name="increase_quantity_content_description">Button to increase quantity by one</string>
     <string name="decrease_quantity_content_description">Button to decrease quantity by one</string>
     <string name="price_label">Price:</string>
+    <string name="price_hint">Price</string>
     <string name="currency_symbol">€</string>
     <string name="supplier_label">Supplier:</string>
+    <string name="supplier_hint">Supplier</string>
     <string name="supplier_phone_label">Telephone:</string>
+    <string name="supplier_phone_hint">Telephone Number</string>
 </resources>

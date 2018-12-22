@@ -9,7 +9,8 @@
     <ListView
         android:id="@+id/products_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/floatingActionButton" />
 
     <!-- Empty view for the products_list -->
     <RelativeLayout
@@ -50,6 +51,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/mp_big_global"
+        android:layout_marginTop="@dimen/mp_big_vertical"
+        android:layout_marginEnd="@dimen/mp_big_horizontal"
+        android:layout_marginRight="@dimen/mp_big_horizontal"
+        android:layout_marginBottom="@dimen/mp_normal_vertical"
         android:src="@drawable/ic_add" />
 </RelativeLayout>

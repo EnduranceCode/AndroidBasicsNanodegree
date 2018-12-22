@@ -35,16 +35,6 @@ public class ProductCursorAdapter extends CursorAdapter {
     private static final String LOG_TAG = ProductCursorAdapter.class.getSimpleName();
 
     /**
-     * Track the product's row ID
-     */
-    private int id;
-
-    /**
-     * Track the product's quantity
-     */
-    private int quantity;
-
-    /**
      * Constructs a new {@link ProductCursorAdapter}.
      *
      * @param context The context
@@ -88,48 +78,47 @@ public class ProductCursorAdapter extends CursorAdapter {
         Button saleButton = view.findViewById(R.id.sale_button);
 
         /* Extract properties from cursor */
-        id = cursor.getInt(cursor.getColumnIndex(Products._ID));
+        long id = cursor.getInt(cursor.getColumnIndex(Products._ID));
         String name = cursor.getString(cursor.getColumnIndex(Products.PRODUCT_NAME));
         double price = cursor.getDouble(cursor.getColumnIndex(Products.PRICE));
-        quantity = cursor.getInt(cursor.getColumnIndex(Products.QUANTITY));
+        final int quantity = cursor.getInt(cursor.getColumnIndex(Products.QUANTITY));
 
         /* Populate fields with extracted properties */
         nameTextView.setText(name);
         priceTextView.setText(String.valueOf(price));
         quantityTextView.setText(String.valueOf(quantity));
 
+        /* Get the current product URI */
+        final Uri currentProductUri = ContentUris.withAppendedId(Products.CONTENT_URI, id);
+
         /* Set an onClickListener method on the sales button */
         saleButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                /* Check if actual quantity is less or equal to zero */
+                Log.e(LOG_TAG, "Current Product URI: " + currentProductUri);
+                Log.e(LOG_TAG, "Product's quantity: " + quantity);
+
                 if (quantity <= 0) {
 
                     /*
-                     * We don't allow negative quantities, therefore we don't update the database
-                     * and we let the user know
+                     * We don't allow negative quantities in the database, therefore
+                     * we don't update the database and we let the user know
                      */
                     Toast.makeText(context, context.getString(R.string.negative_quantities_warning),
                             Toast.LENGTH_SHORT).show();
                 } else {
-
-                    /* Decrease the quantity */
-                    quantity -= 1;
-
-                    /* Get the URI to update */
-                    Uri currentProductUri = ContentUris.withAppendedId(Products.CONTENT_URI, id);
-
-                    Log.e(LOG_TAG, "Current Product URI: " + currentProductUri);
 
                     /*
                      * Create a ContentValues object where column names are the keys,
                      * and product attributes from the cursor are the values.
                      * We only want to update the quantity, therefore it is the only pair key/value
                      * that we use
+                     *
+                     * The inserted quantity value is the current quantity decreased by one
                      */
                     ContentValues contentValues = new ContentValues();
-                    contentValues.put(Products.QUANTITY, quantity);
+                    contentValues.put(Products.QUANTITY, quantity - 1);
 
                     /* Update the database with the new product's quantity */
                     context.getContentResolver().update(

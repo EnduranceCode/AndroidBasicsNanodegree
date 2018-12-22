@@ -31,4 +31,11 @@
     <string name="supplier_phone_hint">Telephone Number</string>
 
     <string name="negative_quantities_warning">It\'s not possible to store negative quantities!</string>
+
+    <!-- Product's Details -->
+    <string name="delete_dialog_single_product_msg">Delete this product?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="editor_delete_product_failed">Error with deleting product</string>
+    <string name="editor_delete_product_successful">Product deleted</string>
 </resources>

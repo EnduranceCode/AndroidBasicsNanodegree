@@ -1,5 +1,6 @@
 package com.endurancecode.inventoryappstagetwo;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -11,13 +12,23 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
 import com.endurancecode.inventoryappstagetwo.data.ProductProvider;
 
 /**
  * Display the products details
+ * <p>
+ * METHODS INDEX
+ * -------------
+ * - onCreate()
+ * - onCreateLoader()
+ * - onLoadFinished()
+ * - onLoaderReset()
  */
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -25,30 +36,42 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
      * Tag for the log messages
      */
     public static final String LOG_TAG = ProductProvider.class.getSimpleName();
+
     /**
      * Identifier for the product's data loader
      */
     private static final int DETAILS_PRODUCT_LOADER = 1;
+
     /**
-     * Track the product's name
+     * Track the product's name TextView
      */
     private TextView nameTextView;
+
+    /**
+     * Track the product's quantity TextView
+     */
+    private TextView quantityTextView;
+
     /**
      * Track the product's quantity
      */
-    private TextView quantityTextView;
+    private int quantity;
+
     /**
-     * Track the product's price
+     * Track the product's price TextView
      */
     private TextView priceTextView;
+
     /**
-     * Track the product's supplier
+     * Track the product's supplier TextView
      */
     private TextView supplierTextView;
+
     /**
-     * Track the product's supplier phone neumber
+     * Track the product's supplier phone number TextView
      */
     private TextView supplierPhoneTextView;
+
     /**
      * Content URI for the existing pet
      */
@@ -135,16 +158,12 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
                 int supplierColumnIndex = cursor.getColumnIndex(Products.SUPPLIER);
                 int supplierPhoneColumnIndex = cursor.getColumnIndex(Products.SUPPLIER_PHONE);
 
-                Log.e(LOG_TAG, "Name Column Index: " + nameColumnIndex);
-
                 /* Extract out the value from the Cursor for the given column index */
                 String name = cursor.getString(nameColumnIndex);
-                int quantity = cursor.getInt(quantityColumnIndex);
+                quantity = cursor.getInt(quantityColumnIndex);
                 double price = cursor.getDouble(priceQuantityColumnIndex);
                 String supplier = cursor.getString(supplierColumnIndex);
                 String supplierPhone = cursor.getString(supplierPhoneColumnIndex);
-
-                Log.e(LOG_TAG, "Name: " + name);
 
                 /* Update the TextViews in the layout with the extracted values from the cursor */
                 nameTextView.setText(name);
@@ -152,6 +171,71 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
                 priceTextView.setText(Double.toString(price));
                 supplierTextView.setText(supplier);
                 supplierPhoneTextView.setText(supplierPhone);
+
+                /* Set an onClickListener method on the increase button */
+                ImageButton increaseButton = findViewById(R.id.increase_button);
+                increaseButton.setOnClickListener(new ImageButton.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+
+                        /*
+                         * Create a ContentValues object where column names are the keys,
+                         * and product attributes from the cursor are the values.
+                         * We only want to update the quantity, therefore it is the only pair key/value
+                         * that we use
+                         *
+                         * The inserted quantity value is the current quantity increased by one
+                         */
+                        ContentValues contentValues = new ContentValues();
+                        contentValues.put(Products.QUANTITY, quantity + 1);
+
+                        /* Update the database with the new product's quantity */
+                        getContentResolver().update(
+                                currentProductUri,
+                                contentValues,
+                                null,
+                                null);
+                    }
+                });
+
+                /* Set an onItemClickListener method on the decrease button */
+                ImageButton decreaseButton = findViewById(R.id.decrease_button);
+                decreaseButton.setOnClickListener(new ImageButton.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+
+                        if (quantity <= 0) {
+
+                            /*
+                             * We don't allow negative quantities, therefore we don't update the database
+                             * and we let the user know
+                             */
+                            Toast.makeText(getBaseContext(), getString(R.string.negative_quantities_warning),
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+
+                            /*
+                             * Create a ContentValues object where column names are the keys,
+                             * and product attributes from the cursor are the values.
+                             * We only want to update the quantity, therefore it is the only pair key/value
+                             * that we use
+                             *
+                             * The inserted quantity value is the current quantity decreased by one
+                             */
+                            ContentValues contentValues = new ContentValues();
+                            contentValues.put(Products.QUANTITY, quantity - 1);
+
+                            /* Update the database with the new product's quantity */
+                            getContentResolver().update(
+                                    currentProductUri,
+                                    contentValues,
+                                    null,
+                                    null);
+                        }
+                    }
+                });
             }
         }
     }

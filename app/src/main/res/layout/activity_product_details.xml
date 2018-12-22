@@ -17,7 +17,7 @@
     <RelativeLayout
         android:id="@+id/quantity"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/name"
         android:layout_marginBottom="@dimen/mp_normal_vertical">
 
@@ -28,23 +28,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@id/quantity_value"
-            android:layout_toLeftOf="@id/quantity_value"
+            android:layout_toStartOf="@id/quantity_layout"
+            android:layout_toLeftOf="@id/quantity_layout"
             android:text="@string/quantity_label" />
 
-        <TextView
-            android:id="@+id/quantity_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/mp_big_horizontal"
-            android:layout_marginLeft="@dimen/mp_big_horizontal"
-            android:layout_toStartOf="@id/buttons_layout"
-            android:layout_toLeftOf="@id/buttons_layout"
-            tools:text="5" />
-
         <LinearLayout
-            android:id="@+id/buttons_layout"
+            android:id="@+id/quantity_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -56,20 +45,40 @@
 
             <ImageButton
                 android:id="@+id/increase_button"
+                style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/mp_small_vertical"
+                android:layout_margin="@dimen/mp_small_vertical"
                 android:background="@color/colorAccent"
+                android:clickable="true"
                 android:contentDescription="@string/increase_quantity_content_description"
-                android:src="@drawable/ic_add" />
+                android:elevation="@dimen/mp_small_global"
+                android:focusable="true"
+                android:padding="@dimen/mp_small_global"
+                android:src="@drawable/ic_add"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/quantity_value"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                tools:text="5" />
 
             <ImageButton
                 android:id="@+id/decrease_button"
+                style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mp_small_vertical"
                 android:background="@color/colorAccent"
+                android:clickable="true"
                 android:contentDescription="@string/decrease_quantity_content_description"
-                android:src="@drawable/ic_remove" />
+                android:elevation="@dimen/mp_small_global"
+                android:focusable="true"
+                android:padding="@dimen/mp_small_global"
+                android:src="@drawable/ic_remove"
+                tools:ignore="UnusedAttribute" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -184,8 +193,9 @@
         android:layout_marginStart="@dimen/mp_big_horizontal"
         android:layout_marginLeft="@dimen/mp_big_horizontal"
         android:layout_marginBottom="@dimen/mp_big_vertical"
-        android:src="@drawable/ic_delete"
-        tools:backgroundTint="@android:color/holo_red_dark" />
+        android:backgroundTint="@color/warningColor"
+        android:clickable="true"
+        android:src="@drawable/ic_delete" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingEditButton"
@@ -197,6 +207,7 @@
         android:layout_marginBottom="@dimen/mp_big_vertical"
         android:layout_toEndOf="@id/floatingDeleteButton"
         android:layout_toRightOf="@id/floatingDeleteButton"
+        android:clickable="true"
         android:src="@drawable/ic_create" />
 
     <android.support.design.widget.FloatingActionButton
@@ -207,5 +218,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/mp_big_global"
+        android:clickable="true"
         android:src="@drawable/ic_call" />
 </RelativeLayout>

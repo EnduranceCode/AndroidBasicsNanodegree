@@ -1,13 +1,18 @@
 package com.endurancecode.inventoryappstagetwo;
 
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
 
@@ -15,8 +20,29 @@ import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
  * {@link ProductCursorAdapter} is an adapter for a list or grid view
  * that uses a {@link Cursor} of product data as its data source. This adapter knows
  * how to create list items for each row of product data in the {@link Cursor}.
+ * <p>
+ * METHODS INDEX
+ * -------------
+ * - productCursorAdapter()
+ * - newView()
+ * - bindView()
  */
 public class ProductCursorAdapter extends CursorAdapter {
+
+    /**
+     * Tag for the log messages
+     */
+    private static final String LOG_TAG = ProductCursorAdapter.class.getSimpleName();
+
+    /**
+     * Track the product's row ID
+     */
+    private int id;
+
+    /**
+     * Track the product's quantity
+     */
+    private int quantity;
 
     /**
      * Constructs a new {@link ProductCursorAdapter}.
@@ -53,7 +79,7 @@ public class ProductCursorAdapter extends CursorAdapter {
      *                correct row.
      */
     @Override
-    public void bindView(View view, Context context, Cursor cursor) {
+    public void bindView(View view, final Context context, Cursor cursor) {
 
         /* Find views to populate in inflated template */
         TextView nameTextView = view.findViewById(R.id.name);
@@ -62,15 +88,57 @@ public class ProductCursorAdapter extends CursorAdapter {
         Button saleButton = view.findViewById(R.id.sale_button);
 
         /* Extract properties from cursor */
+        id = cursor.getInt(cursor.getColumnIndex(Products._ID));
         String name = cursor.getString(cursor.getColumnIndex(Products.PRODUCT_NAME));
-        String priceString = String.valueOf(cursor.getDouble(cursor.getColumnIndex(Products.PRICE)));
-        String quantityString = String.valueOf(cursor.getInt(cursor.getColumnIndex(Products.QUANTITY)));
+        double price = cursor.getDouble(cursor.getColumnIndex(Products.PRICE));
+        quantity = cursor.getInt(cursor.getColumnIndex(Products.QUANTITY));
 
         /* Populate fields with extracted properties */
         nameTextView.setText(name);
-        priceTextView.setText(priceString);
-        quantityTextView.setText(quantityString);
+        priceTextView.setText(String.valueOf(price));
+        quantityTextView.setText(String.valueOf(quantity));
 
-        /* TODO: Add onClick event on the sale Button to decrease {@Products.#QUANTIY} by one */
+        /* Set an onClickListener method on the sales button */
+        saleButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                /* Check if actual quantity is less or equal to zero */
+                if (quantity <= 0) {
+
+                    /*
+                     * We don't allow negative quantities, therefore we don't update the database
+                     * and we let the user know
+                     */
+                    Toast.makeText(context, context.getString(R.string.negative_quantities_warning),
+                            Toast.LENGTH_SHORT).show();
+                } else {
+
+                    /* Decrease the quantity */
+                    quantity -= 1;
+
+                    /* Get the URI to update */
+                    Uri currentProductUri = ContentUris.withAppendedId(Products.CONTENT_URI, id);
+
+                    Log.e(LOG_TAG, "Current Product URI: " + currentProductUri);
+
+                    /*
+                     * Create a ContentValues object where column names are the keys,
+                     * and product attributes from the cursor are the values.
+                     * We only want to update the quantity, therefore it is the only pair key/value
+                     * that we use
+                     */
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put(Products.QUANTITY, quantity);
+
+                    /* Update the database with the new product's quantity */
+                    context.getContentResolver().update(
+                            currentProductUri,
+                            contentValues,
+                            null,
+                            null);
+                }
+            }
+        });
     }
 }

@@ -29,4 +29,6 @@
     <string name="supplier_hint">Supplier</string>
     <string name="supplier_phone_label">Telephone:</string>
     <string name="supplier_phone_hint">Telephone Number</string>
+
+    <string name="negative_quantities_warning">It\'s not possible to store negative quantities!</string>
 </resources>

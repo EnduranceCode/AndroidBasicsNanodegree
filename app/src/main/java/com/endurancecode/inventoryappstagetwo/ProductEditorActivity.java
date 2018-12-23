@@ -141,6 +141,15 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
             /* And we only initialize the loader when we are editing a existing product */
             //noinspection deprecation
             getSupportLoaderManager().initLoader(EDITOR_PRODUCT_LOADER, null, this);
+
+            /* As this is an existing product, we can set an onClickListener method on the FAB delete button */
+            FloatingActionButton deleteProductButton = findViewById(R.id.floatingDeleteButton);
+            deleteProductButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    deleteProduct();
+                }
+            });
         }
 
         /* Find all relevant views that we will need to read user input from */
@@ -161,7 +170,7 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
         supplierEditText.setOnTouchListener(editorTouchListener);
         supplierPhoneEditText.setOnTouchListener(editorTouchListener);
 
-        /* Set an onClickListener method on the FAB delete button */
+        /* Set an onClickListener method on the FAB save button */
         FloatingActionButton saveProductButton = findViewById(R.id.floatingSaveButton);
         saveProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -260,7 +269,7 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
                 if (rowsUpdated == 0) {
 
                     /*
-                     * If the returned number of updated rows is zero, the data insertion was succesfull
+                     * If the returned number of updated rows is zero, the data insertion was successful
                      * and we let the user know about the success, there was an error with insertion
                      * and we let the user know about the failure
                      */
@@ -343,6 +352,28 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
         }
 
         return isInputProductDataValid;
+    }
+
+    private void deleteProduct() {
+
+        /* Only perform the delete if this is an existing product */
+        if (existingProductUri != null) {
+
+            int rowsDeleted = getContentResolver().delete(existingProductUri, null, null);
+
+            /* Show a toast message depending on whether or not the deletion was successful */
+            if (rowsDeleted == 0) {
+                Toast.makeText(this, getString(R.string.editor_delete_product_failed), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, getString(R.string.editor_delete_product_successful), Toast.LENGTH_SHORT).show();
+
+                /* Close the activity */
+                finish();
+
+                Intent mainActivityIntent = new Intent(ProductEditorActivity.this, MainActivity.class);
+                startActivity(mainActivityIntent);
+            }
+        }
     }
 
     @Override

@@ -76,7 +76,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
     private TextView supplierPhoneTextView;
 
     /**
-     * Content URI for the existing pet
+     * Content URI for the existing product
      */
     private Uri currentProductUri;
 
@@ -102,14 +102,30 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
         supplierTextView = findViewById(R.id.supplier_value);
         supplierPhoneTextView = findViewById(R.id.supplier_phone_value);
 
-        /* Set an onClickListener method on the delete button */
-        FloatingActionButton deleteButton = findViewById(R.id.floatingDeleteButton);
-        deleteButton.setOnClickListener(new FloatingActionButton.OnClickListener() {
+        /* Set an onClickListener method on the delete product button */
+        FloatingActionButton deleteProductButton = findViewById(R.id.floatingDeleteButton);
+        deleteProductButton.setOnClickListener(new FloatingActionButton.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
                 showDeleteConfirmationDialog();
+            }
+        });
+
+        /* Set an onClickListener method on the edit product button */
+        FloatingActionButton editProductButton = findViewById(R.id.floatingEditButton);
+        editProductButton.setOnClickListener(new FloatingActionButton.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent productEditorActivityIntent = new Intent(ProductDetailsActivity.this, ProductEditorActivity.class);
+
+                /* Set the URI on the data field of the intent */
+                productEditorActivityIntent.setData(currentProductUri);
+
+                /* Launch the {@link ProductEditorActivity} to display the data for the current product */
+                startActivity(productEditorActivityIntent);
             }
         });
     }

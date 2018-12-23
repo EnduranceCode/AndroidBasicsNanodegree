@@ -1,5 +1,6 @@
 package com.endurancecode.inventoryappstagetwo;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,10 +12,12 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.app.NavUtils;
+import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -37,6 +40,7 @@ import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
  * - onCreateLoader()
  * - onLoadFinished()
  * - onLoaderReset()
+ * - isCursorValid()
  */
 public class ProductEditorActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -88,6 +92,7 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
      */
     private View.OnTouchListener editorTouchListener = new View.OnTouchListener() {
 
+        @SuppressLint("ClickableViewAccessibility")
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
             productHasChanged = true;
@@ -95,6 +100,7 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
         }
     };
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +112,8 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
          */
         Intent editorActivityIntent = getIntent();
         existingProductUri = editorActivityIntent.getData();
+
+        Log.e(LOG_TAG, "Existing Content URI: " + existingProductUri);
 
         /*
          * If the intent DOES NOT contain a product content URI, then we know that we are
@@ -129,6 +137,10 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
              * Therefore we change the app bar label accordingly
              */
             setTitle(R.string.editor_activity_title_edit_product);
+
+            /* And we only initialize the loader when we are editing a existing product */
+            //noinspection deprecation
+            getSupportLoaderManager().initLoader(EDITOR_PRODUCT_LOADER, null, this);
         }
 
         /* Find all relevant views that we will need to read user input from */
@@ -165,6 +177,7 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
         String name = nameEditText.getText().toString().trim();
         int quantity;
         if (TextUtils.isEmpty(quantityEditText.getText().toString().trim())) {
+
             /*
              * We set the quantity to a negative number when the user leaves the quantity
              * EditText field blank to trigger the Products.isInvalidQuantity method and
@@ -176,6 +189,7 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
         }
         double price;
         if (TextUtils.isEmpty(priceEditText.getText().toString().trim())) {
+
             /*
              * We set the price to zero when the user leaves the price
              * EditText field blank to trigger the Products.isInvalidPrice method and
@@ -215,7 +229,7 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
                 if (newUri == null) {
 
                     /*
-                     * If the new content URI is null there was an error with insertion
+                     * If the new content URI is null, there was an error with insertion
                      * and we let the user know about the failure
                      */
                     Toast.makeText(this, getString(R.string.save_product_failure), Toast.LENGTH_SHORT).show();
@@ -232,6 +246,38 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
 
                     /* Set the URI on the data field of the intent */
                     detailsActivityIntent.setData(newUri);
+                    startActivity(detailsActivityIntent);
+                }
+            } else {
+
+                /*
+                 * This is a EXISTING product, so insert the edited exiting product into the provider,
+                 * returning the content URI for the new pet.
+                 */
+                int rowsUpdated = getContentResolver().update(existingProductUri, contentValues, null, null);
+
+                /* Show a toast message depending on whether or not the insertion was successful */
+                if (rowsUpdated == 0) {
+
+                    /*
+                     * If the returned number of updated rows is zero, the data insertion was succesfull
+                     * and we let the user know about the success, there was an error with insertion
+                     * and we let the user know about the failure
+                     */
+                    Toast.makeText(this, getString(R.string.save_product_failure), Toast.LENGTH_SHORT).show();
+                } else {
+
+                    /*
+                     * If the returned number of updated rows is NOT zero, the data insertion was successful
+                     * and we let the user know about the success
+                     */
+                    Toast.makeText(this, getString(R.string.save_product_success), Toast.LENGTH_SHORT).show();
+
+                    /* We now show to the user the Details Product view with the new product's data */
+                    Intent detailsActivityIntent = new Intent(ProductEditorActivity.this, ProductDetailsActivity.class);
+
+                    /* Set the URI on the data field of the intent */
+                    detailsActivityIntent.setData(existingProductUri);
                     startActivity(detailsActivityIntent);
                 }
             }
@@ -408,16 +454,94 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int i, @Nullable Bundle bundle) {
-        return null;
+
+        /*
+         * The editor shows all product'a attributes,
+         * so we need to define a projection that contains all columns from the product table
+         */
+        String[] projection = {
+                Products._ID,
+                Products.PRODUCT_NAME,
+                Products.PRICE,
+                Products.QUANTITY,
+                Products.SUPPLIER,
+                Products.SUPPLIER_PHONE
+        };
+
+        /*
+         * This loader will execute the ContentProvider's query method on a background thread
+         *
+         * Provided input parameters:
+         *  - Parent activity context
+         *  - Provider content URI to query
+         *  - Columns to include in the resulting Cursor
+         *  - No selection clause
+         *  - No selection arguments
+         *  - Default sort order
+         */
+        return new CursorLoader(
+                this,
+                existingProductUri,
+                projection,
+                null,
+                null,
+                null
+        );
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor cursor) {
 
+        if (isCursorValid(cursor)) {
+
+            /*
+             * Proceed with moving to the first row of the cursor and reading data from it
+             * (This should be the only row in the cursor)
+             */
+            if (cursor.moveToFirst()) {
+
+                /* Find the columns of product's attributes that we're interested in */
+                int nameColumnIndex = cursor.getColumnIndex(Products.PRODUCT_NAME);
+                int priceColumnIndex = cursor.getColumnIndex(Products.PRICE);
+                int quantityColumnIndex = cursor.getColumnIndex(Products.QUANTITY);
+                int supplierColumnIndex = cursor.getColumnIndex(Products.SUPPLIER);
+                int supplierPhoneColumnIndex = cursor.getColumnIndex(Products.SUPPLIER_PHONE);
+
+                /* Extract out the value from the Cursor for the given column index */
+                String name = cursor.getString(nameColumnIndex);
+                double price = cursor.getDouble(priceColumnIndex);
+                int quantity = cursor.getInt(quantityColumnIndex);
+                String supplier = cursor.getString(supplierColumnIndex);
+                String supplierPhone = cursor.getString(supplierPhoneColumnIndex);
+
+                /* Update the EditText fields in the layout with the extracted values from the cursor */
+                nameEditText.setText(name);
+                priceEditText.setText(Double.toString(price));
+                quantityEditText.setText(Integer.toString(quantity));
+                supplierEditText.setText(supplier);
+                supplierPhoneEditText.setText(supplierPhone);
+            }
+        }
     }
 
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
 
+        /* If the loader is invalidated, clear out all the data from the input fields */
+        nameEditText.getText().clear();
+        priceEditText.getText().clear();
+        quantityEditText.getText().clear();
+        supplierEditText.getText().clear();
+        supplierPhoneEditText.getText().clear();
+    }
+
+    /**
+     * Check if the cursor is not null and if it has at least one row
+     *
+     * @param cursor The cursor to be checked
+     */
+    private boolean isCursorValid(Cursor cursor) {
+        return cursor != null && cursor.getCount() >= 1;
     }
 }

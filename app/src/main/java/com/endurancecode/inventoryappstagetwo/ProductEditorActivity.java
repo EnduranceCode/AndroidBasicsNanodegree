@@ -34,6 +34,7 @@ import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
  * - onCreate()
  * - saveProduct()
  * - isInputProductDataValid()
+ * - deleteProduct()
  * - onOptionsItemSelected()
  * - onBackPressed()
  * - showUnsavedChangesDialog()

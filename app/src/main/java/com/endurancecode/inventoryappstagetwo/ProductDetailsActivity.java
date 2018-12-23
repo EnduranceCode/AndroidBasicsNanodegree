@@ -33,7 +33,7 @@ import com.endurancecode.inventoryappstagetwo.data.ProductProvider;
  * - onLoadFinished()
  * - onLoaderReset()
  */
-public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class ProductDetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     /**
      * Tag for the log messages

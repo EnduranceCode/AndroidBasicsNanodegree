@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".DetailsActivity"
+            android:name=".ProductDetailsActivity"
             android:label="@string/details_activity"
             android:parentActivityName=".MainActivity"
             tools:ignore="UnusedAttribute">

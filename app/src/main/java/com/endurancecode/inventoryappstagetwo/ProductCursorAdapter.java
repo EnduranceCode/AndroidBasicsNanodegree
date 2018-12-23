@@ -40,7 +40,7 @@ public class ProductCursorAdapter extends CursorAdapter {
      * @param context The context
      * @param cursor  The cursor from which to get the data.
      */
-    public ProductCursorAdapter(Context context, Cursor cursor) {
+    ProductCursorAdapter(Context context, Cursor cursor) {
         super(context, cursor, 0 /* flags */);
     }
 

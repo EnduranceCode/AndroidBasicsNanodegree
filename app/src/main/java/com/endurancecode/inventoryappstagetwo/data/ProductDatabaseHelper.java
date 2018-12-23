@@ -13,7 +13,7 @@ import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
 public class ProductDatabaseHelper extends SQLiteOpenHelper {
 
     /* Tag for log messages */
-    public static final String LOG_TAG = ProductDatabaseHelper.class.getSimpleName();
+    private static final String LOG_TAG = ProductDatabaseHelper.class.getSimpleName();
 
     /* Name of the database file */
     private static final String DATABASE_FILE = "products.db";
@@ -29,10 +29,9 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
      *
      * @param context of the app
      */
-    public ProductDatabaseHelper(Context context) {
+    ProductDatabaseHelper(Context context) {
         super(context, DATABASE_FILE, null, DATABASE_VERSION);
     }
-
 
     /**
      * This is called when the database is created for the first time.

@@ -7,6 +7,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
@@ -83,7 +84,7 @@ public class ProductProvider extends ContentProvider {
      * @param sortOrder     Sort order
      */
     @Override
-    public Cursor query(Uri uri,
+    public Cursor query(@NonNull Uri uri,
                         String[] projection,
                         String selection,
                         String[] selectionArgs,
@@ -154,7 +155,7 @@ public class ProductProvider extends ContentProvider {
      * Returns the MIME type of data for the content URI.
      */
     @Override
-    public String getType(Uri uri) {
+    public String getType(@NonNull Uri uri) {
 
         /* Figure out if the URI matcher can match the URI to a specific code */
         final int match = uriMatcher.match(uri);
@@ -179,7 +180,7 @@ public class ProductProvider extends ContentProvider {
      * @param contentValues Values to insert in the database
      */
     @Override
-    public Uri insert(Uri uri, ContentValues contentValues) {
+    public Uri insert(@NonNull Uri uri, ContentValues contentValues) {
 
         /* Figure out if the URI matcher can match the URI to a specific code */
         final int match = uriMatcher.match(uri);
@@ -265,7 +266,7 @@ public class ProductProvider extends ContentProvider {
      * @param selectionArgs Selection arguments
      */
     @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
+    public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
 
         /* Get writable database */
         SQLiteDatabase database = productDatabaseHelper.getWritableDatabase();
@@ -313,7 +314,7 @@ public class ProductProvider extends ContentProvider {
      * @param selectionArgs Selection arguments
      */
     @Override
-    public int update(Uri uri, ContentValues contentValues, String selection, String[] selectionArgs) {
+    public int update(@NonNull Uri uri, ContentValues contentValues, String selection, String[] selectionArgs) {
 
         /* Figure out if the URI matcher can match the URI to a specific code */
         int match = uriMatcher.match(uri);

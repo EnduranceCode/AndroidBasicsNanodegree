@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         });
 
         /* Kick off the loader */
+        //noinspection deprecation
         getSupportLoaderManager().initLoader(PRODUCT_LOADER, null, this);
     }
 
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
          * Receive the new content URI that will allow us
          * to access Dummy's product data in the future.
          */
-        Uri newUri = getContentResolver().insert(Products.CONTENT_URI, contentValues);
+        getContentResolver().insert(Products.CONTENT_URI, contentValues);
     }
 
     @NonNull

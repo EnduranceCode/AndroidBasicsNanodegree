@@ -38,4 +38,18 @@
     <string name="cancel">Cancel</string>
     <string name="editor_delete_product_failed">Error with deleting product</string>
     <string name="editor_delete_product_successful">Product deleted</string>
+
+    <!-- Product Editor -->
+    <string name="editor_activity_title_insert_product">Insert product</string>
+    <string name="editor_activity_title_edit_product">Edit product</string>
+    <string name="invalid_product_name_msg">It\'s necessary to insert a name for the product</string>
+    <string name="invalid_product_quantity_msg">It\'s necessary to insert a quantity for the product and it can\'t be zero</string>
+    <string name="invalid_product_price_msg">It\'s necessary to insert the price for the product and it can\'t be zero</string>
+    <string name="invalid_product_supplier_msg">It\'s necessary to insert the product\'s supplier</string>
+    <string name="invalid_product_supplier_phone_msg">It\'s necessary to insert the product\'s supplier phone number</string>
+    <string name="save_product_failure">Failed to save new product</string>
+    <string name="save_product_success">Saved the new product</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="unsaved_changes_dialog_discard">Discard</string>
+    <string name="unsaved_changes_dialog_keep_editing">Keep editing</string>
 </resources>

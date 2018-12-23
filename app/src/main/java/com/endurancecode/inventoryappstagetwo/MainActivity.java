@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
@@ -20,6 +21,14 @@ import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
 
 /**
  * Displays the list of products stored in the database
+ * <p>
+ * METHODS INDEX
+ * -------------
+ * - onCreate()
+ * - insertDummyData()
+ * - onCreateLoader()
+ * - onLoadFinished()
+ * - onLoaderReset()
  */
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -42,7 +51,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         /* Temporary call for debugging purposes only */
         insertDummyData();
 
-        /* TODO: Set FAB to open an insert product activity */
+        /* Set an onClickListener method on the FAB add product button */
+        FloatingActionButton addProductButton = findViewById(R.id.floatingAddProductButton);
+        addProductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent productEditorActivityIntent = new Intent(MainActivity.this, ProductEditorActivity.class);
+                startActivity(productEditorActivityIntent);
+            }
+        });
 
         /* Find the ListView which will be populated with the product data */
         ListView productListView = findViewById(R.id.products_list);
@@ -66,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent detailsActivityIntent = new Intent(MainActivity.this, DetailsActivity.class);
+                Intent detailsActivityIntent = new Intent(MainActivity.this, ProductDetailsActivity.class);
 
                 /*
                  * Form the content URI that represents the specific product that was clicked on,
@@ -81,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 /* Set the URI on the data field of the intent */
                 detailsActivityIntent.setData(currentProductUri);
 
-                /* Launch the {@link DetailsActivity} to display the data for the current product */
+                /* Launch the {@link ProductDetailsActivity} to display the data for the current product */
                 startActivity(detailsActivityIntent);
             }
         });

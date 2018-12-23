@@ -32,6 +32,17 @@
                 android:value=".MainActivity" />
         </activity>
 
+        <activity
+            android:name=".ProductEditorActivity"
+            android:parentActivityName=".ProductDetailsActivity"
+            tools:ignore="UnusedAttribute">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ProductDetailsActivity" />
+        </activity>
+
         <provider
             android:name=".data.ProductProvider"
             android:authorities="com.endurancecode.inventoryappstagetwo"

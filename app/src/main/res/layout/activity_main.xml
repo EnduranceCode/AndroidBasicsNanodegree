@@ -10,7 +10,7 @@
         android:id="@+id/products_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/floatingActionButton" />
+        android:layout_above="@id/floatingAddProductButton" />
 
     <!-- Empty view for the products_list -->
     <RelativeLayout
@@ -45,7 +45,7 @@
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/floatingAddProductButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

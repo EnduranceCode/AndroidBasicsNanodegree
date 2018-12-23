@@ -195,7 +195,9 @@
         android:layout_marginBottom="@dimen/mp_big_vertical"
         android:backgroundTint="@color/warningColor"
         android:clickable="true"
-        android:src="@drawable/ic_delete" />
+        android:focusable="true"
+        android:src="@drawable/ic_delete"
+        tools:ignore="UnusedAttribute" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingEditButton"
@@ -208,10 +210,11 @@
         android:layout_toEndOf="@id/floatingDeleteButton"
         android:layout_toRightOf="@id/floatingDeleteButton"
         android:clickable="true"
+        android:focusable="true"
         android:src="@drawable/ic_create" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingSaveButton"
+        android:id="@+id/floatingCallButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -219,5 +222,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/mp_big_global"
         android:clickable="true"
-        android:src="@drawable/ic_call" />
+        android:focusable="true"
+        android:src="@drawable/ic_call"
+        tools:ignore="RelativeOverlap" />
 </RelativeLayout>

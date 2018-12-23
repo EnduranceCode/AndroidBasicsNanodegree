@@ -131,6 +131,18 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
                 startActivity(productEditorActivityIntent);
             }
         });
+
+        /* Set an onClickListener method on the call button */
+        FloatingActionButton callButton = findViewById(R.id.floatingCallButton);
+        callButton.setOnClickListener(new FloatingActionButton.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+                dialIntent.setData(Uri.parse("tel:" + String.valueOf(supplierPhoneTextView.getText())));
+                startActivity(dialIntent);
+            }
+        });
     }
 
     /**

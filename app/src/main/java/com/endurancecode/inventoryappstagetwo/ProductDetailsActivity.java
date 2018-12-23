@@ -1,5 +1,6 @@
 package com.endurancecode.inventoryappstagetwo;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -32,6 +33,7 @@ import com.endurancecode.inventoryappstagetwo.data.ProductProvider;
  * - onCreateLoader()
  * - onLoadFinished()
  * - onLoaderReset()
+ * - isCursorValid()
  */
 public class ProductDetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -93,6 +95,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
         Log.e(LOG_TAG, "Current Product URI: " + currentProductUri);
 
         /* Initialize the loader to get the current's product data */
+        //noinspection deprecation
         getSupportLoaderManager().initLoader(DETAILS_PRODUCT_LOADER, null, this);
 
         /* Find all relevant TextViews that we will need update with the data from the Cursor */
@@ -225,13 +228,11 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
         );
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor cursor) {
 
-        /* Bail early if the cursor is null or there is less than 1 row in the cursor */
-        if (cursor == null || cursor.getCount() < 1) {
-            return;
-        } else {
+        if (isCursorValid(cursor)) {
 
             /*
              * Proceed with moving to the first row of the cursor and reading data from it
@@ -325,6 +326,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
                     }
                 });
             }
+
         }
     }
 
@@ -337,5 +339,14 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
         priceTextView.setText(null);
         supplierTextView.setText(null);
         supplierPhoneTextView.setText(null);
+    }
+
+    /**
+     * Check if the cursor is not null and if it has at least one row
+     *
+     * @param cursor The cursor to be checked
+     */
+    private boolean isCursorValid(Cursor cursor) {
+        return cursor != null && cursor.getCount() >= 1;
     }
 }

@@ -30,6 +30,9 @@ import com.endurancecode.inventoryappstagetwo.data.ProductProvider;
  * METHODS INDEX
  * -------------
  * - onCreate()
+ * - showDeleteConfirmationDialog()
+ * - deleteProduct()
+ * - onBackPressed()
  * - onCreateLoader()
  * - onLoadFinished()
  * - onLoaderReset()
@@ -191,7 +194,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
 
             int rowsDeleted = getContentResolver().delete(currentProductUri, null, null);
 
-            /* Show a toast message depending on whether or not the update was successful */
+            /* Show a toast message depending on whether or not the deletion was successful */
             if (rowsDeleted == 0) {
                 Toast.makeText(this, getString(R.string.editor_delete_product_failed), Toast.LENGTH_SHORT).show();
             } else {
@@ -201,6 +204,12 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
 
         /* Close the activity */
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent mainActivityIntent = new Intent(ProductDetailsActivity.this, MainActivity.class);
+        startActivity(mainActivityIntent);
     }
 
     @NonNull

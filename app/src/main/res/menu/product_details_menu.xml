@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProductDetailsActivity">
+
+    <item
+        android:id="@+id/edit_product"
+        android:title="@string/menu_item_edit_product"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/call_supplier"
+        android:title="@string/menu_item_call_supplier"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/delete_product"
+        android:title="@string/menu_item_delete_product"
+        app:showAsAction="never" />
+</menu>

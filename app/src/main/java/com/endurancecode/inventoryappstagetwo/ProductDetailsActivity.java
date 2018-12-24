@@ -12,10 +12,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
+import android.support.v4.app.NavUtils;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -30,6 +33,10 @@ import com.endurancecode.inventoryappstagetwo.data.ProductProvider;
  * METHODS INDEX
  * -------------
  * - onCreate()
+ * - onCreateOptionsMenu()
+ * - onOptionsItemSelected()
+ * - editProduct()
+ * - callSupplier()
  * - showDeleteConfirmationDialog()
  * - deleteProduct()
  * - onBackPressed()
@@ -125,13 +132,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
             @Override
             public void onClick(View view) {
 
-                Intent productEditorActivityIntent = new Intent(ProductDetailsActivity.this, ProductEditorActivity.class);
-
-                /* Set the URI on the data field of the intent */
-                productEditorActivityIntent.setData(currentProductUri);
-
-                /* Launch the {@link ProductEditorActivity} to display the data for the current product */
-                startActivity(productEditorActivityIntent);
+                editProduct();
             }
         });
 
@@ -141,11 +142,70 @@ public class ProductDetailsActivity extends AppCompatActivity implements LoaderM
             @Override
             public void onClick(View v) {
 
-                Intent dialIntent = new Intent(Intent.ACTION_DIAL);
-                dialIntent.setData(Uri.parse("tel:" + String.valueOf(supplierPhoneTextView.getText())));
-                startActivity(dialIntent);
+                callSupplier();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        /*
+         * Inflate the menu options from the res/menu/product_details_menu.xml file.
+         * This adds menu items to the app bar.
+         */
+        getMenuInflater().inflate(R.menu.product_details_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        /* User clicked on a menu option in the app bar overflow menu */
+        switch (item.getItemId()) {
+
+            /* Respond to a click on the "Edit product" menu option */
+            case R.id.edit_product:
+                editProduct();
+                return true;
+
+            /* Respond to a click on the "Call supplier" menu option */
+            case R.id.call_supplier:
+                callSupplier();
+                return true;
+
+            /* Respond to a click on the "Delete product" menu option */
+            case R.id.delete_product:
+                showDeleteConfirmationDialog();
+                return true;
+
+            /* Respond to the action bar's Up/Home button */
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(ProductDetailsActivity.this);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Start the Product Editor Activity
+     */
+    private void editProduct() {
+
+        Intent productEditorActivityIntent = new Intent(ProductDetailsActivity.this, ProductEditorActivity.class);
+
+        /* Set the URI on the data field of the intent */
+        productEditorActivityIntent.setData(currentProductUri);
+
+        /* Launch the {@link ProductEditorActivity} to display the data for the current product */
+        startActivity(productEditorActivityIntent);
+    }
+
+    private void callSupplier() {
+        Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+        dialIntent.setData(Uri.parse("tel:" + String.valueOf(supplierPhoneTextView.getText())));
+        startActivity(dialIntent);
     }
 
     /**

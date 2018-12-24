@@ -56,4 +56,7 @@
     <!-- Main Activity Menu -->
     <string name="menu_item_add_product">Add new product</string>
     <string name="menu_item_insert_dummy_data">Insert Dummy data</string>
+    <string name="menu_item_edit_product">Edit product</string>
+    <string name="menu_item_call_supplier">Call supplier</string>
+    <string name="menu_item_delete_product">Delete product</string>
 </resources>

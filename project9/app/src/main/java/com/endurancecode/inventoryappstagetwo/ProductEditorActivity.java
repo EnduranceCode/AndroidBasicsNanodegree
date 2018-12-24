@@ -18,6 +18,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -32,10 +33,13 @@ import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
  * METHODS INDEX
  * -------------
  * - onCreate()
+ * - onPrepareOptionsMenu()
+ * - onCreateOptionsMenu()
+ * - onOptionsItemSelected()
  * - saveProduct()
  * - isInputProductDataValid()
+ * - showDeleteConfirmationDialog()
  * - deleteProduct()
- * - onOptionsItemSelected()
  * - onBackPressed()
  * - showUnsavedChangesDialog()
  * - onCreateLoader()
@@ -130,6 +134,12 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
              */
             FloatingActionButton deleteProductButton = findViewById(R.id.floatingDeleteButton);
             deleteProductButton.hide();
+
+            /*
+             * And we also invalidate the options menu, so the "Delete product" menu option can be hidden.
+             * (It doesn't make sense to delete a product that hasn't been created yet.)
+             */
+            invalidateOptionsMenu();
         } else {
 
             /*
@@ -148,7 +158,7 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
             deleteProductButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    deleteProduct();
+                    showDeleteConfirmationDialog();
                 }
             });
         }
@@ -175,10 +185,90 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
         FloatingActionButton saveProductButton = findViewById(R.id.floatingSaveButton);
         saveProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 saveProduct();
             }
         });
+    }
+
+    /**
+     * This method is called after invalidateOptionsMenu(), so that the
+     * menu can be updated (some menu items can be hidden or made visible).
+     */
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+
+        /* If this is a new product, hide the "Delete product" menu item */
+        if (existingProductUri == null) {
+
+            MenuItem menuItem = menu.findItem(R.id.delete_product);
+            menuItem.setVisible(false);
+        }
+
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        /*
+         * Inflate the menu options from the res/menu/product_editor_menu.xml file.
+         * This adds menu items to the app bar.
+         */
+        getMenuInflater().inflate(R.menu.product_editor_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        /* User clicked on a menu option in the app bar overflow menu */
+        switch (item.getItemId()) {
+
+            /* Respond to a click on the "Save product" menu option */
+            case R.id.save_product:
+                saveProduct();
+                return true;
+
+            /* Respond to a click on the "Delete product" menu option */
+            case R.id.delete_product:
+                showDeleteConfirmationDialog();
+                return true;
+
+            /* Respond to the action bar's Up/Home button */
+            case android.R.id.home:
+
+                if (productHasChanged) {
+
+                    /*
+                     * The user has changed something in the EditText fields
+                     * so we have unsaved changes, therefore we setup a dialog to warn the user.
+                     *
+                     * Create a click listener to handle the user confirming
+                     * that changes should be discarded
+                     */
+                    DialogInterface.OnClickListener discardButtonClickListener = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int which) {
+
+                            /* User clicked "Discard" button, navigate to parent activity */
+                            NavUtils.navigateUpFromSameTask(ProductEditorActivity.this);
+                        }
+                    };
+
+                    /* Show a dialog that notifies the user they have unsaved changes */
+                    showUnsavedChangesDialog(discardButtonClickListener);
+                    return true;
+                } else {
+
+                    /* If the product hasn't changed, continue with navigating up to parent activity */
+                    NavUtils.navigateUpFromSameTask(ProductEditorActivity.this);
+                    return true;
+                }
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void saveProduct() {
@@ -355,6 +445,42 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
         return isInputProductDataValid;
     }
 
+    /**
+     * Prompt the user to confirm product's deletion
+     */
+    private void showDeleteConfirmationDialog() {
+
+        /*
+         * Create an AlertDialog.Builder and set the message, and click listeners
+         * for the positive and negative buttons on the dialog.
+         */
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+        builder.setMessage(R.string.delete_dialog_single_product_msg);
+        builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+                /* User clicked the "Delete" button, so delete the product */
+                deleteProduct();
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+                /*
+                 * User clicked the "Cancel" button, so dismiss the dialog
+                 * and continue editing the pet.
+                 */
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        /* Create and show the AlertDialog */
+        android.app.AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
     private void deleteProduct() {
 
         /* Only perform the delete if this is an existing product */
@@ -375,46 +501,6 @@ public class ProductEditorActivity extends AppCompatActivity implements LoaderMa
                 startActivity(mainActivityIntent);
             }
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            /* Respond to the action bar's Up/Home button */
-            case android.R.id.home:
-
-                if (productHasChanged) {
-
-                    /*
-                     * The user has changed something in the EditText fields
-                     * so we have unsaved changes, therefore we setup a dialog to warn the user.
-                     *
-                     * Create a click listener to handle the user confirming
-                     * that changes should be discarded
-                     */
-                    DialogInterface.OnClickListener discardButtonClickListener = new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int which) {
-
-                            /* User clicked "Discard" button, navigate to parent activity */
-                            NavUtils.navigateUpFromSameTask(ProductEditorActivity.this);
-                        }
-                    };
-
-                    /* Show a dialog that notifies the user they have unsaved changes */
-                    showUnsavedChangesDialog(discardButtonClickListener);
-                    return true;
-                } else {
-
-                    /* If the product hasn't changed, continue with navigating up to parent activity */
-                    NavUtils.navigateUpFromSameTask(ProductEditorActivity.this);
-                    return true;
-                }
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

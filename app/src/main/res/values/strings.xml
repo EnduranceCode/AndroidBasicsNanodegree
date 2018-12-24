@@ -52,4 +52,8 @@
     <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
     <string name="unsaved_changes_dialog_discard">Discard</string>
     <string name="unsaved_changes_dialog_keep_editing">Keep editing</string>
+
+    <!-- Main Activity Menu -->
+    <string name="menu_item_add_product">Add new product</string>
+    <string name="menu_item_insert_dummy_data">Insert Dummy data</string>
 </resources>

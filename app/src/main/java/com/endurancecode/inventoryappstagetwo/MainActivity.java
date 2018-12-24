@@ -13,9 +13,12 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
 
@@ -25,6 +28,9 @@ import com.endurancecode.inventoryappstagetwo.data.InventoryContract.Products;
  * METHODS INDEX
  * -------------
  * - onCreate()
+ * - onCreateOptionsMenu()
+ * - onOptionsItemSelected(
+ * - startEditorActivity()
  * - insertDummyData()
  * - onCreateLoader()
  * - onLoadFinished()
@@ -48,16 +54,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /* Temporary call for debugging purposes only */
-        insertDummyData();
-
         /* Set an onClickListener method on the FAB add product button */
         FloatingActionButton addProductButton = findViewById(R.id.floatingAddProductButton);
         addProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent productEditorActivityIntent = new Intent(MainActivity.this, ProductEditorActivity.class);
-                startActivity(productEditorActivityIntent);
+                startEditorActivity();
             }
         });
 
@@ -108,6 +110,45 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         getSupportLoaderManager().initLoader(PRODUCT_LOADER, null, this);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        /*
+         * Inflate the menu options from the res/menu/main_activity_menu.xml file.
+         * This adds menu items to the app bar.
+         */
+        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        /* User clicked on a menu option in the app bar overflow menu */
+        switch (item.getItemId()) {
+
+            /* Respond to a click on the "Add new product" menu option */
+            case R.id.add_product:
+                startEditorActivity();
+                return true;
+
+            /* Respond to a click on the "Insert dummy data" menu option */
+            case R.id.insert_dummy_data:
+                insertDummyData();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Starts the Product Editor Activity to insert a new product in the database
+     */
+    private void startEditorActivity() {
+        Intent productEditorActivityIntent = new Intent(MainActivity.this, ProductEditorActivity.class);
+        startActivity(productEditorActivityIntent);
+    }
+
     /* Temporary helper method for debugging the app
      * Inserts dummy data in the database
      */
@@ -130,7 +171,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
          * Receive the new content URI that will allow us
          * to access Dummy's product data in the future.
          */
-        getContentResolver().insert(Products.CONTENT_URI, contentValues);
+        Uri newUri = getContentResolver().insert(Products.CONTENT_URI, contentValues);
+
+        /* Show a toast message depending on whether or not the insertion was successful */
+        if (newUri == null) {
+            Toast.makeText(this, getString(R.string.save_product_failure), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, getString(R.string.save_product_success), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @NonNull

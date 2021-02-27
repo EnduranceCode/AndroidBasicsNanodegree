@@ -13,6 +13,7 @@ Each Project, Practice Set, Sample App and all the written code following the co
 This project's code is stored in the folder [project1](./project1) of this repository.
 
 #### Project Overview
+
 The goal of this project is to design and implement a single screen app that displays information about a small business. The business choosen in the context of this project was [Ourivesaria Pinhal](http://www.rpinhal.pt/). 
 
 ### Project 2 - Score Keeper App
@@ -20,6 +21,7 @@ The goal of this project is to design and implement a single screen app that dis
 This project's code is stored in the folder [project2](./project2) of this repository.
 
 #### Project Overview
+
 The goal of this project is to create a Score Keeper App which gives a user the ability to keep track of the score of two different teams/players playing a game/sport. The choosen sport for this app is [Taekwondo](https://en.wikipedia.org/wiki/Taekwondo).
 
 ### Project 3 - Quiz App
@@ -27,6 +29,7 @@ The goal of this project is to create a Score Keeper App which gives a user the 
 This project's code is stored in the folder [project3](./project3) of this repository.
 
 #### Project Overview
+
 The goal is to create an educational app that quizzes a user about Triathlon Olympic History. It is required a minimum of 4 questions and a maximum of 10 quiz questions, including at least one check box, one radio button, and one text entry.
 
 ### Project 4 - Music Player App
@@ -34,6 +37,7 @@ The goal is to create an educational app that quizzes a user about Triathlon Oly
 This project's code is stored in the folder [project4](./project4) of this repository.
 
 #### Project Overview
+
 The goal is to design and layout a music playing app that displays the list of available songs in a ListView or a GridView, navigates to a details screen of the currently playing song and uses explicit intents to navigate around the app. For this project, **the app does not actually needs to play music**.
 
 Data about each song should be stored in a custom class that is retrieved and displayed via a Loop and Adapter.
@@ -106,6 +110,7 @@ The goal of this Practice Set is to use object-oriented programming techniques t
 This Practice Set's code is stored in the folder [practice-json-http](./practice-json-http) of this repository.
 
 #### Practice Set Goal
+
 The goal of this Practice Set is to gain a solid foundation of the concepts related to communicate and request for information via JSON Parsing and HTTP Networking.
 
 ## Samples

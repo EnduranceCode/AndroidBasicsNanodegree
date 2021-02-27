@@ -73,6 +73,7 @@ proguard/
 .idea/libraries/
 .idea/scopes/scope_settings.xml
 .idea/shelf/
+.idea/sonarlint/
 .idea/.name
 .idea/compiler.xml
 .idea/copyright/profiles_settings.xml
@@ -80,6 +81,7 @@ proguard/
 .idea/datasources.xml
 .idea/dynamic.xml
 .idea/encodings.xml
+.idea/jarRepositories.xml
 .idea/jsLibraryMappings.xml
 .idea/misc.xml
 .idea/modules.xml

@@ -12,4 +12,3 @@ The logos used in the app were downloaded from
 
 * [The Guardian Open Plataform](https://www.theguardian.com/open-platform/logos)
 * [Newsworks](https://www.newsworks.org.uk/toolkit)
-

@@ -1,6 +1,6 @@
 # Google Developer Nanodegree Scholarship
 
-This branch of the [Google Developer Nanodegree Scholarship](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/master) repository contains the code written for the **Fifth Project** of the [Android Basics Google Developer Nanodegree Scholarship](https://sites.google.com/knowlabs.com/gdnd2017).
+This folder of the [Google Developer Nanodegree Scholarship](https://github.com/EnduranceCode/GoogleDeveloperNanodegreeScholarship/tree/master) repository contains the code written for the **Fifth Project** of the [Android Basics Google Developer Nanodegree Scholarship](https://sites.google.com/knowlabs.com/gdnd2017).
 
 ## Project Overview
 
